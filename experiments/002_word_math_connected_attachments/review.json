@@ -1,0 +1,50 @@
+{
+  "schema": "umd.playground.review.v1",
+  "id": "002_word_math_connected_attachments",
+  "title": "Real Lab Word Math × Connected Systems: five attachments",
+  "status": "BLOCKED",
+  "question": "How do the actual Lab Word Math semantics and Connected Systems First policy behave when joined to mission gates, multi-organ validation, bioelectric health, goal gravity and causal composition?",
+  "summary": "Five Lab-backed comparison probes are built. Current private Lab master was inspected and 18 expected implementation/policy signatures verified, but the actual runtime probes cannot execute from this ChatGPT sandbox. No outcome claims or Lab changes.",
+  "evidence": [
+    {
+      "kind": "LIVE_SOURCE_INSPECTION",
+      "environment": "GitHub connected read of private Lab master at e3b08828522ecf6e0ffb547b18dac5c32da42b18",
+      "observation": "18/18 expected source API/policy signatures found across six modules. This proves source-level availability, not runtime.",
+      "source": "matrix.json"
+    },
+    {
+      "kind": "LOCAL_PYTHON_SYNTAX_CHECK",
+      "environment": "Local isolated Python sandbox, no private Lab checkout",
+      "observation": "The initial authenticated-runner implementation compiled; the subsequently committed runner still requires execution under a private Lab environment.",
+      "source": "run_on_lab.py"
+    }
+  ],
+  "limitations": [
+    "Actual Word Math and connected-system code has NOT executed against a private Lab checkout during this ChatGPT session.",
+    "The public harness includes only synthetic fixtures and API references, not any private Lab source.",
+    "A side-by-side measurement of Word Math and validation routing is not proof of an existing feed-forward coupling between them.",
+    "Any claims about live agent orchestration, mutable Lab state or downstream learning remain UNKNOWN."
+  ],
+  "next_actions": [
+    "Run the actual five read-only probes in a private authenticated Lab checkout and inspect the complete results.",
+    "Contrast positive, negative, conditional and order-reversed fixtures and investigate failures rather than counting mocked expectations as runtime proof.",
+    "After results are reported, publish a sanitized evidence summary for review and consider additional target systems."
+  ],
+  "recommended_action": "IMPROVE",
+  "recommendation_reason": "The test matrix has current source-level grounding, but lacks real Lab runtime outcome evidence.",
+  "files": [
+    {
+      "path": "README.md",
+      "label": "Grounding, test matrix and proof boundaries"
+    },
+    {
+      "path": "matrix.json",
+      "label": "Five actual interface attachment cases"
+    },
+    {
+      "path": "run_on_lab.py",
+      "label": "Read-only harness importing real private Lab modules"
+    }
+  ],
+  "issue_number": null
+}

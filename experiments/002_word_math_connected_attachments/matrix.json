@@ -1,0 +1,84 @@
+{
+  "schema": "umd.playground.probe_matrix.v1",
+  "title": "Real Lab Word Math × Connected Systems attachments",
+  "lab_source_head": "e3b08828522ecf6e0ffb547b18dac5c32da42b18",
+  "tests": [
+    {
+      "id": "sequence_and_prerequisites",
+      "attach": "Ordered dependency chains and prerequisite satisfaction",
+      "real_owners": [
+        "Word Math"
+      ],
+      "measures": [
+        "order sensitivity",
+        "reality gating",
+        "neutral-relative overlap"
+      ],
+      "control": "reverse input order; vary prerequisite evidence"
+    },
+    {
+      "id": "execution_and_consent",
+      "attach": "Mission execution and safety/consent gate",
+      "real_owners": [
+        "Word Math",
+        "Zero Point Spine"
+      ],
+      "measures": [
+        "execution state",
+        "conditional evidence requirement",
+        "destructive hard block"
+      ],
+      "control": "benign vs negated vs conditional vs destructive"
+    },
+    {
+      "id": "connected_systems_and_word_math",
+      "attach": "Cross-organ validation planning and routing policy",
+      "real_owners": [
+        "Word Math",
+        "Validation Planner",
+        "Routing"
+      ],
+      "measures": [
+        "CONNECTED_SYSTEMS_FIRST",
+        "tier",
+        "Word Math pressure testimony"
+      ],
+      "control": "small local task vs broad organism work vs game multi-system task",
+      "note": "side-by-side inspection; does not imply Word Math already controls connected policy"
+    },
+    {
+      "id": "bioelectric_attachment",
+      "attach": "Bioelectric morphogenesis tissue",
+      "real_owners": [
+        "Word Math",
+        "Morphogenesis Grid"
+      ],
+      "measures": [
+        "semantic stress sign",
+        "12-step voltages",
+        "neighbor coupling"
+      ],
+      "control": "proof vs hazard language, same topology and starting voltage"
+    },
+    {
+      "id": "gravity_attachment",
+      "attach": "Goal gravity potential field",
+      "real_owners": [
+        "Word Math",
+        "Goal Gravity"
+      ],
+      "measures": [
+        "attraction/obstacle coefficients",
+        "proof well",
+        "net forces"
+      ],
+      "control": "delivery vs repair vs risk inputs"
+    }
+  ],
+  "safety": {
+    "private_lab_source_in_public_repo": false,
+    "lab_writes": false,
+    "automatic_lab_transfer": false,
+    "runtime_claim": "NOT RUN in authenticated Lab checkout as of experiment creation"
+  }
+}
