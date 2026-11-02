@@ -1,25 +1,18 @@
-# Evidence and authority boundary
+# Proof, authority and retention
 
-## Five distinct proof layers
+Public Playground enables tool reach, not private Lab access. The repository owner is Cody. **No experiment is automatically sent to the Lab.** Only his explicit command `playground extract <id>` initiates selective, one-way research staging in the private Lab.
 
-| Layer | What establishes it | What it does NOT establish |
-| --- | --- | --- |
-| Intent | explicit owner direction | implementation |
-| Source fidelity | current files and revision | executed behavior |
-| Execution | actual tool invocation with inputs and output | usefulness or later learning |
-| Outcome | observation of target behavior | generalization |
-| Learning | later consumer uses result and produces altered behavior/outcome | mere storage |
+A GitHub commit proves versioned bytes persisted. A test proves what ran in the observed environment. A Lab staging file does not prove adoption, production execution, outcome or learning. These must remain separate.
 
-## Public-to-Lab relation
+Active experiments are removed after successful approved extraction or evidence-backed discard. Git history remains, including deleted files: **do not treat deletion as a privacy tool.** Public GitHub source may be copied or cached.
 
-This is an advisory public research workspace. Private Ultramonkeydog Lab owns its mission synthesis, routing, execution, proof, memory, integration, and adaptation. Existing current GitHub source contains `labcore/github_organ.py`, `labcore/informal_evidence.py`, `labcore/forge_relay.py`, and `intake/companion/README.md`; their existence is **not** proof of a ready-made external-repository ingest path.
+## Founding observations, 2026-11-02
 
-No Playground issue, packet or note has inherent Lab authority. Agents must independently recover current Lab code/runtime and determine whether an existing intake owner can consume selected results before making or recommending changes there. The Playground does not poll the Lab or receive private credentials.
+- The originally empty public `Bone-bracket` repository was bootstrapped, and `master` was established. Active work and GitHub readbacks were successful.
+- GitHub issue creation, comment posting and comment readback succeeded.
+- A local SHA-256 integrity experiment and focused tests ran; that proves only their scoped behavior, not author authenticity.
+- Before Cody clarified the extraction boundary, the assistant created two advisory companion-intake notes in the Lab. **Both were removed from current Lab `master`** once he specified that nothing enters without his explicit selection. Their old Git commits remain in history; no downstream consumption was verified.
+- The private Lab's existing `research/vault/ingest/README.md` states that intake is a temporary research staging surface with promote/merge/refine/delete dispositions; it does not make public Playground a new authority.
+- A real **Cody-approved extraction** has not occurred. Any test of the lifecycle code is a test of that code, not an observation of a live Lab extraction.
 
-## Proof ledger — founding session, 2026-11-02
-
-- GitHub repo API returned public, non-archived, size 0, existing default `main`, with account write permission.
-- Contents API returned “This repository is empty” before bootstrap.
-- `README.md` was created on `main` at commit `f9d2e039ea78cb3ff04b39765bb6f2628537c020`; `master` was created from that commit.
-- The source tree later committed to master should be verified by reading the live branch and running local tests; this file is a time-scoped record, not a perpetual status claim.
-- No GitHub Pages deployment, continuous background agent, Lab bridge, or downstream learning has been demonstrated.
+The current remote branch and live Lab execution may change; re-inspect them before consequential decisions.

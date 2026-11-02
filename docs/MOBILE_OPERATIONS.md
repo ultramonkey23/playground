@@ -1,38 +1,25 @@
-# Mobile-first operations
+# Mobile operations — workbench, not public showcase
 
-The Playground's principal job is to let a ChatGPT mobile session perform useful R&D **without an inbound Lab connection**.
+The Android/iOS ChatGPT app can act as the control surface **only when a session actually has the relevant tools**. No direct Lab tunnel is assumed. GitHub public reading reduces access friction; GitHub writing remains permissioned.
 
-## Three usable modes
+## The normal loop
 
-### A — ChatGPT + connected GitHub tools (observed in founding session)
+Tell ChatGPT: **“Playground experiment: <your full objective>. Inspect `ultramonkey23/Bone-bracket` on `master` and read AGENTS.md first. Use real tools to research/test, commit results, independently verify readback, and keep the experiment temporary.”**
 
-Ask: “Use my connected GitHub tools for `ultramonkey23/Bone-bracket`. Work on `master`. First read `AGENTS.md` and the relevant current files. Open an issue for this mission, execute the experiment with available sandbox tools, commit evidence files, read the files back, and link the issue/commit. Separate verified actions from claims that need Lab/runtime access.”
+A new session can resume from the active `experiments/` directories, exact commits and actual experiment files, without depending on old chat memory. Ask `playground status` to inspect current reality.
 
-Do not ask a chat to *claim* it wrote to GitHub: request concrete tool-backed readback and a commit URL. If no authenticated GitHub write tool is present, switch to Mode B.
+Once useful work is established, Cody can say **`playground extract <id>`** and optionally select exact paths. This is the **only** signal that authorizes transfer to private Lab research intake. Unworthy work gets **`playground discard <id> <reason>`** or an evidence-backed negative disposition.
 
-### B — GitHub app/web issue submission (no ChatGPT GitHub write permission required)
+## Ways to interact
 
-Open [new issue](https://github.com/ultramonkey23/Bone-bracket/issues/new/choose), choose NOTE / CHALLENGE / EXPERIMENT, paste proposal, then submit. [Mobile proposal composer](../index.html) can generate copyable Markdown in any local browser once the HTML is opened/downloaded.
+- **ChatGPT with installed/connected GitHub tools:** direct authenticated commits, issues/comments and readback. It can execute local/sandbox code only if those tools are presently available.
+- **GitHub browser/app:** create a quick note in an issue, then have an agent convert it into a temporary experiment. GitHub mobile issue-prefill links have known reliability issues; copying text and pasting into a plain issue remains viable.
+- **Pocket Desk:** [index.html](../index.html) is a self-contained form for composing a task and copying it. It has no direct GitHub API authentication or background worker. GitHub Pages must be enabled separately, and the current default branch setting may be different from the active `master`.
 
-**Community-observed caveat:** GitHub app deep links sometimes lose prefilled issue title/body parameters on Android or iOS. The clipboard + manual issue route is intentional, not a broken fallback. A GitHub account is still required to submit.
+## The real boundaries
 
-### C — Independent local/cloud execution
+A GitHub commit is a file write, not a remote terminal command on the Lab. GitHub Issues and notes are not execution permissions. A private Lab research packet can be written via a connected GitHub tool **only after Cody orders extraction**; the Lab's own runtime proof, decision owners and current canon are independent.
 
-Use Python sandbox, browser, Termux, Codex, or another available tool *only if it is present for this session*. Keep examples self-contained. Publish exact command, inputs, exit code, and observed stdout. No direct Lab runtime is necessary to research an independent hypothesis.
+Avoid publishing private code, secrets, internal addresses, assets, personal data or confidential screenshots. Git history and caches make later cleanup incomplete.
 
-## Mobile prompt patterns
-
-- “**Research & test:** compare three existing GitHub implementations of [problem], cite primary code, choose a falsifiable hypothesis, implement a small executable benchmark in Playground on master, run it, report evidence.”
-- “**Second opinion:** pick the newest Playground challenge, independently reproduce and attack its strongest claim. Comment with exact counterexample, not a summary.”
-- “**Handoff:** inspect issue #[N], collect current files and execution evidence, state executed/unexecuted work, then add one sourced comment without changing its authority.”
-- “**Prototype:** create a standalone offline HTML/JS or Python prototype in Playground, test it with real input, commit and read back. Do not require the private Lab.”
-
-## Capability discovery
-
-At the start of every task, record: available GitHub tools, ability to execute code, ability to access URLs, current branch, and any enabled background/scheduler/host capabilities. Do **not** infer feature presence from a ChatGPT product announcement or old thread.
-
-## Current limitations
-
-This session can GitHub-write and can run local Python, but has not shown a direct private Lab tunnel, live Lab host, or repository-admin rename/default-branch settings API. ChatGPT background wakeups and push notifications must be verified independently before advertised.
-
-For observability, use GitHub issue comments and commits instead of volatile chat-only completion reports. Compare public material with the real target branch before every consequential action.
+[Full one-way extraction procedure](EXTRACTION_PROTOCOL.md).

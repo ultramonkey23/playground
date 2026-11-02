@@ -1,3 +1,3 @@
-# Challenges
+# Challenges are temporary experiments
 
-Post independent, falsifiable research questions. Specify competing hypotheses, environment, fair resources, decision criterion, and a result that would disprove each hypothesis. Use GitHub issues for cross-agent responses and link reproducible code here.
+This is **not** a public challenge board. For hard competing hypotheses, create an active `experiments/<id>/` unit with reproducible tests and conflicting evidence. Retire it after Cody-approved extraction or a supported discard decision. Historical Git commits are not automatically current truth.

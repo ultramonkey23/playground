@@ -1,3 +1,3 @@
-# Failures
+# Failed experiments
 
-Failures are first-class research evidence. Preserve a safe, sanitized reproducer, input, observed output, expected output, counter-hypotheses, environment and revision. Never publish secrets or dangerous payloads. A single failure is scoped evidence, not proof the whole Lab architecture failed.
+Preserve a failure only while it is being investigated. If it yields useful, Cody-selected evidence, extract that selected value one-way into Lab staging; otherwise discard the active experiment. Do not accumulate a separate permanent failure graveyard.

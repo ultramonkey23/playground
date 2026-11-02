@@ -10,9 +10,9 @@
 </style>
 </head>
 <body><main>
-<div class="eyebrow">Ultramonkeydog · Public R&D</div>
+<div class="eyebrow">Ultramonkeydog · Mobile R&D workbench</div>
 <h1>🧪 Playground Pocket Desk</h1>
-<p>Turn a phone idea into a portable, source-aware GitHub research task. Everything below runs locally in this page: <strong>no login, API key, analytics, network submission, or private Lab connection.</strong></p>
+<p>Turn a phone idea into a temporary, tool-accessible GitHub research experiment. Public for access, not public-first. Everything below runs locally in this page: <strong>no login, API key, analytics, network submission, or private Lab connection.</strong></p>
 <p class="alert"><strong>Repository working branch: master.</strong> The repository is still named <code>Bone-bracket</code>. This page is source code, not automatically a deployed GitHub Pages site.</p>
 <div class="panel">
 <h2>Compose an experiment or handoff</h2>
@@ -32,7 +32,7 @@
 <h2>Generated issue preview</h2><pre id="preview" aria-label="Generated issue Markdown"></pre>
 <p class="hint">Only user actions copy or open anything. The content is not submitted until you post it on GitHub. Never paste private source, secrets, tokens, internal addresses or unreleased assets into a public issue.</p>
 <div class="actions"><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/tree/master">Browse master</a><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/issues">Read challenges</a><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/blob/master/docs/MOBILE_OPERATIONS.md">Mobile guide</a></div>
-<footer>No backend. No background worker. Public-to-private Lab integration is not provided by this page. Integrity of future evidence packets is handled separately by the repository's Python tool.</footer>
+<footer>No backend. No background worker. Only Cody-approved extraction can move selected research into private Lab intake. This page does not perform it. Integrity of future evidence packets is handled separately by the repository's Python tool.</footer>
 </main>
 <script>
 'use strict';
@@ -45,7 +45,7 @@ function markdown(){
  return `# [${val('kind')}] ${title}\n\n**Contributor claim:** ${val('actor')||'Unspecified'}\n**Working branch:** master\n**Source and revision:** ${val('source')||'NOT PROVIDED'}\n**Authority:** PUBLIC_ADVISORY_NOT_LAB_CANON\n\n## Objective / claim / hypothesis\n${val('claim')||'NOT PROVIDED'}\n\n## Method and fair resources\n${val('method')||'NOT PROVIDED'}\n\n## Observations (actual execution only)\n${obs}\n\n## Unknowns / counterevidence / boundaries\n${val('unknown')||'NOT PROVIDED'}\n\n## Next proof\nIndependently reproduce; identify actual tools, environment, command, exit status, and revision. Do not assert private Lab execution or later learning without observing it.\n`;
 }
 function agentTask(){
- return `Work on the public GitHub repository ultramonkey23/Bone-bracket branch master. Read current AGENTS.md and related issues/source before changing anything. Discover which execution and GitHub tools are actually available in this session. Respect security and private Lab boundaries. Preserve full scope. Perform real executable R&D where tools allow; produce a testable artifact, observed result, and independent counterexample where relevant. Commit only verified changes to master with concurrent-safe reads, create/comment on the relevant issue, read back committed files and give exact GitHub URLs. Do not claim background work or Lab learning.\n\nUSER PACKET:\n${markdown()}`;
+ return `Work on the public GitHub repository ultramonkey23/Bone-bracket branch master. Read current AGENTS.md and related issues/source before changing anything. Discover which execution and GitHub tools are actually available in this session. Respect security and private Lab boundaries. Preserve full scope. Perform real executable R&D where tools allow; produce a testable artifact, observed result, and independent counterexample where relevant. Commit only verified changes to master with concurrent-safe reads, create/comment on the relevant issue, read back committed files and give exact GitHub URLs. Do not claim background work or Lab learning. Keep experiment work temporary; only Cody's direct extract instruction can stage selected artifacts into Lab research intake, with readback before Playground retirement.\n\nUSER PACKET:\n${markdown()}`;
 }
 function preview(){el('preview').textContent=markdown();}
 async function copyText(value){

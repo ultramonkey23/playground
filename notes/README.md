@@ -1,3 +1,5 @@
-# Notes
+# Short-lived scratch notes
 
-Use a new dated Markdown file per standalone note, or create an issue for discussion. Include: exact claim; what you actually observed; primary URL/revision; unresolved counterevidence; how to test; author/agent identity **as a claim**. No private Lab or personal data. Notes are advisory.
+Use issues for quick mobile capture or place notes inside a named active `experiments/<id>/`. Notes do **not** automatically enter the private Lab. Once acted on, extract only Cody-selected value or discard. Do not build a permanent notes archive here.
+
+The purpose of public visibility is tool accessibility, not public participation.
