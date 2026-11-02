@@ -40,6 +40,28 @@ The harness clones a clean, temporary private Lab master and calls only read/com
 
 Paste the JSON results here. I can evaluate the measured differences and publish a bounded review to the Desk. **Never paste private source, tokens or personal data.** No transfer into the Lab is authorized by these tests.
 
+## Publish results without uploading a phone file
+
+The original command saved the complete corrected results at `~/fusion-results.json`. To publish **that existing result** to this PUBLIC Playground (no file browsing or copying JSON):
+
+```sh
+cd ~/playground
+git pull --ff-only
+python experiments/002_word_math_connected_attachments/publish_results.py
+```
+
+The publisher validates the seven-probe schema and expected names, refuses partial runs and recognizable secrets/private paths, clones public Playground `master` temporarily with your existing `gh` authentication, commits `latest_results.json` plus an updated `review.json`, pushes **fast-forward only**, and checks remote readback. It changes no private Lab files and does not grant Lab extraction approval.
+
+For **future runs**, replace the output-file dance with one command:
+
+```sh
+python experiments/002_word_math_connected_attachments/probe_fusions.py --clone-private --publish
+```
+
+The `--publish` flag is intentional because GitHub Playground is **PUBLIC** and deleted data may remain in public Git history. The limited synthetic data is not automatically classified as secret-free with certainty; verify your intended publishing scope. With no `--publish`, the runner continues to print JSON only. After publishing, say **"Review the latest Playground results"** here: ChatGPT can read them from GitHub directly and interpret the evidence. No attachment, upload, or paste needed. You can still simply paste terminal output here.
+
+The mobile Desk's existing artifact viewer will list `latest_results.json` for inspection after Refresh. A successful GitHub commit means the results are **available**, not that downstream Lab adoption or learning occurred.
+
 ## Source vs execution vs outcome
 
 - **Verified:** current GitHub master source ownership, actual direct callsites and targeted formulas listed in the atlas.
