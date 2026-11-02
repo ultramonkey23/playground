@@ -365,6 +365,8 @@ def run(root: Path) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Measure existing Word Math fusions, not rewire the Lab")
+    parser.add_argument("--publish", action="store_true",
+                        help="explicitly publish complete synthetic result to PUBLIC Playground Git history")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--clone-private", action="store_true",
                        help="clone a clean private master temporarily using authenticated gh")
@@ -383,6 +385,19 @@ def main() -> int:
     except Exception as exc:
         output = {"schema": SCHEMA, "status": "BLOCKED", "error_type": type(exc).__name__,
                   "reason": "Private clone/import/environment blocked; Lab execution UNKNOWN"}
+    if args.publish and output["status"] == "OBSERVED":
+        try:
+            from publish_results import publish_result
+            publication = publish_result(output)
+        except Exception as exc:
+            # A successful Lab probe can still fail public publishing. Never
+            # report the result as published until public readback succeeds.
+            print(json.dumps(output, indent=2, sort_keys=True, allow_nan=False))
+            print("PUBLICATION_NOT_PERFORMED: " + type(exc).__name__ + ": " + str(exc),
+                  file=sys.stderr)
+            return 3
+        print(json.dumps(publication, indent=2, sort_keys=True))
+        return 0
     print(json.dumps(output, indent=2, sort_keys=True, allow_nan=False))
     return 0 if output["status"] == "OBSERVED" else 2
 
