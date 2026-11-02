@@ -1,0 +1,223 @@
+{
+  "schema": "umd.playground.fusion_observations.v1",
+  "provenance": {
+    "reported_date": "2026-11-02",
+    "origin": "USER_PROVIDED_TERMUX_CONSOLE_JSON",
+    "lab_head": "c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65",
+    "lab_head_verified_from_connected_github": "2026-11-02",
+    "lab_branch": "master",
+    "case_statuses": "SEVEN_PROBES_REPORTED_OBSERVED",
+    "top_level_status": "NOT_VISIBLE_IN_PASTED_OUTPUT",
+    "runner_public_revision": "NOT_ATTESTED_BY_OUTPUT",
+    "raw_output_completeness": "TRUNCATED_AT_END_OF_LAST_CASE",
+    "private_lab_source_embedded": false,
+    "private_lab_write_claim": "RUNNER_REPORTED_ZERO_EXPLICIT_LAB_WRITE_OPERATIONS",
+    "proof_ceiling": "User-reported authenticated Termux synthetic execution, current source matched by GitHub; not independent device attestation nor production outcome"
+  },
+  "findings": {
+    "neurodaemon": {
+      "existing_connection": true,
+      "test_name": "neurodaemon_affinity_vs_placement",
+      "conditions": [
+        "neutral",
+        "fusion",
+        "proof",
+        "repair"
+      ],
+      "daemon_count": 5,
+      "placement_changed": {
+        "fusion": false,
+        "proof": false,
+        "repair": false
+      },
+      "rounded_spawn_scores_changed": {
+        "fusion": false,
+        "proof": false,
+        "repair": false
+      },
+      "semantic_affinity_changed": {
+        "fusion": false,
+        "proof": true,
+        "repair": true
+      },
+      "nonzero_affinities": {
+        "proof": {
+          "CYBORG_FALSE_PASS_LEECH": 0.6,
+          "SCHOLAR_ARCHIVE_MANTIS": 0.6
+        },
+        "repair": {
+          "ALFRED_FRICTION_FINCH": 0.8,
+          "BRAIN_COHERENCE_MOTH": 0.5
+        }
+      },
+      "interpretation": "Existing Word Math testimony changes affinity metadata but not the scored bridge assignments in these fixed synthetic fixtures."
+    },
+    "four_mind": {
+      "test_name": "four_mind_semantic_tool_fit",
+      "reported_distinct_winners_including_null": 2,
+      "actual_distinct_nonnull_winners": 1,
+      "positive_match_tasks": {
+        "repair": {
+          "profile": "repair_specialist",
+          "coverage": 1,
+          "resonance": 0.8
+        }
+      },
+      "unmatched_tasks": {
+        "verify": {
+          "top_match": null,
+          "max_resonance": 0
+        },
+        "fuse": {
+          "top_match": null,
+          "max_resonance": 0
+        }
+      },
+      "interpretation": "Reported count includes null as a distinct winner. No observed proof or fusion specialist selection; their wording may be outside current Word Math activation vocabulary."
+    },
+    "scribe_spine": {
+      "test_name": "scribe_spine_scope_integrity",
+      "cases": [
+        "prohibition",
+        "question",
+        "conditional",
+        "claimed_proof"
+      ],
+      "semantic_vector_preserved_all": true,
+      "scoped_summary_preserved_all": true,
+      "scribe_may_execute_all": false,
+      "zero_point": {
+        "prohibition": {
+          "state": "SAFE_TO_PROCEED",
+          "executable_events": 0
+        },
+        "question": {
+          "state": "SAFE_TO_PROCEED",
+          "executable_events": 0
+        },
+        "conditional": {
+          "state": "CONDITION_EVIDENCE_REQUIRED",
+          "held_events": 1,
+          "unverified_relations": 1
+        },
+        "claimed_proof": {
+          "state": "SAFE_TO_PROCEED",
+          "executable_events": 0
+        }
+      },
+      "interpretation": "Semantic handoff integrity held; SAFE_TO_PROCEED for no-action speech does not license executing a prohibited or queried command."
+    },
+    "socket_visibility": {
+      "test_name": "socket_graph_visibility",
+      "declared_consumers": [
+        "action_math_fusion",
+        "power_router",
+        "scribe_translation",
+        "zero_point_spine"
+      ],
+      "direct_importers_count": 11,
+      "additional_direct_importers": [
+        "dimensional_compiler",
+        "four_mind",
+        "goal_gravity",
+        "growth_physics",
+        "morphogenesis_grid",
+        "mycelial_pattern_fusion",
+        "sense_calibration"
+      ],
+      "interpretation": "Typed socket consumers are not the complete direct-import call graph. Difference alone is not broken wiring."
+    },
+    "socket_authority": {
+      "test_name": "socket_fabric_authority_boundary",
+      "read_only_observer_compatible": true,
+      "active_writer_proven_compatible": false,
+      "rejection_reasons": [
+        "authority_escalation_forbidden:READ_ONLY_to_ACTIVE_WRITE",
+        "proof_ceiling_escalation_forbidden:UNPROVEN_to_PROVEN"
+      ],
+      "handoff_compilable": true,
+      "interpretation": "Read-only Word Math observations do not silently grant higher write authority or verified proof."
+    },
+    "structural_radius": {
+      "test_name": "structural_connected_policy",
+      "simple_leaf": {
+        "tier": "STANDARD",
+        "connected_required": false,
+        "routing_policy": "REUSE_EXISTING_ORGANS_WHEN_PRESENT",
+        "structural_escalated": false,
+        "word_math_activation": {
+          "execution_pressure": 0.4,
+          "mutation_pressure": 0.8
+        }
+      },
+      "simple_cross_organ": {
+        "tier": "DEEP",
+        "connected_required": true,
+        "routing_policy": "REUSE_EXISTING_ORGANS_WHEN_PRESENT",
+        "structural_escalated": true,
+        "word_math_activation": {
+          "execution_pressure": 0.4,
+          "mutation_pressure": 0.8
+        }
+      },
+      "broad_leaf": {
+        "tier": "DEEP",
+        "connected_required": true,
+        "structural_escalated": false,
+        "word_math_activation": {}
+      },
+      "broad_cross_organ": {
+        "tier": "DEEP",
+        "connected_required": true,
+        "structural_escalated": false,
+        "word_math_activation": {}
+      },
+      "interpretation": "Structural context changed Validation's tier/required flag for identical simple text while Routing's text-only integration policy did not change. No actual cross-organ execution measured."
+    },
+    "bioelectric_to_daemon": {
+      "test_name": "bioelectric_to_daemon_candidate",
+      "kind": "TEMPORARY_IN_MEMORY_ADAPTER_NOT_ACTIVE_LAB_WIRING",
+      "gain_values": [
+        0,
+        0.5,
+        1,
+        2
+      ],
+      "inputs": {
+        "unrecognized_hazard_label": {
+          "phrase": "delete everything danger damage destructive",
+          "semantic_signal": 0.04,
+          "voltage_after_12_steps": 0.736223,
+          "reported_name": "hazard"
+        },
+        "proof": {
+          "phrase": "verified tests proof evidence passed",
+          "semantic_signal": 0.34,
+          "voltage_after_12_steps": 0.87762
+        }
+      },
+      "derived_resistances": {
+        "unrecognized_hazard_label": [
+          1,
+          0.981888,
+          0.963777,
+          0.927554
+        ],
+        "proof": [
+          1,
+          0.91119,
+          0.82238,
+          0.64476
+        ]
+      },
+      "baseline_fifth_target": "four_mind_to_pattern_fusion",
+      "nonzero_gain_fifth_target": "pattern_fusion_to_burst",
+      "unchanged_reported_rounded_spawn_scores": true,
+      "unique_targets_without_adapter": 5,
+      "unique_targets_nonzero_gain": 4,
+      "changed_slots": 1,
+      "interpretation": "A tiny resistance change flips the fifth assignment to an already-used bridge; this is real synthetic behavior but lowers coverage, so no upgrade is established.",
+      "fixture_flaw": "The old 'hazard' text did not match Word Math's registered risk/destructive phrases. Its signal +0.04 exactly matches neutral proof/danger baseline: 0.5×0.2 - 0.6×0.1 = 0.04. No actual negative stress condition was measured."
+    }
+  }
+}
