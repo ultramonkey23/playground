@@ -1,50 +1,58 @@
 {
   "schema": "umd.playground.review.v1",
   "id": "002_word_math_connected_attachments",
-  "title": "Real Lab Word Math × Connected Systems: five attachments",
-  "status": "BLOCKED",
-  "question": "How do the actual Lab Word Math semantics and Connected Systems First policy behave when joined to mission gates, multi-organ validation, bioelectric health, goal gravity and causal composition?",
-  "summary": "Five Lab-backed comparison probes are built. Current private Lab master was inspected and 18 expected implementation/policy signatures verified, but the actual runtime probes cannot execute from this ChatGPT sandbox. No outcome claims or Lab changes.",
+  "title": "Existing Word Math fusions: hidden downstream behavior",
+  "status": "ACTIVE",
+  "question": "Which of Word Math's already-connected Lab organs actually change downstream behavior, where is only advisory metadata changing, and which cross-organ experiments reveal genuinely new effects?",
+  "summary": "Current Lab source verifies extensive existing Word Math consumption. Five controlled fusion-discovery probes now distinguish existing wired effects, socket visibility, and one explicitly experimental in-memory bioelectric→Neurodaemon edge. Runtime effects of the new probe are NOT YET MEASURED.",
   "evidence": [
     {
-      "kind": "LIVE_SOURCE_INSPECTION",
-      "environment": "GitHub connected read of private Lab master at e3b08828522ecf6e0ffb547b18dac5c32da42b18",
-      "observation": "18/18 expected source API/policy signatures found across six modules. This proves source-level availability, not runtime.",
-      "source": "inspection.json"
+      "kind": "LIVE_PRIVATE_SOURCE_INSPECTION",
+      "environment": "Connected GitHub read of private Lab master e3b08828522ecf6e0ffb547b18dac5c32da42b18",
+      "observation": "Verified direct Word Math consumers beyond the four consumers declared by the semantic-vector socket. The registry is not a complete call graph.",
+      "source": "fusion_atlas.json"
     },
     {
-      "kind": "LOCAL_PYTHON_SYNTAX_CHECK",
-      "environment": "Local isolated Python sandbox, no private Lab checkout",
-      "observation": "The initial authenticated-runner implementation compiled; the subsequently committed runner still requires execution under a private Lab environment.",
-      "source": "run_on_lab.py"
+      "kind": "SOURCE_LEVEL_CAUSAL_OBSERVATION",
+      "environment": "Private Lab source: mycelial_pattern_fusion.py, exact master version",
+      "observation": "Neurodaemon spawn_score uses bridge_need, proof safety, mind fit, creativity and density; Word Math semantic_affinity is recorded separately. Actual runtime effects remain to be tested.",
+      "source": "fusion_atlas.json"
+    },
+    {
+      "kind": "UNEXECUTED_RUNTIME_HARNESS",
+      "environment": "New public Python harness invokes private Lab modules only on an authenticated host",
+      "observation": "Five comparative cases authored; no private Lab runtime observations or uplift claims yet.",
+      "source": "probe_fusions.py"
     }
   ],
   "limitations": [
-    "Actual Word Math and connected-system code has NOT executed against a private Lab checkout during this ChatGPT session.",
-    "The public harness includes only synthetic fixtures and API references, not any private Lab source.",
-    "A side-by-side measurement of Word Math and validation routing is not proof of an existing feed-forward coupling between them.",
-    "Any claims about live agent orchestration, mutable Lab state or downstream learning remain UNKNOWN."
+    "Private Lab host/runtime and local uncommitted work remain inaccessible from this GitHub-connected conversation.",
+    "No authenticated private Lab runtime probe has executed in this turn.",
+    "Direct imports and function calls do not prove a signal influences later project behavior or learning.",
+    "Bioelectric-to-Neurodaemon resistance mapping exists ONLY in the experimental probe and uses swept, uncalibrated gains.",
+    "The source inventory is targeted rather than a complete 5,000+ path organism census."
   ],
   "next_actions": [
-    "Run the actual five read-only probes in a private authenticated Lab checkout and inspect the complete results.",
-    "Contrast positive, negative, conditional and order-reversed fixtures and investigate failures rather than counting mocked expectations as runtime proof.",
-    "After results are reported, publish a sanitized evidence summary for review and consider additional target systems.",
-    "Check static inspection.json source fingerprints against any newer private Lab master before treating the experiment as current."
+    "Run the five comparative probes against a clean private Lab master checkout and inspect observed vs unchanged consumer outputs.",
+    "Investigate whether semantic affinity is intentionally descriptive or under-consumed before proposing any Neurodaemon change.",
+    "Compare typed socket declarations against actual signal consumers, without inventing missing integrations.",
+    "Where an experimental adapter changes real results, test on a controlled Lab workload and isolate whether the effect survives a later consumer.",
+    "Keep all improvements in Playground until Cody selects specific research for staging."
   ],
   "recommended_action": "IMPROVE",
-  "recommendation_reason": "The test matrix has current source-level grounding, but lacks real Lab runtime outcome evidence.",
+  "recommendation_reason": "A source-grounded corrected experiment exists; the next evidence is real downstream execution, not redundant connection work.",
   "files": [
     {
       "path": "README.md",
-      "label": "Grounding, test matrix and proof boundaries"
+      "label": "Corrected experimental objective and protocol"
     },
     {
-      "path": "matrix.json",
-      "label": "Five actual interface attachment cases"
+      "path": "fusion_atlas.json",
+      "label": "Verified existing connections and falsifiable fusion hypotheses"
     },
     {
-      "path": "run_on_lab.py",
-      "label": "Read-only harness importing real private Lab modules"
+      "path": "probe_fusions.py",
+      "label": "Five existing-organ comparative probes"
     }
   ],
   "issue_number": null

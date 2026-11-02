@@ -1,39 +1,38 @@
-# Actual Word Math × Connected Systems — five attachments
+# Word Math × Lab connected-organ fusion discovery
 
-**Objective:** Compare what happens when the private Ultramonkeydog Lab's REAL Word Math and connected-system strategy interfaces are applied together or through their existing consumers, under multiple synthetic, controlled workloads.
+**Corrected objective:** Discover what the Lab's existing Word Math connections *actually do* to other organs, where multiple connections interact, what behavior they leave unchanged, and whether a genuinely new connection could unlock a useful effect. **Do not propose wiring that already exists.**
 
-**No generic word-combination engine.** All dynamic probes import the named modules directly from an authenticated local checkout of the **private Lab** at runtime. The public Playground contains *only this new test harness and non-confidential synthetic fixtures*, not private Lab source.
+## Existing connections first
 
-## Verified current source reality
+The current private Lab source already directly consumes Word Math in Power Router, Zero Point Spine, Action Math Fusion, Scribe, Four Mind, Mycelial Pattern Fusion, Growth Physics and Sense Calibration. Morphogenesis Grid, Goal Gravity and Dimensional Compiler also contain on-demand Word Math integration points. These are not missing-organs claims; their real downstream use must be measured independently.
 
-On 2026-11-02, connected GitHub inspection of private Lab `master` at `e3b08828522ecf6e0ffb547b18dac5c32da42b18` found all 18 expected APIs/policy signatures across actual Word Math, Validation, Routing, Zero Point Spine, Morphogenesis Grid, and Goal Gravity. **This is SOURCE CONTRACT proof only. No Lab execution yet.** The private Lab's live local runtime, dirty worktrees, running agents, and later commits remain UNKNOWN.
+The math socket registry names four consumers of one semantic-vector socket. The complete call/import graph contains more Word Math consumers. Different inventories serve different purposes; their difference is **not automatically a bug**.
 
-## Variants
+## Five controlled experiments
 
-1. **Composition and prerequisites:** Word Math non-commutativity, conditional action gating, neutral-relative semantic overlap.
-2. **Consent / command gate:** Word Math → Zero Point Spine; benign, destructive, conditional, and negated utterances as **data**, never commands to execute.
-3. **Connected-system policy + semantic testimony:** the Lab's Validation Planner and Routing strategy compared across small tasks, broad cross-organ tasks, and game-system work; Word Math observations next to actual policies. **This probe does not change these organs or assert the policies already consume Word Math.**
-4. **Bioelectric tissue:** Word Math semantic stress injected into existing Morphogenesis Grid; proof vs hazard trajectories under identical initial conditions.
-5. **Goal gravity:** Word Math semantic charges change the existing potential-field parameters; compare delivery, proof and hazard fixtures.
+1. **Neurodaemon affinity vs placement.** Apply different semantic missions to the existing Mycelial Word Math path, keeping all path and history inputs equal. Detect whether semantic affinity affects actual bridge assignment or just description.
+2. **Four Mind tool affinity.** Change mission language while tool profiles stay constant; measure ranking and explain the advisory authority ceiling.
+3. **Scribe ↔ Word Math ↔ Zero Point.** Compare scoped event summaries, forbidden commands, questions and claimed proof. Verify semantic preservation without changing execution authority.
+4. **Typed socket visibility.** Compare real Word Math importers with declared socket consumers; separate discovered topology from proven runtime usage.
+5. **Experimental cross-organ edge.** Drive the existing Morphogenesis Grid with Word Math, then pass simulated voltage-derived bridge resistance to an existing Mycelial Neurodaemon scorer. Sweep *unproven adapter gains* including a no-adapter control. This is strictly temporary in-memory composition, **not a proposed production constant, not an active Lab bridge**.
 
-See [matrix.json](matrix.json) for controls and expected measurements.
+See [fusion_atlas.json](fusion_atlas.json) for source-grounded connection classifications and falsifiable hypotheses. The [probe_fusions.py](probe_fusions.py) harness runs the existing private Lab functions without making Lab source public.
 
-## Execute against REAL private Lab (no Lab write)
+## Real runtime experiment
 
-On an authenticated Termux shell already containing `gh`, Python, and the public `playground` clone:
+Because the connected GitHub plugin can read private Lab source but this conversation cannot execute that private checkout, actual downstream effects remain unmeasured at this point. In Termux, from a current Playground clone with gh authenticated:
 
-```sh
-cd ~/playground
-git pull --ff-only origin master
-python experiments/002_word_math_connected_attachments/run_on_lab.py --clone-private
-```
+    cd ~/playground
+    git pull --ff-only origin master
+    python experiments/002_word_math_connected_attachments/probe_fusions.py --clone-private
 
-The command obtains a temporary shallow checkout of private Lab `master` using the authenticated GitHub CLI, imports the actual six Lab modules, runs five probes, emits JSON to your terminal, and deletes its private temporary checkout afterward. No GitHub CI, auto-push, Lab source upload, project mutation or private code publication.
+The harness clones a clean, temporary private Lab master and calls only read/compute paths on synthetic fixtures. It has no explicit Lab write or dispatch calls. Imports and incidental module behavior have **not** yet been sandbox-attested; do not confuse this with complete isolation.
 
-**Output review:** Paste the JSON into our ChatGPT conversation. I will inspect failures/contradictions and publish *sanitized* measured results into this temporary experiment so they appear on the mobile Desk. Do not paste private path/traceback or secrets.
+Paste the JSON results here. I can evaluate the measured differences and publish a bounded review to the Desk. **Never paste private source, tokens or personal data.** No transfer into the Lab is authorized by these tests.
 
-Or if you already have a private Lab checkout: `python experiments/002_word_math_connected_attachments/run_on_lab.py --lab-root /path/to/your/private/lab`.
+## Source vs execution vs outcome
 
-## Evidence boundary
-
-This script runs Lab Python **only on a private authenticated host**; the current ChatGPT sandbox cannot resolve the private GitHub host or run a user's local Lab checkout. A source signature's existence is not proof its runtime behavior will succeed. A passing synthetic probe is not proof of integration into a real project, nor of learning, production behavior, or implicit extraction approval. No changes have been made to the private Lab.
+- **Verified:** current GitHub master source ownership, actual direct callsites and targeted formulas listed in the atlas.
+- **Not yet verified:** any effects from running the new cross-organ harness, actual current private host state, and production downstream consumption.
+- **Not claimed:** new production integrations, uplift, learning, private Lab changes, automatic adoption or full system completeness.
+- The earlier generic comparison matrix and runner were superseded. They remain only in ordinary public Git history, not active master.

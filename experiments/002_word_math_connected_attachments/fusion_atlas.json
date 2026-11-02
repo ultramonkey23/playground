@@ -1,0 +1,144 @@
+{
+  "schema": "umd.playground.fusion_atlas.v1",
+  "grounding": {
+    "lab_branch": "master",
+    "lab_head": "e3b08828522ecf6e0ffb547b18dac5c32da42b18",
+    "observation_type": "CONNECTED_GITHUB_SOURCE_READ",
+    "live_local_worktrees": "UNKNOWN",
+    "user_report": "Some of these are already connected"
+  },
+  "existing": [
+    {
+      "pathway": "Word Math → Power Router",
+      "owner": "labcore/power_router.py",
+      "code_evidence": "nerddaemon_router_packet calls word_math_packet",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "compare actual router verdicts on controlled inputs"
+    },
+    {
+      "pathway": "Word Math → Zero Point Spine",
+      "owner": "labcore/zero_point_spine.py",
+      "code_evidence": "evaluate_program_text calls word_math_packet and uses semantic/scoped decisions",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "compare gated behavior with Scribe's testimony"
+    },
+    {
+      "pathway": "Word Math → Action Math Fusion",
+      "owner": "labcore/action_math_fusion.py",
+      "code_evidence": "score_action_candidate computes semantic alignment; fused_action uses Zero Point",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "compare downstream action ranking, no mutation"
+    },
+    {
+      "pathway": "Word Math → Scribe",
+      "owner": "labcore/scribe_translation.py",
+      "code_evidence": "_word_math_semantic_testimony included in translate packets",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "scope and authority preservation"
+    },
+    {
+      "pathway": "Word Math → Four Mind",
+      "owner": "labcore/four_mind.py",
+      "code_evidence": "_rank_tool_semantic_profiles consumes semantic overlap",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "test capability fit changes and actual consumer usage"
+    },
+    {
+      "pathway": "Word Math → Mycelial Pattern Fusion",
+      "owner": "labcore/mycelial_pattern_fusion.py",
+      "code_evidence": "pattern_fusion_data builds semantic environment and Neurodaemon semantic affinity",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "compare semantic affinity against actual spawn choices"
+    },
+    {
+      "pathway": "Word Math → Morphogenesis Grid",
+      "owner": "labcore/morphogenesis_grid.py",
+      "code_evidence": "inject_semantic_stress calls Word Math bioelectric signal",
+      "classification": "EXISTING_ON_DEMAND_COUPLING",
+      "next": "find real caller/outcome beyond self-test"
+    },
+    {
+      "pathway": "Word Math → Goal Gravity",
+      "owner": "labcore/goal_gravity.py",
+      "code_evidence": "semantic_potential_field_config calls Word Math charges",
+      "classification": "EXISTING_ON_DEMAND_COUPLING",
+      "next": "find downstream field evaluation consumer"
+    },
+    {
+      "pathway": "Word Math → Dimensional Compiler",
+      "owner": "labcore/dimensional_compiler.py",
+      "code_evidence": "compile_slab_to_lineage_token uses dimensional_carry",
+      "classification": "EXISTING_ON_DEMAND_COUPLING",
+      "next": "test affine replay and downstream lineage"
+    },
+    {
+      "pathway": "Word Math → Growth Physics",
+      "owner": "labcore/growth_physics.py",
+      "code_evidence": "v_state calls native_dimensional_exp",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "test produced growth fields against later consumers"
+    },
+    {
+      "pathway": "Word Math → Sense Calibration",
+      "owner": "labcore/sense_calibration.py",
+      "code_evidence": "semantic corpus and metamorphic replay use live Word Math engine",
+      "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
+      "next": "observe recalibration downstream, not just replay result"
+    }
+  ],
+  "socket_context": {
+    "source": "labcore/math_socket_registry.py",
+    "word_math_socket": "lab.semantic.vector_observation.v1",
+    "declared_consumers": [
+      "power_router",
+      "zero_point_spine",
+      "action_math_fusion",
+      "scribe_translation"
+    ],
+    "note": "This is a typed socket contract for a particular signal, not a complete listing of every function call that consumes any Word Math primitive."
+  },
+  "behavioral_hypotheses": [
+    {
+      "id": "mycelial_affinity_only",
+      "grounding": "_calculate_neurodaemon_swarm computes spawn_score independently of semantic_signals and semantic_affinity",
+      "prediction": "Different mission text changes semantic affinity while bridge placement remains unchanged under identical path/receipt inputs",
+      "test": "neurodaemon_affinity_vs_placement",
+      "novelty": "MEASURE_QUIRK_OF_EXISTING_CONNECTION"
+    },
+    {
+      "id": "mind_capability_alignment",
+      "grounding": "_rank_tool_semantic_profiles sorts Word Math overlap by mission coverage and resonance",
+      "prediction": "Changing task semantics alters tool fit, but has no direct execution authority",
+      "test": "four_mind_semantic_tool_fit",
+      "novelty": "MEASURE_EXISTING_CONNECTION"
+    },
+    {
+      "id": "semantic_scope_handoff",
+      "grounding": "Scribe handoff is READ_ONLY; Zero Point consumes scoped Word Math gates",
+      "prediction": "Scribe preserves semantic identity but cannot promote language claims to writes or proof",
+      "test": "scribe_spine_scope_integrity",
+      "novelty": "MULTI_ORGAN_INTERFERENCE_CHECK"
+    },
+    {
+      "id": "socket_census_visibility",
+      "grounding": "Static socket registry names only four Word Math consumers while other code imports Word Math directly",
+      "prediction": "Import graph and typed socket index differ; not necessarily an integration defect",
+      "test": "socket_graph_visibility",
+      "novelty": "HIDDEN_TOPOLOGY_INSPECTION"
+    },
+    {
+      "id": "bioelectric_routing_candidate",
+      "grounding": "Morphogenesis has semantic-stress injection; Mycelial has independently scored bridge resistance",
+      "prediction": "An in-memory voltage-to-resistance adapter MAY alter Neurodaemon placement under parameter sweeps; result must justify any future integration",
+      "test": "bioelectric_to_daemon_candidate",
+      "novelty": "NEW_CANDIDATE_NOT_EXISTING_WIRING"
+    }
+  ],
+  "proof": {
+    "source_only": true,
+    "runtime_observed": false,
+    "private_source_published": false,
+    "lab_modified": false,
+    "claims_of_upgrade": false
+  }
+}
