@@ -10,7 +10,7 @@
       "kind": "LIVE_SOURCE_INSPECTION",
       "environment": "GitHub connected read of private Lab master at e3b08828522ecf6e0ffb547b18dac5c32da42b18",
       "observation": "18/18 expected source API/policy signatures found across six modules. This proves source-level availability, not runtime.",
-      "source": "matrix.json"
+      "source": "inspection.json"
     },
     {
       "kind": "LOCAL_PYTHON_SYNTAX_CHECK",
@@ -28,7 +28,8 @@
   "next_actions": [
     "Run the actual five read-only probes in a private authenticated Lab checkout and inspect the complete results.",
     "Contrast positive, negative, conditional and order-reversed fixtures and investigate failures rather than counting mocked expectations as runtime proof.",
-    "After results are reported, publish a sanitized evidence summary for review and consider additional target systems."
+    "After results are reported, publish a sanitized evidence summary for review and consider additional target systems.",
+    "Check static inspection.json source fingerprints against any newer private Lab master before treating the experiment as current."
   ],
   "recommended_action": "IMPROVE",
   "recommendation_reason": "The test matrix has current source-level grounding, but lacks real Lab runtime outcome evidence.",
