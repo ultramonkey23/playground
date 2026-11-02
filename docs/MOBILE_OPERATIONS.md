@@ -4,7 +4,7 @@ The Android/iOS ChatGPT app can act as the control surface **only when a session
 
 ## The normal loop
 
-Tell ChatGPT: **“Playground experiment: <your full objective>. Inspect `ultramonkey23/Bone-bracket` on `master` and read AGENTS.md first. Use real tools to research/test, commit results, independently verify readback, and keep the experiment temporary.”**
+Tell ChatGPT: **“Playground experiment: <your full objective>. Inspect `ultramonkey23/playground` on `master` and read AGENTS.md first. Use real tools to research/test, commit results, independently verify readback, and keep the experiment temporary.”**
 
 A new session can resume from the active `experiments/` directories, exact commits and actual experiment files, without depending on old chat memory. Ask `playground status` to inspect current reality; the standalone authenticated CLI also now implements `status` directly.
 

@@ -4,7 +4,7 @@
 
 The repository is **public for accessibility**, not because the Playground is primarily intended as a public community. Public visibility lets mobile ChatGPT and other clients read source without private-repository friction. GitHub authentication is still required to write. Everything stored here is publicly readable.
 
-**Canonical work branch:** [master](https://github.com/ultramonkey23/Bone-bracket/tree/master). The old repo name `Bone-bracket` and GitHub default branch `main` still need owner-side Settings changes. Until then, choose **master** explicitly.
+**Canonical work branch:** [master](https://github.com/ultramonkey23/playground/tree/master). The old repo name `Bone-bracket` and GitHub default branch `main` still need owner-side Settings changes. Until then, choose **master** explicitly.
 
 ## From ChatGPT mobile
 

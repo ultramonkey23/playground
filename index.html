@@ -25,7 +25,7 @@
 <label for="method">Reproduction method or proposed procedure</label><textarea id="method" placeholder="Commands, inputs, environment, fair resources..."></textarea>
 <label for="observed">Observed evidence (leave blank if not executed)</label><textarea id="observed" placeholder="Actual stdout, tool evidence, counterexample, or NOT RUN"></textarea>
 <label for="unknown">Unknowns, conflicts, security boundaries</label><textarea id="unknown" placeholder="What could change the conclusion? Any protected data omitted?"></textarea>
-<div class="actions"><button id="copy-issue">Copy issue body</button><button id="copy-agent" class="secondary">Copy ChatGPT mission</button><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/issues/new/choose" target="_blank" rel="noopener noreferrer">Open GitHub issue</a></div>
+<div class="actions"><button id="copy-issue">Copy issue body</button><button id="copy-agent" class="secondary">Copy ChatGPT mission</button><a class="action secondary" href="https://github.com/ultramonkey23/playground/issues/new/choose" target="_blank" rel="noopener noreferrer">Open GitHub issue</a></div>
 <div class="status" id="status" role="status" aria-live="polite"></div>
 <p class="hint">Copy the issue body before opening GitHub. The GitHub app has sometimes lost URL-prefilled fields on mobile; paste the body manually. GitHub sign-in and permissions still apply.</p>
 </div>
@@ -38,7 +38,7 @@
 </section>
 <h2>Generated issue preview</h2><pre id="preview" aria-label="Generated issue Markdown"></pre>
 <p class="hint">Only user actions copy or open anything. The content is not submitted until you post it on GitHub. Never paste private source, secrets, tokens, internal addresses or unreleased assets into a public issue.</p>
-<div class="actions"><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/tree/master">Browse master</a><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/issues">Read challenges</a><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/blob/master/docs/MOBILE_OPERATIONS.md">Mobile guide</a></div>
+<div class="actions"><a class="action secondary" href="https://github.com/ultramonkey23/playground/tree/master">Browse master</a><a class="action secondary" href="https://github.com/ultramonkey23/playground/issues">Read challenges</a><a class="action secondary" href="https://github.com/ultramonkey23/playground/blob/master/docs/MOBILE_OPERATIONS.md">Mobile guide</a></div>
 <footer>No backend. No background worker. Only Cody-approved extraction can move selected research into private Lab intake. This page does not perform it. Integrity of future evidence packets is handled separately by the repository's Python tool.</footer>
 </main>
 <script>
@@ -52,7 +52,7 @@ function markdown(){
  return `# [${val('kind')}] ${title}\n\n**Contributor claim:** ${val('actor')||'Unspecified'}\n**Working branch:** master\n**Source and revision:** ${val('source')||'NOT PROVIDED'}\n**Authority:** PUBLIC_ADVISORY_NOT_LAB_CANON\n\n## Objective / claim / hypothesis\n${val('claim')||'NOT PROVIDED'}\n\n## Method and fair resources\n${val('method')||'NOT PROVIDED'}\n\n## Observations (actual execution only)\n${obs}\n\n## Unknowns / counterevidence / boundaries\n${val('unknown')||'NOT PROVIDED'}\n\n## Next proof\nIndependently reproduce; identify actual tools, environment, command, exit status, and revision. Do not assert private Lab execution or later learning without observing it.\n`;
 }
 function agentTask(){
- return `Work on the public GitHub repository ultramonkey23/Bone-bracket branch master. Read current AGENTS.md and related issues/source before changing anything. Discover which execution and GitHub tools are actually available in this session. Respect security and private Lab boundaries. Preserve full scope. Perform real executable R&D where tools allow; produce a testable artifact, observed result, and independent counterexample where relevant. Commit only verified changes to master with concurrent-safe reads, create/comment on the relevant issue, read back committed files and give exact GitHub URLs. Do not claim background work or Lab learning. Keep experiment work temporary; only Cody's direct extract instruction can stage selected artifacts into Lab research intake, with readback before Playground retirement.\n\nUSER PACKET:\n${markdown()}`;
+ return `Work on the public GitHub repository ultramonkey23/playground branch master. Read current AGENTS.md and related issues/source before changing anything. Discover which execution and GitHub tools are actually available in this session. Respect security and private Lab boundaries. Preserve full scope. Perform real executable R&D where tools allow; produce a testable artifact, observed result, and independent counterexample where relevant. Commit only verified changes to master with concurrent-safe reads, create/comment on the relevant issue, read back committed files and give exact GitHub URLs. Do not claim background work or Lab learning. Keep experiment work temporary; only Cody's direct extract instruction can stage selected artifacts into Lab research intake, with readback before Playground retirement.\n\nUSER PACKET:\n${markdown()}`;
 }
 function preview(){el('preview').textContent=markdown();}
 async function copyText(value){
@@ -69,7 +69,7 @@ async function refreshRemote(){
  status.textContent='Checking public master (read-only)...';
  listing.replaceChildren();
  try{
-  const response=await fetch('https://api.github.com/repos/ultramonkey23/Bone-bracket/git/trees/master?recursive=1',{headers:{'Accept':'application/vnd.github+json'},cache:'no-store'});
+  const response=await fetch('https://api.github.com/repos/ultramonkey23/playground/git/trees/master?recursive=1',{headers:{'Accept':'application/vnd.github+json'},cache:'no-store'});
   if(!response.ok)throw Error('GitHub HTTP '+response.status);
   const data=await response.json();
   if(data.truncated || !Array.isArray(data.tree))throw Error('incomplete GitHub tree');
@@ -83,7 +83,7 @@ async function refreshRemote(){
   status.textContent='Public master tree '+String(data.sha||'unknown').slice(0,12)+' · '+active.size+' active experiment(s).';
   for(const [id,count] of [...active.entries()].sort()){
    const li=document.createElement('li'),a=document.createElement('a');
-   a.href='https://github.com/ultramonkey23/Bone-bracket/tree/master/experiments/'+encodeURIComponent(id);
+   a.href='https://github.com/ultramonkey23/playground/tree/master/experiments/'+encodeURIComponent(id);
    a.target='_blank';a.rel='noopener noreferrer';
    a.textContent=id+' ('+count+' files)';li.appendChild(a);listing.appendChild(li);
   }
@@ -93,7 +93,7 @@ async function refreshRemote(){
 
 ids.forEach(id=>el(id).addEventListener('input',preview));
 el('refresh-remote').addEventListener('click',refreshRemote);
-el('copy-status').addEventListener('click',async()=>{const ok=await copyText('playground status: read live ultramonkey23/Bone-bracket master, inspect AGENTS.md and actual experiments/ tree; report current revision, active experiment IDs, source and execution proof limits; do not mutate the Lab.');el('remote-status').textContent=ok?'Status mission copied.':'Clipboard unavailable.';});
+el('copy-status').addEventListener('click',async()=>{const ok=await copyText('playground status: read live ultramonkey23/playground master, inspect AGENTS.md and actual experiments/ tree; report current revision, active experiment IDs, source and execution proof limits; do not mutate the Lab.');el('remote-status').textContent=ok?'Status mission copied.':'Clipboard unavailable.';});
 el('copy-issue').addEventListener('click',()=>copy('issue'));
 el('copy-agent').addEventListener('click',()=>copy('agent'));
 preview();

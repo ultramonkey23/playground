@@ -16,7 +16,7 @@ import re
 import subprocess
 from pathlib import PurePosixPath
 
-PLAYGROUND = "ultramonkey23/Bone-bracket"
+PLAYGROUND = "ultramonkey23/playground"
 LAB = "ultramonkey23/ultramonkeydog-lab"
 BRANCH = "master"
 INGEST = "research/vault/ingest"

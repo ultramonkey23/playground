@@ -38,7 +38,7 @@ The repository has [`tools/playground_lifecycle.py`](../tools/playground_lifecyc
 
 Read active experiments (no writes): `python3 tools/playground_lifecycle.py status`.
 
-Find current head: `gh api repos/ultramonkey23/Bone-bracket/git/ref/heads/master --jq '.object.sha'`.
+Find current head: `gh api repos/ultramonkey23/playground/git/ref/heads/master --jq '.object.sha'`.
 
 Before asking Cody to select anything, replace `extract` in the following command with `preview` and omit `--owner-approved` to obtain a **read-only** selection digest and exact proposed packet SHA-256.
 
