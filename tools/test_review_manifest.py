@@ -50,6 +50,12 @@ class ReviewManifestTests(unittest.TestCase):
         d["status"] = "EXTRACTED"
         self.assertEqual(2, len(validate(d,self.experiment)))
 
+    def test_missing_review_is_invalid(self):
+        (self.experiment / "demo.py").write_text("print(1)", encoding="utf-8")
+        found = scan(self.root)
+        self.assertEqual(1, len(found))
+        self.assertIn("missing review.json", found[0][1][0])
+
     def test_scan(self):
         d = sample(self.experiment)
         (self.experiment / "review.json").write_text(json.dumps(d),encoding="utf-8")

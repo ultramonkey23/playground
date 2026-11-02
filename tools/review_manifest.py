@@ -70,10 +70,16 @@ def validate(data: object, experiment: Path) -> list[str]:
 
 def scan(root: Path) -> list[tuple[str, list[str]]]:
     results = []
-    for file in sorted(root.glob("*/review.json")):
+    for experiment in sorted(root.iterdir()):
+        if not experiment.is_dir() or not ID.fullmatch(experiment.name):
+            continue
+        file = experiment / "review.json"
+        if not file.is_file():
+            results.append((str(file), ["active experiment is missing review.json"]))
+            continue
         try:
             data = json.loads(file.read_text(encoding="utf-8"))
-            errs = validate(data, file.parent)
+            errs = validate(data, experiment)
         except (ValueError, OSError) as e:
             errs = [type(e).__name__ + ": " + str(e)]
         results.append((str(file), errs))
