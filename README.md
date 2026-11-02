@@ -16,7 +16,7 @@ When an experiment is decided:
 - **`playground discard <id> <reason>`** — remove an unworthy experiment from active `master` with a real reason; do **not** write anything to the Lab.
 - **`playground status`** — inspect the current active experiment folders and existing tool capability; do not infer from old notes.
 
-These are **ChatGPT operational commands** implemented by authorized GitHub tool actions under [the extraction protocol](docs/EXTRACTION_PROTOCOL.md). When a properly authenticated `gh` CLI is available, [the lifecycle script](tools/playground_lifecycle.py) also offers executable `extract` and `discard` commands.
+These are **ChatGPT operational commands** requiring authorized GitHub tool actions under [the extraction protocol](docs/EXTRACTION_PROTOCOL.md). When a properly authenticated `gh` CLI is available, [the lifecycle script](tools/playground_lifecycle.py) also offers executable `status`, `preview`, `extract` and `discard` commands.
 
 ## Active work
 
@@ -47,4 +47,4 @@ Nothing automatically enters the private Lab. Public Playground files and untrus
 
 ## Proof level
 
-The founding mobile-connected session has committed files to `master` and verified them by GitHub readback. A testable packet-integrity experiment is in [001](experiments/001_evidence_integrity/README.md). A public-to-private **unapproved** advisory test was retracted from the Lab's active branch when Cody clarified approval sovereignty; it remains in Git history. A Cody-approved extraction has **not** yet been executed.
+The founding GitHub-connected session has committed files to `master` and verified them by GitHub readback. A testable packet-integrity experiment is in [001](experiments/001_evidence_integrity/README.md). A public-to-private **unapproved** advisory test was retracted from the Lab's active branch when Cody clarified approval sovereignty; it remains in Git history. A Cody-approved extraction has **not** yet been executed.

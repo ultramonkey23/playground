@@ -14,13 +14,17 @@ No permanent Playground result archive, no alternative Lab memory. Existing Git 
 
 ## ChatGPT mobile commands
 
+**`playground preview <experiment-id> [selected files]` — read-only review**
+
+Pin current `master`, inspect selected exact bytes and SHA-256 digests, and output the deterministic proposed Lab packet SHA-256 and destination. This does **not** write to the private Lab, delete files or grant approval.
+
 **`playground extract <experiment-id> [selected files]`**
 
 1. Check that the **current directly participating Cody** explicitly requested extraction and identifies the experiment and approved scope. A public issue or JSON label does not grant this permission.
 2. Read live public Playground `master` HEAD and all selected experiment files. Check real execution evidence, attribution and privacy. Recover the current private Lab `research/vault/ingest/README.md` owner on `master`; do not blindly rely on this document.
 3. Create one bounded Markdown research packet with topic, provenance and exact source SHA, relevant findings and selected source text/hashes, consumer, contradictions, proof ceiling and proposed next investigation. Nothing outside the user-approved selection goes into Lab.
 4. Use **authenticated GitHub tools** to create one new `research/vault/ingest/playground_<id>_<source-sha-prefix>.md` on private Lab `master`. Do not touch Lab application code, agent contracts, registry, or canon.
-5. **Read the new Lab file back and compare its bytes/content and commit.** If write/readback fails, do not retire the Playground experiment.
+5. **Read the Lab file back and compare its exact bytes/content.** If write/readback fails, do not retire the Playground experiment. If a previous partial attempt wrote the exact **same deterministic packet**, verify it and safely resume cleanup; if the destination content differs, refuse to overwrite and escalate for review.
 6. Remove every active `experiments/<id>/` path on public Playground `master` in a non-forced commit only if its expected HEAD still matches. Verify the active tree no longer contains it. If remote changed, report partial, retain source, and reconcile.
 7. Link the Lab packet and cleanup commits for the user, with accurate proof limits. A staged packet is not automatically adopted; Cody owns subsequent acceptance.
 
@@ -30,9 +34,13 @@ Inspect current evidence and objective; if definitively unworthy, duplicate, aba
 
 ## Standalone `gh` CLI
 
-The repository has [`tools/playground_lifecycle.py`](../tools/playground_lifecycle.py), which can run where an appropriately permissioned `gh` CLI already exists. It is **not** a background daemon and is **not** needed for ChatGPT's GitHub connector route.
+The repository has [`tools/playground_lifecycle.py`](../tools/playground_lifecycle.py), which can run where an appropriately permissioned `gh` CLI already exists. This is a separate CLI entrypoint; it is not the private Lab's `labctl`. It is **not** a background daemon and is **not** needed for ChatGPT's GitHub connector route.
+
+Read active experiments (no writes): `python3 tools/playground_lifecycle.py status`.
 
 Find current head: `gh api repos/ultramonkey23/Bone-bracket/git/ref/heads/master --jq '.object.sha'`.
+
+Before asking Cody to select anything, replace `extract` in the following command with `preview` and omit `--owner-approved` to obtain a **read-only** selection digest and exact proposed packet SHA-256.
 
 To extract a specific approved selection, call:
 

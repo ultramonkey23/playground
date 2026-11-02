@@ -19,9 +19,10 @@ Work on `master`; use atomic/non-force GitHub writes, refresh stale refs, and ve
 
 ## Command phrases
 
-- `playground status` — inspect active, current experiments and actual tools.
+- `playground status` — read-only inspect actual active experiments and current `master` SHA, plus discover tools available in this session.
 - `playground experiment <objective>` — create/use active temporary experiment, execute and report evidence.
-- `playground extract <id> [selected paths]` — **Cody-approved** one-way GitHub-to-Lab research staging, then cleanup.
+- `playground preview <id> [selected paths]` — read-only selection hash and deterministic packet review; no Lab mutation.
+- `playground extract <id> [selected paths]` — **Cody-approved** one-way GitHub-to-Lab research staging, then cleanup; partial retries may resume only for identical verified packet bytes.
 - `playground discard <id> <reason>` — reasoned rejection and active-branch cleanup, no Lab write.
 
 See [EXTRACTION_PROTOCOL](docs/EXTRACTION_PROTOCOL.md) and [mobile operations](docs/MOBILE_OPERATIONS.md). These chat phrases require an actually connected GitHub writer. The same commands are not magically available in every ChatGPT context.
