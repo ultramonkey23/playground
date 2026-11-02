@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Ultramonkeydog Playground — Pocket Desk</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#e9f5ef;background:#081310;line-height:1.5}*{box-sizing:border-box}body{margin:0}main{max-width:780px;margin:auto;padding:22px 16px 76px}h1{font-size:clamp(26px,7vw,44px);line-height:1.1;margin:8px 0 12px}h2{font-size:21px}p{color:#acc5b8}.eyebrow{color:#76e6a8;font-size:12px;text-transform:uppercase;letter-spacing:.17em;font-weight:700}.panel{border:1px solid #2d5343;border-radius:16px;padding:18px;margin:20px 0;background:#10221b}label{font-weight:650;font-size:13px;display:block;margin:14px 0 6px}input,textarea,select{width:100%;border:1px solid #416450;border-radius:9px;padding:12px;font:inherit;background:#091611;color:#eafff0;min-height:44px}textarea{resize:vertical;min-height:84px}input:focus,textarea:focus,select:focus{outline:2px solid #6bdfa0;outline-offset:1px}button,a.action{cursor:pointer;display:inline-block;border:1px solid #79daa3;border-radius:10px;padding:11px 13px;background:#20744e;color:white;font:600 14px system-ui;text-decoration:none;min-height:44px}button.secondary,a.secondary{background:#162f23;border-color:#477358}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.hint{font-size:12px;color:#a4bbaf}.alert{border-left:3px solid #83dfaa;padding:6px 12px;background:#173326;border-radius:0 8px 8px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:13px;border:1px solid #325c45;border-radius:9px;background:#07120e;max-height:320px;overflow:auto;font-size:12px}a{color:#8deec1}footer{margin-top:34px;color:#9fb4a9;font-size:12px}.status{min-height:26px;font-weight:700;color:#9ff4c3}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">Ultramonkeydog · Public R&D</div>
+<h1>🧪 Playground Pocket Desk</h1>
+<p>Turn a phone idea into a portable, source-aware GitHub research task. Everything below runs locally in this page: <strong>no login, API key, analytics, network submission, or private Lab connection.</strong></p>
+<p class="alert"><strong>Repository working branch: master.</strong> The repository is still named <code>Bone-bracket</code>. This page is source code, not automatically a deployed GitHub Pages site.</p>
+<div class="panel">
+<h2>Compose an experiment or handoff</h2>
+<label for="kind">Packet type</label>
+<select id="kind"><option value="EXPERIMENT">Experiment</option><option value="CHALLENGE">Research challenge</option><option value="NOTE">Research note</option><option value="RESULT">Evidence/result</option><option value="FAILURE">Reproducible failure</option></select>
+<label for="title">Objective / title</label><input id="title" autocomplete="off" placeholder="e.g. Compare two model routing hypotheses">
+<label for="actor">Contributor name or agent (self-reported)</label><input id="actor" placeholder="e.g. mobile ChatGPT session">
+<label for="source">Public source / exact revision</label><input id="source" placeholder="GitHub URL, commit, paper, observed build">
+<label for="claim">Claim / hypothesis / full requested scope</label><textarea id="claim" placeholder="What matters? What would disprove it?"></textarea>
+<label for="method">Reproduction method or proposed procedure</label><textarea id="method" placeholder="Commands, inputs, environment, fair resources..."></textarea>
+<label for="observed">Observed evidence (leave blank if not executed)</label><textarea id="observed" placeholder="Actual stdout, tool evidence, counterexample, or NOT RUN"></textarea>
+<label for="unknown">Unknowns, conflicts, security boundaries</label><textarea id="unknown" placeholder="What could change the conclusion? Any protected data omitted?"></textarea>
+<div class="actions"><button id="copy-issue">Copy issue body</button><button id="copy-agent" class="secondary">Copy ChatGPT mission</button><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/issues/new/choose" target="_blank" rel="noopener noreferrer">Open GitHub issue</a></div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+<p class="hint">Copy the issue body before opening GitHub. The GitHub app has sometimes lost URL-prefilled fields on mobile; paste the body manually. GitHub sign-in and permissions still apply.</p>
+</div>
+<h2>Generated issue preview</h2><pre id="preview" aria-label="Generated issue Markdown"></pre>
+<p class="hint">Only user actions copy or open anything. The content is not submitted until you post it on GitHub. Never paste private source, secrets, tokens, internal addresses or unreleased assets into a public issue.</p>
+<div class="actions"><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/tree/master">Browse master</a><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/issues">Read challenges</a><a class="action secondary" href="https://github.com/ultramonkey23/Bone-bracket/blob/master/docs/MOBILE_OPERATIONS.md">Mobile guide</a></div>
+<footer>No backend. No background worker. Public-to-private Lab integration is not provided by this page. Integrity of future evidence packets is handled separately by the repository's Python tool.</footer>
+</main>
+<script>
+'use strict';
+const ids=['kind','title','actor','source','claim','method','observed','unknown'];
+const el=id=>document.getElementById(id);
+const val=id=>el(id).value.trim();
+function markdown(){
+ const title=val('title')||'(title needed)';
+ const obs=val('observed')||'NOT RUN / NOT OBSERVED';
+ return `# [${val('kind')}] ${title}\n\n**Contributor claim:** ${val('actor')||'Unspecified'}\n**Working branch:** master\n**Source and revision:** ${val('source')||'NOT PROVIDED'}\n**Authority:** PUBLIC_ADVISORY_NOT_LAB_CANON\n\n## Objective / claim / hypothesis\n${val('claim')||'NOT PROVIDED'}\n\n## Method and fair resources\n${val('method')||'NOT PROVIDED'}\n\n## Observations (actual execution only)\n${obs}\n\n## Unknowns / counterevidence / boundaries\n${val('unknown')||'NOT PROVIDED'}\n\n## Next proof\nIndependently reproduce; identify actual tools, environment, command, exit status, and revision. Do not assert private Lab execution or later learning without observing it.\n`;
+}
+function agentTask(){
+ return `Work on the public GitHub repository ultramonkey23/Bone-bracket branch master. Read current AGENTS.md and related issues/source before changing anything. Discover which execution and GitHub tools are actually available in this session. Respect security and private Lab boundaries. Preserve full scope. Perform real executable R&D where tools allow; produce a testable artifact, observed result, and independent counterexample where relevant. Commit only verified changes to master with concurrent-safe reads, create/comment on the relevant issue, read back committed files and give exact GitHub URLs. Do not claim background work or Lab learning.\n\nUSER PACKET:\n${markdown()}`;
+}
+function preview(){el('preview').textContent=markdown();}
+async function copyText(value){
+ try{if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(value);return true;}}catch(e){}
+ const area=document.createElement('textarea');area.value=value;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.focus();area.select();let ok=false;try{ok=document.execCommand('copy');}catch(e){}area.remove();return ok;
+}
+async function copy(which){
+ const ok=await copyText(which==='agent'?agentTask():markdown());
+ el('status').textContent=ok?'Copied. Review before publishing.':'Clipboard unavailable. Select and copy from the preview.';
+}
+ids.forEach(id=>el(id).addEventListener('input',preview));
+el('copy-issue').addEventListener('click',()=>copy('issue'));
+el('copy-agent').addEventListener('click',()=>copy('agent'));
+preview();
+</script>
+</body></html>
