@@ -8,14 +8,15 @@ The current private Lab source already directly consumes Word Math in Power Rout
 
 The math socket registry names four consumers of one semantic-vector socket. The complete call/import graph contains more Word Math consumers. Different inventories serve different purposes; their difference is **not automatically a bug**.
 
-## Six controlled experiments
+## Seven controlled experiments
 
 1. **Neurodaemon affinity vs placement.** Apply different semantic missions to the existing Mycelial Word Math path, keeping all path and history inputs equal. Detect whether semantic affinity affects actual bridge assignment or just description.
 2. **Four Mind tool affinity.** Change mission language while tool profiles stay constant; measure ranking and explain the advisory authority ceiling.
 3. **Scribe ↔ Word Math ↔ Zero Point.** Compare scoped event summaries, forbidden commands, questions and claimed proof. Verify semantic preservation without changing execution authority.
 4. **Typed socket visibility.** Compare real Word Math importers with declared socket consumers; separate discovered topology from proven runtime usage.
 5. **Socket Fabric compatibility.** Verify that the existing Word Math semantic socket supports read-only observers but does not confer higher execution authority or proof. Use an in-memory fabric and a typed handoff obligation.
-6. **Experimental cross-organ edge.** Drive the existing Morphogenesis Grid with Word Math, then pass simulated voltage-derived bridge resistance to an existing Mycelial Neurodaemon scorer. Sweep *unproven adapter gains* including a no-adapter control. This is strictly temporary in-memory composition, **not a proposed production constant, not an active Lab bridge**.
+6. **Connected Systems First policy interaction.** Run the same task through real Validation and Routing with a leaf vs synthetic multi-organ blast radius; contrast Word Math activation without claiming it already drives those decisions.
+7. **Experimental cross-organ edge.** Drive the existing Morphogenesis Grid with Word Math, then pass simulated voltage-derived bridge resistance to an existing Mycelial Neurodaemon scorer. Sweep *unproven adapter gains* including a no-adapter control. This is strictly temporary in-memory composition, **not a proposed production constant, not an active Lab bridge**.
 
 See [fusion_atlas.json](fusion_atlas.json) for source-grounded connection classifications and falsifiable hypotheses. The [probe_fusions.py](probe_fusions.py) harness runs the existing private Lab functions without making Lab source public.
 

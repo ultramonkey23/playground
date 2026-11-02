@@ -3,8 +3,8 @@
   "id": "002_word_math_connected_attachments",
   "title": "Existing Word Math fusions: hidden downstream behavior",
   "status": "ACTIVE",
-  "question": "Which of Word Math's already-connected Lab organs actually change downstream behavior, where is only advisory metadata changing, and which cross-organ experiments reveal genuinely new effects?",
-  "summary": "Current Lab source verifies extensive existing Word Math consumption. Six controlled fusion-discovery probes now distinguish existing wired effects, socket visibility, and one explicitly experimental in-memory bioelectric→Neurodaemon edge. Runtime effects of the new probe are NOT YET MEASURED.",
+  "question": "How do Word Math and Connected Systems First interact with already-connected Lab organs, and which interactions expose hidden downstream effects rather than duplicate wiring?",
+  "summary": "Current Lab source verifies extensive existing Word Math consumption. Seven controlled fusion-discovery probes now distinguish existing wired effects, socket visibility, and one explicitly experimental in-memory bioelectric→Neurodaemon edge. Runtime effects of the new probe are NOT YET MEASURED.",
   "evidence": [
     {
       "kind": "LIVE_PRIVATE_SOURCE_INSPECTION",
@@ -21,7 +21,7 @@
     {
       "kind": "UNEXECUTED_RUNTIME_HARNESS",
       "environment": "New public Python harness invokes private Lab modules only on an authenticated host",
-      "observation": "Six comparative cases authored; no private Lab runtime observations or uplift claims yet.",
+      "observation": "Seven comparative cases authored; no private Lab runtime observations or uplift claims yet.",
       "source": "probe_fusions.py"
     }
   ],
@@ -33,6 +33,7 @@
     "The source inventory is targeted rather than a complete 5,000+ path organism census."
   ],
   "next_actions": [
+    "Compare Connected Systems First structural-radius validation against Routing posture and Word Math testimony, without pretending they already share one decision path.",
     "Run the five comparative probes against a clean private Lab master checkout and inspect observed vs unchanged consumer outputs.",
     "Investigate whether semantic affinity is intentionally descriptive or under-consumed before proposing any Neurodaemon change.",
     "Compare typed socket declarations against actual signal consumers, without inventing missing integrations.",

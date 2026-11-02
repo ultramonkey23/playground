@@ -84,6 +84,13 @@
       "code_evidence": "semantic corpus and metamorphic replay use live Word Math engine",
       "classification": "IMPLEMENTED_DIRECT_CONSUMPTION",
       "next": "observe recalibration downstream, not just replay result"
+    },
+    {
+      "pathway": "Connected Systems First policy (validation and routing)",
+      "owner": "labcore/validation.py and labcore/routing.py",
+      "code_evidence": "Validation can escalate proof checks using structural_context; Routing sets integration policy from task posture.",
+      "classification": "IMPLEMENTED_POLICY_NOT_PROVEN_WORD_MATH_COUPLING",
+      "next": "Compare same task with leaf vs cross-organ structure; compare with Word Math signals without assuming feed-forward consumption."
     }
   ],
   "socket_context": {
@@ -132,6 +139,13 @@
       "prediction": "A read-only observer is compatible with Word Math's semantic socket, while a proven active-writer consumer is rejected without legitimate authority/proof elevation.",
       "test": "socket_fabric_authority_boundary",
       "novelty": "MEASURE_EXISTING_SOCKET_GUARDRAILS"
+    },
+    {
+      "id": "structural_radius_text_routing_divergence",
+      "grounding": "validation_plan_data uses structural_context; routing._execution_posture uses task text; Word Math semantic activation is a separate consumer signal",
+      "prediction": "Same text with broader structural radius changes validation tier while routing posture may remain text-stable, revealing multi-organ coordination pressure",
+      "test": "structural_connected_policy",
+      "novelty": "EXISTING_POLICY_INTERACTION_NOT_NEW_WIRING"
     },
     {
       "id": "bioelectric_routing_candidate",

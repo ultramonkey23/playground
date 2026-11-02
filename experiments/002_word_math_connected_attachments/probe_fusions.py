@@ -202,6 +202,49 @@ def probe_socket_fabric_authority(mods: dict) -> dict:
     }
 
 
+def probe_structural_connected_policy(mods: dict) -> dict:
+    wm, validation, routing = (mods[k] for k in
+                               ("word_math", "validation", "routing"))
+    simple = "fix small README typo"
+    broad = "deep improve and fuse connected systems across organs"
+    contexts = {
+        "leaf": {"relevant_files": ["labcore/example.py"],
+                 "mutable_state_touched": [], "direct_callers": []},
+        "cross_organ": {"relevant_files": ["labcore/a.py", "labcore/b.py", "labcore/c.py"],
+                        "mutable_state_touched": [{"name": "synthetic_state"}],
+                        "direct_callers": ["consumer_a", "consumer_b"]},
+    }
+    rows = {}
+    for name, text, context in (
+        ("simple_leaf", simple, contexts["leaf"]),
+        ("simple_cross_organ", simple, contexts["cross_organ"]),
+        ("broad_leaf", broad, contexts["leaf"]),
+        ("broad_cross_organ", broad, contexts["cross_organ"]),
+    ):
+        plan = validation.validation_plan_data(
+            text, project="lab", execute=False, structural_context=context)
+        route = routing._execution_posture(text, "script")
+        rows[name] = {
+            "tier": plan.get("recommended_tier"),
+            "validation_system_policy": (plan.get("system_strategy") or {}).get("policy"),
+            "validation_connected_required": (plan.get("system_strategy") or {}).get("required"),
+            "structural_radius": (plan.get("structural_blast_radius") or {}).get("level"),
+            "structural_escalated": (plan.get("structural_blast_radius") or {}).get("escalated"),
+            "routing_integration_policy": route.get("system_integration_policy"),
+            "word_math_activation": wm.semantic_activation_vector(semantic(mods, text)),
+        }
+    return {
+        "existing_owners": ["Connected Systems First validation strategy",
+                            "Routing execution posture", "Word Math semantic activation"],
+        "cases": rows,
+        "validation_tier_changes_with_radius": rows["simple_leaf"]["tier"] != rows["simple_cross_organ"]["tier"],
+        "route_policy_changes_with_radius_at_same_text":
+            rows["simple_leaf"]["routing_integration_policy"] != rows["simple_cross_organ"]["routing_integration_policy"],
+        "word_math_currently_drives_policy": "NOT ESTABLISHED; this is side-by-side testimony",
+        "proof_ceiling": "real planning functions on synthetic task and structural context, no execution or routing mutation",
+    }
+
+
 def probe_bioelectric_daemon_candidate(mods: dict) -> dict:
     myc = mods["mycelial_pattern_fusion"]
     morph = mods["morphogenesis_grid"]
@@ -248,6 +291,7 @@ PROBES = (
     ("scribe_spine_scope_integrity", ("word_math", "scribe_translation", "zero_point_spine"), probe_scribe_scope),
     ("socket_graph_visibility", ("math_socket_registry",), probe_socket_visibility),
     ("socket_fabric_authority_boundary", ("math_socket_registry", "socket_fabric"), probe_socket_fabric_authority),
+    ("structural_connected_policy", ("word_math", "validation", "routing"), probe_structural_connected_policy),
     ("bioelectric_to_daemon_candidate", ("word_math", "morphogenesis_grid", "mycelial_pattern_fusion"), probe_bioelectric_daemon_candidate),
 )
 
