@@ -100,7 +100,7 @@ def read_bytes(repo: str, path: str, sha: str, *, max_bytes: int = MAX_FILE) -> 
         raise LifecycleError(f"{path}: malformed base64") from exc
     if len(result) > max_bytes or len(result) != file.get("size"):
         raise LifecycleError(f"{path}: decoded bytes differ from GitHub file size")
-    git_blob_sha = hashlib.sha1(b"blob " + str(len(result)).encode("ascii") + b"\\0" + result).hexdigest()
+    git_blob_sha = hashlib.sha1(b"blob " + str(len(result)).encode("ascii") + b"\0" + result).hexdigest()
     if file.get("sha") != git_blob_sha:
         raise LifecycleError(f"{path}: content does not match Git blob SHA")
     return result
