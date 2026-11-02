@@ -1,3 +1,5 @@
+> **Original-task scope correction (2026-11-02):** This is an analysis of seven *baseline and exploratory synthetic probes*, **not a completed Word Math × Connected Systems multi-organ fusion campaign**. No factorial attachment of both capabilities into several other Lab organs has been executed. The earlier repair-focused recommendations misrepresented the owner's mission. See [SCOPE_REASSESSMENT.md](SCOPE_REASSESSMENT.md) before interpreting any upgrade claim.
+
 # Corrected fusion-run analysis — November 2, 2026
 
 ## Source and evidence ceiling

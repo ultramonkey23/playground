@@ -1,11 +1,17 @@
 {
   "schema": "umd.playground.review.v1",
   "id": "002_word_math_connected_attachments",
-  "title": "Fusion discoveries: measured organ behavior and unexpected quirks",
-  "status": "REVIEW_READY",
-  "question": "How do Word Math and Connected Systems First interact with already-connected Lab organs, and which interactions expose hidden downstream effects rather than duplicate wiring?",
-  "summary": "Source-corrected review: 7/7 synthetic probes OBSERVED on Lab master a08c9619ba60. The proposed health-aware repair fusion was NOT a discovered gap: existing Morphogenesis→Physarum edge modulation, Mycelial evidence routing, watchdog→metabolic reflex→immune repair, and outcome feedback were already implemented. Novel voltage→bridge-resistance adapter remains a synthetic alternative, not proven improvement. Native runtime activation and downstream results are UNKNOWN.",
+  "title": "Word Math × Connected Systems: multi-organ fusion experiment",
+  "status": "ACTIVE",
+  "question": "What new, hidden, unusual or powerful behaviors emerge when Word Math and the Lab's real connected-systems mechanisms are fused with multiple existing organs, compared against what each already does alone?",
+  "summary": "Original multi-organ fusion objective remains ACTIVE and UNANSWERED. Seven real-module synthetic probes were published from Termux (all OBSERVED), but six are primarily baseline/inventory/invariant checks and one introduces an artificial bioelectric→Neurodaemon scoring adapter. None compared multiple real target organs under Word Math-only, Connected Systems-only and combined attachment with downstream behavioral evidence. Preserve the observed data; do not treat previous health-aware repair discussion as an upgrade recommendation.",
   "evidence": [
+    {
+      "kind": "SCOPE_AUDIT_LIVE_SOURCE",
+      "environment": "Connected GitHub inspection of current private Lab master a08c9619ba606e972dbcfb99f898cc3a5c69bfed and published Playground runner",
+      "observation": "Recovered actual Word Math and Connected Systems First/structural/socket owners plus fusion_scan and Project Nervous System. The current seven-probe harness does not test a Word Math × Connected Systems causal fusion across several other organs.",
+      "source": "SCOPE_REASSESSMENT.md"
+    },
     {
       "kind": "CORRECTED_EXISTING_ORGAN_OWNERS",
       "environment": "Targeted live GitHub read of private Lab master a08c9619ba606e972dbcfb99f898cc3a5c69bfed",
@@ -50,22 +56,27 @@
     }
   ],
   "limitations": [
-    "The earlier 'health-aware repair prioritization' upgrade recommendation was not based on adequate whole-system source recovery and is withdrawn.",
-    "The synthetic voltage→bridge-resistance adapter does NOT provide evidence that a new repair capability is needed; existing native Grid→Physarum and watchdog→immune systems were not used as comparator baselines.",
+    "The user-requested cross-organ multi-attachment experiment has NOT been performed; the seven OBSERVED probes are baselines and one separate artificial edge.",
+    "Connected Systems was reduced to a validation policy/text comparison without tracing structural discovery, owner/consumer obligations or multi-organ downstream use.",
+    "Prior repair-system recommendations changed the subject and are withdrawn as irrelevant to the original fusion-discovery objective.",
     "Current main Physarum convergence source omits the optional bioelectric grid argument, and watchdog's auto_reflex flag defaults false; what live hosts, active agents and other consumers actually enable is UNKNOWN.",
     "The Neurodaemon semantic-affinity/score separation is an explicit tested intention of the current source, not evidence of an accidental disconnection.",
     "Seven published synthetic probe functions returned OBSERVED; they do not establish real project repair, routing improvement, or learning.",
     "The public publication is authenticated; local private Lab execution and non-GitHub active state have not been independently inspected."
   ],
   "next_actions": [
-    "Preserve the corrected measurements and review only; do not change Lab organs or contracts based on this experiment.",
-    "Any future inference about fusion novelty must first examine existing Grid→Physarum, Mycelial routing, watchdog→metabolic reflex→immune repair, and outcome-feedback owners plus actual consumers.",
-    "Before interpreting runtime underactivation, inspect real process configurations, local worktrees and active agent work; GitHub source alone cannot establish those facts.",
-    "Only stage specific Playground research if Cody explicitly authorizes extraction after review."
+    "Recover existing candidate fusions via native fusion_scan, PNS task graph, socket declarations and actual consumers; include working links as baseline controls.",
+    "Design and execute multiple 2×2 Word Math × Connected Systems interaction experiments on distinct existing organ families, comparing native baseline and later consumer behavior.",
+    "Observe non-additive and unexpected effects, not merely positive scores; only call something a capability upgrade when an outcome and later consumer support it.",
+    "Keep all private Lab code and production state unchanged until owner-selected extraction or explicit authorization."
   ],
-  "recommended_action": "REVIEW",
-  "recommendation_reason": "Prior upgrade proposal was made without inspecting existing native repair/health-routing machinery. Current evidence supports review of synthetic behavior only, not a new integration recommendation.",
+  "recommended_action": "IMPROVE",
+  "recommendation_reason": "The published data is valid as seven synthetic probes but does not execute the owner's specified multiple Word Math × Connected Systems fusion attachments. The experiment must return to its original causal objective.",
   "files": [
+    {
+      "path": "SCOPE_REASSESSMENT.md",
+      "label": "Original mission, source-grounded feature owners, and why current probes are not the fusion experiment"
+    },
     {
       "path": "FINDINGS_LATEST.md",
       "label": "Corrected run analysis: effects, quirks, evidence limits"

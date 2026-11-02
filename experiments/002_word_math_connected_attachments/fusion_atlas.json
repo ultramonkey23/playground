@@ -202,6 +202,9 @@
     "proven_production_uplift": false,
     "private_source_published": false,
     "lab_modified_by_this_experiment": false,
-    "note": "Source correction: prior health-aware repair prioritization recommendation withdrawn. Existing native Morphogenesis→Physarum, Mycelial evidence routing, immune reflex and outcome feedback were not inspected before recommending it. The synthetic adapter does not demonstrate an absent capability. Runtime activation remains unknown."
+    "note": "Source correction: prior health-aware repair prioritization recommendation withdrawn. Existing native Morphogenesis→Physarum, Mycelial evidence routing, immune reflex and outcome feedback were not inspected before recommending it. The synthetic adapter does not demonstrate an absent capability. Runtime activation remains unknown.",
+    "original_user_intent_answered": false,
+    "latest_scope_assessment": "Seven measured probes are baselines/invariants plus a single artificial adapter, not a multi-organ causal interaction study of Word Math and Connected Systems",
+    "source_recovery_20261102_lab_head": "a08c9619ba606e972dbcfb99f898cc3a5c69bfed"
   }
 }
