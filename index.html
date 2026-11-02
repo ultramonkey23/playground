@@ -87,7 +87,8 @@ details{margin-top:16px}details summary{cursor:pointer;font-weight:800}footer{ma
 <textarea id="note" placeholder="e.g. The benchmark should use the same model budgets. Re-run the adversarial test."></textarea>
 <p class="small muted" id="note-state">Notes on this page are saved only on this browser until you send them to ChatGPT or GitHub. Do not type secrets or private Lab material here.</p>
 <div class="actions">
-<button id="note-to-chat" class="secondary">Copy note for ChatGPT</button>
+<button id="note-to-chat" class="secondary">Send note via ChatGPT</button>
+<button id="copy-note-plain" class="secondary">Copy just note</button>
 <button id="clear-note" class="secondary">Clear local note</button>
 <a id="github-note" class="button secondary" href="#" target="_blank" rel="noopener noreferrer">Discuss on GitHub</a>
 </div>
@@ -305,6 +306,11 @@ el('refresh').addEventListener('click',refresh);
 el('note').addEventListener('input',()=>{if(current){const ok=saveNote(current,el('note').value);el('note-state').textContent=ok?'Saved locally on this browser. Not uploaded.':'Local storage unavailable; copy the note to avoid losing it.';}});
 el('clear-note').addEventListener('click',()=>{if(current){el('note').value='';saveNote(current,'');el('note-state').textContent='Local draft cleared.';}});
 el('note-to-chat').addEventListener('click',()=>makeHandoff('NOTE'));
+el('copy-note-plain').addEventListener('click',async()=>{
+ const note=el('note').value.trim();
+ if(!note){toast('Write a note before copying it.');return;}
+ toast(await clipboard(note)?'Note copied. Paste it in the authenticated GitHub discussion or ChatGPT; it has not been uploaded.':'Copy unavailable; select and copy your note manually.');
+});
 el('action-improve').addEventListener('click',()=>makeHandoff('IMPROVE'));
 el('action-keep').addEventListener('click',()=>makeHandoff('KEEP'));
 el('action-extract').addEventListener('click',()=>makeHandoff('EXTRACT'));
