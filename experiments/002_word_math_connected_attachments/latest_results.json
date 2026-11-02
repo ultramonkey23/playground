@@ -1,0 +1,949 @@
+{
+  "branch": "master",
+  "explicit_lab_write_operations": 0,
+  "lab_head": "a08c9619ba606e972dbcfb99f898cc3a5c69bfed",
+  "private_source_in_output": false,
+  "probes": [
+    {
+      "observation": {
+        "affinity_changed": {
+          "fusion": false,
+          "proof": true,
+          "repair": true
+        },
+        "cases": {
+          "fusion": [
+            {
+              "archetype": "ALFRED_FRICTION_FINCH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.2,
+              "target": "worker_proximity_to_mobile_execution"
+            },
+            {
+              "archetype": "BRAIN_COHERENCE_MOTH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 0.4,
+              "target": "four_mind_to_pattern_fusion"
+            },
+            {
+              "archetype": "CYBORG_FALSE_PASS_LEECH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 0.2,
+              "target": "pattern_fusion_to_burst"
+            },
+            {
+              "archetype": "SCHOLAR_ARCHIVE_MANTIS",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.0,
+              "target": "receipts_to_living_dna"
+            },
+            {
+              "archetype": "SYMBIOTE_SPLICE_WYRM",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.8,
+              "target": "runtime_watchdog_to_growth_physics"
+            }
+          ],
+          "neutral": [
+            {
+              "archetype": "ALFRED_FRICTION_FINCH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.2,
+              "target": "worker_proximity_to_mobile_execution"
+            },
+            {
+              "archetype": "BRAIN_COHERENCE_MOTH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 0.4,
+              "target": "four_mind_to_pattern_fusion"
+            },
+            {
+              "archetype": "CYBORG_FALSE_PASS_LEECH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 0.2,
+              "target": "pattern_fusion_to_burst"
+            },
+            {
+              "archetype": "SCHOLAR_ARCHIVE_MANTIS",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.0,
+              "target": "receipts_to_living_dna"
+            },
+            {
+              "archetype": "SYMBIOTE_SPLICE_WYRM",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.8,
+              "target": "runtime_watchdog_to_growth_physics"
+            }
+          ],
+          "proof": [
+            {
+              "archetype": "ALFRED_FRICTION_FINCH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.2,
+              "target": "worker_proximity_to_mobile_execution"
+            },
+            {
+              "archetype": "BRAIN_COHERENCE_MOTH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 0.4,
+              "target": "four_mind_to_pattern_fusion"
+            },
+            {
+              "archetype": "CYBORG_FALSE_PASS_LEECH",
+              "semantic_affinity": 0.6,
+              "spawn_score": 0.2,
+              "target": "pattern_fusion_to_burst"
+            },
+            {
+              "archetype": "SCHOLAR_ARCHIVE_MANTIS",
+              "semantic_affinity": 0.6,
+              "spawn_score": 1.0,
+              "target": "receipts_to_living_dna"
+            },
+            {
+              "archetype": "SYMBIOTE_SPLICE_WYRM",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.8,
+              "target": "runtime_watchdog_to_growth_physics"
+            }
+          ],
+          "repair": [
+            {
+              "archetype": "ALFRED_FRICTION_FINCH",
+              "semantic_affinity": 0.8,
+              "spawn_score": 1.2,
+              "target": "worker_proximity_to_mobile_execution"
+            },
+            {
+              "archetype": "BRAIN_COHERENCE_MOTH",
+              "semantic_affinity": 0.5,
+              "spawn_score": 0.4,
+              "target": "four_mind_to_pattern_fusion"
+            },
+            {
+              "archetype": "CYBORG_FALSE_PASS_LEECH",
+              "semantic_affinity": 0.0,
+              "spawn_score": 0.2,
+              "target": "pattern_fusion_to_burst"
+            },
+            {
+              "archetype": "SCHOLAR_ARCHIVE_MANTIS",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.0,
+              "target": "receipts_to_living_dna"
+            },
+            {
+              "archetype": "SYMBIOTE_SPLICE_WYRM",
+              "semantic_affinity": 0.0,
+              "spawn_score": 1.8,
+              "target": "runtime_watchdog_to_growth_physics"
+            }
+          ]
+        },
+        "existing_link": "Word Math language testimony -> Mycelial Neurodaemon semantic context",
+        "placement_changed": {
+          "fusion": false,
+          "proof": false,
+          "repair": false
+        },
+        "proof_ceiling": "synthetic advisory daemon comparison; no real mission executed",
+        "score_changed": {
+          "fusion": false,
+          "proof": false,
+          "repair": false
+        }
+      },
+      "probe": "neurodaemon_affinity_vs_placement",
+      "state": "OBSERVED"
+    },
+    {
+      "observation": {
+        "distinct_positive_winners": 3,
+        "existing_link": "Word Math -> Four Mind tool-profile capability fit",
+        "fixture_note": "The 2026-11-02 original count incorrectly included None as a distinct winner.",
+        "proof_ceiling": "advisory ranking, not executor selection or outcome",
+        "tasks": {
+          "fuse": {
+            "active_dimensions": [],
+            "ranked": [
+              {
+                "coverage": 0.0,
+                "profile": "assimilation_control",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "fusion_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "proof_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "repair_specialist",
+                "resonance": 0
+              }
+            ],
+            "top_match": null
+          },
+          "recognized_assimilation_control": {
+            "active_dimensions": [
+              "assimilate_pressure",
+              "diversity_pressure",
+              "execution_pressure",
+              "mutation_pressure",
+              "parallel_will_pressure"
+            ],
+            "ranked": [
+              {
+                "coverage": 1.0,
+                "profile": "assimilation_control",
+                "resonance": 3.5
+              },
+              {
+                "coverage": 0.0,
+                "profile": "fusion_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "proof_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "repair_specialist",
+                "resonance": 0
+              }
+            ],
+            "top_match": "assimilation_control"
+          },
+          "recognized_proof_control": {
+            "active_dimensions": [
+              "proof_pressure"
+            ],
+            "ranked": [
+              {
+                "coverage": 1.0,
+                "profile": "proof_specialist",
+                "resonance": 0.6
+              },
+              {
+                "coverage": 0.0,
+                "profile": "assimilation_control",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "fusion_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "repair_specialist",
+                "resonance": 0
+              }
+            ],
+            "top_match": "proof_specialist"
+          },
+          "repair": {
+            "active_dimensions": [
+              "blocker_pressure"
+            ],
+            "ranked": [
+              {
+                "coverage": 1.0,
+                "profile": "repair_specialist",
+                "resonance": 0.8
+              },
+              {
+                "coverage": 0.0,
+                "profile": "assimilation_control",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "fusion_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "proof_specialist",
+                "resonance": 0
+              }
+            ],
+            "top_match": "repair_specialist"
+          },
+          "verify": {
+            "active_dimensions": [],
+            "ranked": [
+              {
+                "coverage": 0.0,
+                "profile": "assimilation_control",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "fusion_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "proof_specialist",
+                "resonance": 0
+              },
+              {
+                "coverage": 0.0,
+                "profile": "repair_specialist",
+                "resonance": 0
+              }
+            ],
+            "top_match": null
+          }
+        },
+        "unmatched_tasks": [
+          "verify",
+          "fuse"
+        ]
+      },
+      "probe": "four_mind_semantic_tool_fit",
+      "state": "OBSERVED"
+    },
+    {
+      "observation": {
+        "cases": {
+          "claimed_proof": {
+            "scoped_summary_preserved": true,
+            "scribe_handoff_result": "PASS",
+            "scribe_may_execute": false,
+            "semantic_vector_preserved": true,
+            "zero_point_execution_state": "SAFE_TO_PROCEED",
+            "zero_point_scope_decision": {
+              "executable_event_ids": [],
+              "held_event_ids": [],
+              "non_executable_event_ids": [
+                "c0:e0",
+                "c1:e0",
+                "c1:e1"
+              ],
+              "relation_evidence_mode": "RELATION_LOCAL",
+              "schema": "lab_word_math_scope_decision_v1",
+              "unverified_relation_ids": []
+            }
+          },
+          "conditional": {
+            "scoped_summary_preserved": true,
+            "scribe_handoff_result": "PASS",
+            "scribe_may_execute": false,
+            "semantic_vector_preserved": true,
+            "zero_point_execution_state": "CONDITION_EVIDENCE_REQUIRED",
+            "zero_point_scope_decision": {
+              "executable_event_ids": [
+                "c0:e0"
+              ],
+              "held_event_ids": [
+                "c0:e0"
+              ],
+              "non_executable_event_ids": [
+                "c0:e1",
+                "c0:e2",
+                "c0:e3"
+              ],
+              "relation_evidence_mode": "RELATION_LOCAL",
+              "schema": "lab_word_math_scope_decision_v1",
+              "unverified_relation_ids": [
+                "c0:if:0"
+              ]
+            }
+          },
+          "prohibition": {
+            "scoped_summary_preserved": true,
+            "scribe_handoff_result": "PASS",
+            "scribe_may_execute": false,
+            "semantic_vector_preserved": true,
+            "zero_point_execution_state": "SAFE_TO_PROCEED",
+            "zero_point_scope_decision": {
+              "executable_event_ids": [],
+              "held_event_ids": [],
+              "non_executable_event_ids": [
+                "c0:e0",
+                "c0:e1"
+              ],
+              "relation_evidence_mode": "RELATION_LOCAL",
+              "schema": "lab_word_math_scope_decision_v1",
+              "unverified_relation_ids": []
+            }
+          },
+          "question": {
+            "scoped_summary_preserved": true,
+            "scribe_handoff_result": "PASS",
+            "scribe_may_execute": false,
+            "semantic_vector_preserved": true,
+            "zero_point_execution_state": "SAFE_TO_PROCEED",
+            "zero_point_scope_decision": {
+              "executable_event_ids": [],
+              "held_event_ids": [],
+              "non_executable_event_ids": [
+                "c0:e0",
+                "c0:e1"
+              ],
+              "relation_evidence_mode": "RELATION_LOCAL",
+              "schema": "lab_word_math_scope_decision_v1",
+              "unverified_relation_ids": []
+            }
+          }
+        },
+        "existing_links": [
+          "Scribe -> Word Math testimony",
+          "Word Math -> Zero Point Spine gates"
+        ],
+        "proof_ceiling": "language as synthetic data, never commands"
+      },
+      "probe": "scribe_spine_scope_integrity",
+      "state": "OBSERVED"
+    },
+    {
+      "observation": {
+        "allowlisted_direct_source_importers": [
+          "action_math_fusion",
+          "dimensional_compiler",
+          "four_mind",
+          "goal_gravity",
+          "growth_physics",
+          "morphogenesis_grid",
+          "mycelial_pattern_fusion",
+          "power_router",
+          "scribe_translation",
+          "sense_calibration",
+          "zero_point_spine"
+        ],
+        "declared_socket_consumers": [
+          "action_math_fusion",
+          "power_router",
+          "scribe_translation",
+          "zero_point_spine"
+        ],
+        "direct_importers_not_in_declared_socket_consumer_set": [
+          "dimensional_compiler",
+          "four_mind",
+          "goal_gravity",
+          "growth_physics",
+          "morphogenesis_grid",
+          "mycelial_pattern_fusion",
+          "sense_calibration"
+        ],
+        "meaning": "Different inventories: a source import is not a typed socket subscription nor runtime use",
+        "proof_ceiling": "live source AST and registered static declarations, not runtime wiring proof"
+      },
+      "probe": "socket_graph_visibility",
+      "state": "OBSERVED"
+    },
+    {
+      "observation": {
+        "existing_handoff_compilable": true,
+        "in_memory_only": true,
+        "observer_blockers": [],
+        "observer_compatible": true,
+        "proof_ceiling": "source real socket compatibility and obligation compilation; never granted new authority",
+        "tested_existing_socket": "lab.semantic.vector_observation.v1",
+        "writer_proven_blockers": [
+          "authority_escalation_forbidden:READ_ONLY_to_ACTIVE_WRITE",
+          "proof_ceiling_escalation_forbidden:UNPROVEN_to_PROVEN"
+        ],
+        "writer_proven_compatible": false
+      },
+      "probe": "socket_fabric_authority_boundary",
+      "state": "OBSERVED"
+    },
+    {
+      "observation": {
+        "cases": {
+          "broad_cross_organ": {
+            "cross_module_regression_required": true,
+            "required_check_count": 8,
+            "routing_integration_policy": "INSPECT_CONNECTED_SYSTEMS_REUSE_EXISTING_ORGANS_MODULARIZE_BEFORE_GROWING_LABCTL",
+            "state_integrity_check_required": true,
+            "structural_escalated": false,
+            "structural_radius": "HIGH_RADIUS",
+            "tier": "DEEP",
+            "validation_connected_required": true,
+            "validation_system_policy": "CONNECTED_SYSTEMS_FIRST",
+            "word_math_activation": {}
+          },
+          "broad_leaf": {
+            "cross_module_regression_required": false,
+            "required_check_count": 6,
+            "routing_integration_policy": "INSPECT_CONNECTED_SYSTEMS_REUSE_EXISTING_ORGANS_MODULARIZE_BEFORE_GROWING_LABCTL",
+            "state_integrity_check_required": false,
+            "structural_escalated": false,
+            "structural_radius": "LEAF",
+            "tier": "DEEP",
+            "validation_connected_required": true,
+            "validation_system_policy": "CONNECTED_SYSTEMS_FIRST",
+            "word_math_activation": {}
+          },
+          "simple_cross_organ": {
+            "cross_module_regression_required": true,
+            "required_check_count": 6,
+            "routing_integration_policy": "REUSE_EXISTING_ORGANS_WHEN_PRESENT",
+            "state_integrity_check_required": true,
+            "structural_escalated": true,
+            "structural_radius": "HIGH_RADIUS",
+            "tier": "DEEP",
+            "validation_connected_required": true,
+            "validation_system_policy": "REUSE_EXISTING_ORGANS_WHEN_PRESENT",
+            "word_math_activation": {
+              "execution_pressure": 0.4,
+              "mutation_pressure": 0.8
+            }
+          },
+          "simple_leaf": {
+            "cross_module_regression_required": false,
+            "required_check_count": 4,
+            "routing_integration_policy": "REUSE_EXISTING_ORGANS_WHEN_PRESENT",
+            "state_integrity_check_required": false,
+            "structural_escalated": false,
+            "structural_radius": "LEAF",
+            "tier": "STANDARD",
+            "validation_connected_required": false,
+            "validation_system_policy": "REUSE_EXISTING_ORGANS_WHEN_PRESENT",
+            "word_math_activation": {
+              "execution_pressure": 0.4,
+              "mutation_pressure": 0.8
+            }
+          }
+        },
+        "existing_owners": [
+          "Connected Systems First validation strategy",
+          "Routing execution posture",
+          "Word Math semantic activation"
+        ],
+        "proof_ceiling": "real planning functions on synthetic task and structural context, no execution or routing mutation",
+        "route_policy_changes_with_radius_at_same_text": false,
+        "validation_tier_changes_with_radius": true,
+        "word_math_currently_drives_policy": "NOT ESTABLISHED; this is side-by-side testimony"
+      },
+      "probe": "structural_connected_policy",
+      "state": "OBSERVED"
+    },
+    {
+      "observation": {
+        "assumption": "resistance=clamp_min(0.1,1+gain*(0.7-voltage)); gain sweep is NOT calibrated",
+        "candidate_is_not_lab_wiring": true,
+        "conditions": {
+          "neutral": {
+            "gain_sweep": {
+              "0.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.0,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              },
+              "0.5": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.981888,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              },
+              "1.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.963777,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              },
+              "2.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.927554,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              }
+            },
+            "input": "",
+            "matched_destructive_terms": [],
+            "matched_risk_terms": [],
+            "semantic_pressures": {
+              "danger_pressure": 0.1,
+              "destructive_pressure": 0.0,
+              "proof_pressure": 0.2
+            },
+            "semantic_signal": 0.04,
+            "voltage": 0.736223
+          },
+          "proof": {
+            "gain_sweep": {
+              "0.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.0,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              },
+              "0.5": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.91119,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              },
+              "1.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.82238,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              },
+              "2.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.64476,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              }
+            },
+            "input": "verified tests proof evidence passed",
+            "matched_destructive_terms": [],
+            "matched_risk_terms": [],
+            "semantic_pressures": {
+              "danger_pressure": 0.1,
+              "destructive_pressure": 0.0,
+              "proof_pressure": 0.8
+            },
+            "semantic_signal": 0.34,
+            "voltage": 0.87762
+          },
+          "recognized_hazard": {
+            "gain_sweep": {
+              "0.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.0,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              },
+              "0.5": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.23301,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.66
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              },
+              "1.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.466019,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.98
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              },
+              "2.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.932038,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  2.61
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              }
+            },
+            "input": "rm -rf all files with force",
+            "matched_destructive_terms": [
+              "rm -rf"
+            ],
+            "matched_risk_terms": [
+              "force"
+            ],
+            "semantic_pressures": {
+              "danger_pressure": 0.9,
+              "destructive_pressure": 1.0,
+              "proof_pressure": 0.2
+            },
+            "semantic_signal": -1.0,
+            "voltage": 0.233981
+          },
+          "unrecognized_hazard_control": {
+            "gain_sweep": {
+              "0.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "four_mind_to_pattern_fusion"
+                ],
+                "changed_assignment_count_from_no_adapter": 0,
+                "derived_resistance": 1.0,
+                "duplicate_target_count": 0,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 5,
+                "unique_target_delta_from_no_adapter": 0
+              },
+              "0.5": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.981888,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              },
+              "1.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.963777,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              },
+              "2.0": {
+                "assignments": [
+                  "worker_proximity_to_mobile_execution",
+                  "pattern_fusion_to_burst",
+                  "receipts_to_living_dna",
+                  "runtime_watchdog_to_growth_physics",
+                  "pattern_fusion_to_burst"
+                ],
+                "changed_assignment_count_from_no_adapter": 1,
+                "derived_resistance": 0.927554,
+                "duplicate_target_count": 1,
+                "spawn_scores_rounded": [
+                  1.2,
+                  0.4,
+                  0.2,
+                  1.0,
+                  1.35
+                ],
+                "unique_target_count": 4,
+                "unique_target_delta_from_no_adapter": -1
+              }
+            },
+            "input": "delete everything danger damage destructive",
+            "matched_destructive_terms": [],
+            "matched_risk_terms": [],
+            "semantic_pressures": {
+              "danger_pressure": 0.1,
+              "destructive_pressure": 0.0,
+              "proof_pressure": 0.2
+            },
+            "semantic_signal": 0.04,
+            "voltage": 0.736223
+          }
+        },
+        "existing_links": [
+          "Word Math -> Morphogenesis semantic stress",
+          "Word Math -> Mycelial advisory semantic affinity"
+        ],
+        "new_in_memory_candidate": "Morphogenesis voltage -> candidate bridge resistance -> Neurodaemon placement",
+        "proof_ceiling": "synthetic in-memory adapter only; never registered or persisted"
+      },
+      "probe": "bioelectric_to_daemon_candidate",
+      "state": "OBSERVED"
+    }
+  ],
+  "proof_ceiling": "real module functions in isolated synthetic exercises; not whole Lab operation",
+  "schema": "umd.playground.organ_fusion_discovery.v1",
+  "status": "OBSERVED"
+}
