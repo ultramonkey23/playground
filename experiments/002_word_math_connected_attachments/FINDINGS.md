@@ -1,6 +1,6 @@
 # Measured organ-fusion findings — Termux run on 2026-11-02
 
-**Source:** Cody's pasted Termux JSON from actual private Lab `master` at `c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65`. A connected GitHub read independently confirmed that this SHA was current `master` when analyzed and that the relevant source functions exist. The test-run bytes and Android environment were **user reported**, not remotely attested. The pasted result ends partway through the final probe; all seven individual probe records showed `OBSERVED`, but the top-level runner status was not visible.
+**Source:** Cody's pasted Termux JSON from actual private Lab `master` at `c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65`. A connected GitHub read independently confirmed that this SHA was current `master` when analyzed and that the relevant source functions exist. The test-run bytes and Android environment were **user reported**, not remotely attested. The pasted result ends partway through the final probe; six individual probe records explicitly showed `OBSERVED`; the seventh contained detailed observation fields, but its own status and the top-level runner status were cut off.
 
 ## What actually changed?
 

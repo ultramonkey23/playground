@@ -4,12 +4,12 @@
   "title": "Fusion discoveries: measured organ behavior and unexpected quirks",
   "status": "REVIEW_READY",
   "question": "How do Word Math and Connected Systems First interact with already-connected Lab organs, and which interactions expose hidden downstream effects rather than duplicate wiring?",
-  "summary": "Cody ran seven real private-Lab module probes from Termux at c8c7634d84a7 (user-provided execution output). Existing Word Math changed Neurodaemon semantic affinity without changing placements; a temporary bioelectric adapter shifted one placement while reducing distinct target coverage 5→4. Structural context escalated Validation independently of text-only Routing. The original negative-stress fixture and Four Mind winner count were flawed; corrected follow-up controls are prepared but NOT RUN.",
+  "summary": "Cody supplied Termux output from actual Lab master c8c7634d84a7: six explicitly OBSERVED probes plus one detailed final observation whose status was truncated. Existing Word Math changed Neurodaemon semantic affinity without changing placements; a temporary bioelectric adapter shifted one placement while reducing distinct target coverage 5→4. Structural context escalated Validation independently of text-only Routing. The original negative-stress fixture and Four Mind winner count were flawed; corrected follow-up controls are prepared but NOT RUN.",
   "evidence": [
     {
       "kind": "USER_REPORTED_REAL_LAB_EXECUTION",
       "environment": "Authenticated Termux private Lab master c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65, synthetic probes (user-provided output)",
-      "observation": "Seven individual probes reported OBSERVED. This is genuine user-reported module execution, not an independent device attestation or a production mission.",
+      "observation": "Six individual probes explicitly reported OBSERVED; a seventh included detailed measurements but its state and overall run status were truncated. These are user-reported actual module calls, not independent attestation or a production mission.",
       "source": "observations_2026-11-02.json"
     },
     {
@@ -32,7 +32,7 @@
     }
   ],
   "limitations": [
-    "User-provided Termux output was truncated at the last record; all seven individual states were OBSERVED, but the top-level runner status and exact public runner revision were not visible.",
+    "The Termux output was truncated during the seventh record: six probe states explicitly said OBSERVED, but the final state and top-level runner status were not visible. Exact public runner revision was not included.",
     "Candidate fusion affected synthetic placement but reduced target diversity; no measured production improvement or later project consumer outcome.",
     "Original 'hazard' input was not recognized as destructive/risk and cannot support a negative-stress comparison; updated harness requires a new run.",
     "Four Mind distinct_winners=2 counted null; only one positive actual specialist winner occurred in the original three tasks.",

@@ -22,7 +22,7 @@ See [fusion_atlas.json](fusion_atlas.json) for source-grounded connection classi
 
 ## First authenticated-run results — 2026-11-02
 
-Cody ran the seven original probes on actual Lab `master` commit `c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65` and supplied the console JSON. See [FINDINGS.md](FINDINGS.md) and [observations_2026-11-02.json](observations_2026-11-02.json).
+Cody supplied six explicitly OBSERVED probe records and a seventh detailed but truncated observation from actual Lab `master` commit `c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65` and supplied the console JSON. The final probe status and overall run status were not visible. See [FINDINGS.md](FINDINGS.md) and [observations_2026-11-02.json](observations_2026-11-02.json).
 
 Major observations: Word Math semantic affinity changed without altering Neurodaemon placement. The temporary bioelectric→bridge-resistance adapter changed one assignment, but **reduced unique bridge coverage from five to four**. The original hazard input contained no registered risk/destructive phrase, producing the same +0.04 bioelectric signal as the neutral Word Math baseline. Four Mind's initial `distinct_winners` count included a `null` winner. These are discoveries about existing circuits **and the experiment fixtures**, not a warrant to rewrite Lab organs.
 
