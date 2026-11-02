@@ -4,8 +4,14 @@
   "title": "Fusion discoveries: measured organ behavior and unexpected quirks",
   "status": "REVIEW_READY",
   "question": "How do Word Math and Connected Systems First interact with already-connected Lab organs, and which interactions expose hidden downstream effects rather than duplicate wiring?",
-  "summary": "A complete corrected seven-probe synthetic fusion run was published from an authenticated Termux GitHub session for private Lab master a08c9619ba60. All seven records reported OBSERVED. The latest raw, bounded observations are in latest_results.json; downstream benefits are NOT independently evaluated or proven. Earlier findings remain in FINDINGS.md.",
+  "summary": "Published corrected real-module run on private Lab master a08c9619ba60: 7/7 synthetic probes OBSERVED. Recognized destructive input now yields −1.0 bioelectric signal, dropping voltage below native grid's 0.25 critical threshold. An experimental voltage→bridge-resistance adapter raises the fifth daemon spawn score under damage but reduces distinct target coverage 5→4 under neutral/proof. Four Mind reports three real positive matches with recognized terms. These are measured synthetic effects, not proven production improvements.",
   "evidence": [
+    {
+      "kind": "ANALYZED_PUBLISHED_RUNTIME_RESULT",
+      "environment": "Public Playground latest_results.json, Lab master a08c9619ba606e972dbcfb99f898cc3a5c69bfed, confirmed GitHub source files",
+      "observation": "7/7 synthetic probe returns; corrected hazard −1.0, V=0.233981; proof +0.34, V=0.87762; gain 1 damage increased fifth score 1.35→1.98 while proof/neutral reduced distinct targets 5→4. Current native edge-quarantine threshold 0.25 was checked in source, not executed by this probe.",
+      "source": "FINDINGS_LATEST.md"
+    },
     {
       "kind": "OPERATOR_PUBLISHED_COMPLETE_TERMUX_RUN",
       "environment": "User-hosted Termux synthetic Lab module execution; private Lab master a08c9619ba606e972dbcfb99f898cc3a5c69bfed",
@@ -38,23 +44,27 @@
     }
   ],
   "limitations": [
-    "Candidate fusion affected synthetic placement but reduced target diversity; no measured production improvement or later project consumer outcome.",
-    "Four Mind distinct_winners=2 counted null; only one positive actual specialist winner occurred in the original three tasks.",
-    "Direct call/import observations do not prove the later Lab used the results, changed behavior in a real mission, or learned from them.",
-    "Private Lab working tree, active agents, and non-GitHub runtime state remain UNKNOWN; no direct Lab writes were made by the Playground update.",
-    "New output is user-hosted synthetic execution, not independent device attestation or proof of a production capability upgrade."
+    "All seven probes returned OBSERVED in the authenticated published result, which means Python observations were generated, not that a real project or later Lab consumer improved.",
+    "Publication was authenticated through the user's public GitHub workflow but private runtime execution was not independently attested. The Lab's non-GitHub local and active-agent state remain UNKNOWN.",
+    "The temporary voltage-to-bridge-resistance mapping is not Lab production wiring and is not calibrated to real repair outcomes.",
+    "Raw competing Neurodaemon scores, actual traffic isolation, real repair dispatch and adaptation/learning remain unmeasured.",
+    "Typed socket registry membership and direct source imports describe different graphs; neither is automatically a full live execution trace.",
+    "Recognized hazard voltage falls below the existing native critical threshold, but the native quarantine method was not executed as part of this fusion probe."
   ],
   "next_actions": [
-    "Review latest_results.json for correct negative-stress behavior, Four Mind positive-control coverage, and bridge diversity versus baseline.",
-    "Run the updated seven-probe harness with recognized destructive/risk phrasing and neutral/unmatched controls; inspect semantic pressures, voltage sign, bridge coverage and target switches.",
-    "Compare Four Mind recognized and unrecognized proof/fusion terms; count only non-null positive specialist winners before inferring a gap.",
-    "Trace downstream consumption of validation's structural radius and required flags versus Routing's text-only policy.",
-    "Check raw unrounded bridge candidate scores and diversity under varied synthetic topologies before advocating any production voltage-to-resistance fusion.",
-    "Only consider real Lab staging after Cody reviews the measured gains and explicitly selects scope."
+    "Experimentally compare existing native bioelectric edge modulation and Mycelial repair prioritization, including independent and combined controls on synthetic topology; do not modify Lab organs.",
+    "Instrument raw and runner-up Neurodaemon scores around the assignment switch, plus diversity/congestion and downstream repair outcomes.",
+    "Trace structural-radius validation escalation into actual execution/validation consumers before adding another policy connection.",
+    "Compare recognized and unmatched Four Mind semantics on real bounded selection outcomes; expand only proven missing coverage.",
+    "Review the measured findings and decide whether any bounded research should be staged to Lab. No automatic extraction."
   ],
-  "recommended_action": "REVIEW",
-  "recommendation_reason": "A complete corrected result is now available. Interpret causality, downstream behavior and regressions before considering integration.",
+  "recommended_action": "IMPROVE",
+  "recommendation_reason": "The corrected run establishes real synthetic polarity and cross-organ leverage, but beneficial downstream outcomes and safe coordination remain unproven.",
   "files": [
+    {
+      "path": "FINDINGS_LATEST.md",
+      "label": "Corrected run analysis: effects, quirks, evidence limits"
+    },
     {
       "path": "latest_results.json",
       "label": "Latest complete published synthetic results"

@@ -6,7 +6,9 @@
     "observation_type": "CONNECTED_GITHUB_SOURCE_READ",
     "live_local_worktrees": "UNKNOWN",
     "user_report": "Some of these are already connected",
-    "latest_user_reported_execution_lab_head": "c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65"
+    "latest_user_reported_execution_lab_head": "a08c9619ba606e972dbcfb99f898cc3a5c69bfed",
+    "latest_public_result": "latest_results.json",
+    "latest_evidence_review": "FINDINGS_LATEST.md"
   },
   "existing": [
     {
@@ -175,10 +177,10 @@
     "runtime_user_reported": true,
     "runtime_independently_attested": false,
     "original_hazard_fixture_invalid": true,
-    "new_runner_followup_executed": false,
+    "new_runner_followup_executed": true,
     "proven_production_uplift": false,
     "private_source_published": false,
     "lab_modified_by_this_experiment": false,
-    "note": "User-reported seven synthetic probe observations are summarized in FINDINGS.md. The current updated runner differs and requires execution; don't treat history as a fresh run."
+    "note": "Latest 7/7 corrected synthetic probes published on Playground master; distinct-target decline for proof and potential native critical-voltage/repair-need complement are observed/inferred respectively. Runtime outcome and real downstream consumers remain UNKNOWN."
   }
 }

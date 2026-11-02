@@ -20,6 +20,12 @@ The math socket registry names four consumers of one semantic-vector socket. The
 
 See [fusion_atlas.json](fusion_atlas.json) for source-grounded connection classifications and falsifiable hypotheses. The [probe_fusions.py](probe_fusions.py) harness runs the existing private Lab functions without making Lab source public.
 
+## Latest corrected run — analyzed 2026-11-02
+
+The explicit Termux publisher successfully committed `latest_results.json` for private Lab `master` at `a08c9619ba606e972dbcfb99f898cc3a5c69bfed`. All seven synthetic probes returned `OBSERVED`. See **[FINDINGS_LATEST.md](FINDINGS_LATEST.md)** for measured comparisons, native source confirmation and a prioritized next-experiment design.
+
+Key result: damage pressure lowered simulated node voltage below the native grid's 0.25 critical threshold; the temporary Mycelial adapter increased *repair-need score*, while normal/proof conditions could reduce target diversity. This is an experimentally promising interaction but NOT production adoption or proven uplift. The native quarantine function itself was not called in this composite probe.
+
 ## First authenticated-run results — 2026-11-02
 
 Cody supplied six explicitly OBSERVED probe records and a seventh detailed but truncated observation from actual Lab `master` commit `c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65` and supplied the console JSON. The final probe status and overall run status were not visible. See [FINDINGS.md](FINDINGS.md) and [observations_2026-11-02.json](observations_2026-11-02.json).
