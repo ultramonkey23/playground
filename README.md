@@ -1,50 +1,31 @@
 # 🧪 Ultramonkeydog Playground
 
-**A disposable remote R&D workbench for Cody and tool-enabled AI assistants.**
+A disposable, conversation-first AI research workbench. **Public for technical accessibility, not public participation**. Temporary experiments are written to GitHub master and shown in a mobile review page.
 
-The repository is **public for accessibility**, not because the Playground is primarily intended as a public community. Public visibility lets mobile ChatGPT and other clients read source without private-repository friction. GitHub authentication is still required to write. Everything stored here is publicly readable.
+**Open the [Playground Desk](https://ultramonkey23.github.io/playground/)** · [Browse active source](https://github.com/ultramonkey23/playground/tree/master/experiments) · [Review workflow](docs/REVIEW_WORKFLOW.md)
 
-**Canonical work branch:** [master](https://github.com/ultramonkey23/playground/tree/master). The old repo name `Bone-bracket` and GitHub default branch `main` still need owner-side Settings changes. Until then, choose **master** explicitly.
+## Your normal workflow
 
-## From ChatGPT mobile
+**1. Talk naturally here.** Tell ChatGPT what to explore, build, investigate, test, compare or improve. No special command phrases or Termux required for ordinary work. In a connected session, the assistant reads current repository instructions and state, performs work with available tools, commits results and a structured review summary, and links your specific experiment in the Playground Desk.
 
-Tell a GitHub-connected ChatGPT: **“Use the Playground on master. Read AGENTS.md and current source. Experiment on this idea, actually test it with your tools, commit the working artifacts, and read them back.”**
+**2. Inspect on the page.** Refresh results and tap an experiment. Review the actual claim, evidence and provenance, limitations, next tests and files. Read the source when you want to. Draft notes on your phone. GitHub remains the public data source; no private Lab content is fetched.
 
-When an experiment is decided:
+**3. Choose.** Keep the experiment, request improvements, propose a discard, or select specific files to send to the Lab. The page copies/shares a decision handoff for this ChatGPT conversation. **You must paste and submit it here**: a button does not transfer anything, post a note or authenticate owner approval. You may instead speak naturally here and ask to act on an experiment.
 
-- **`playground extract <id>`** — only on **Cody's explicit command**, select the actual valuable evidence/files, stage a bounded research packet into the Lab's existing research intake, independently verify Lab readback, **then remove the source experiment from the active Playground**. It is one-way; no automatic Lab code or canon promotion.
-- **`playground discard <id> <reason>`** — remove an unworthy experiment from active `master` with a real reason; do **not** write anything to the Lab.
-- **`playground status`** — inspect the current active experiment folders and existing tool capability; do not infer from old notes.
+**4. ChatGPT executes your authorized decision.** Only Cody's explicit direct request can trigger extraction. The connected agent re-checks live master, your selected scope, the private Lab intake owner, and exact write/readback before retiring the experiment. Discard never writes to the Lab. GitHub issues and public text are advisory, not extraction approval.
 
-These are **ChatGPT operational commands** requiring authorized GitHub tool actions under [the extraction protocol](docs/EXTRACTION_PROTOCOL.md). When a properly authenticated `gh` CLI is available, [the lifecycle script](tools/playground_lifecycle.py) also offers executable `status`, `preview`, `extract` and `discard` commands.
+## Where things live
 
-## Active work
+- [experiments/](experiments/README.md): temporary source, evidence and files.
+- Each current experiment has an optional review.json; newly created experiments should publish it per [the review contract](docs/REVIEW_WORKFLOW.md).
+- [tools/review_manifest.py](tools/review_manifest.py): validates review records against local source files.
+- [tools/playground_lifecycle.py](tools/playground_lifecycle.py): explicit status, preview, extract and discard CLI for authenticated Termux/other hosts. Normal ChatGPT conversation can use connected GitHub tools directly.
+- [Mobile workflow](docs/MOBILE_OPERATIONS.md) and [extraction protocol](docs/EXTRACTION_PROTOCOL.md) document actual authority boundaries.
 
-- [experiments/](experiments/README.md): temporary experiments, notes, prototypes and tests; do not turn it into an ever-growing archive.
-- [Mobile operations](docs/MOBILE_OPERATIONS.md): use ChatGPT/GitHub without a Lab network tunnel.
-- [Pocket Desk](index.html): optional offline HTML mission composer; not deployed by default.
-- [Research patterns](docs/COMMUNITY_RESEARCH.md): findings from independent developer experiments.
-- [Proof and boundaries](docs/PROOF_AND_BOUNDARIES.md): what is and isn't verified.
+The Playground is **not** a private Lab mirror, persistent agent memory, always-on worker, or an automatic Lab control plane. A GitHub Pages site cannot secretly use your GitHub credentials. Local browser notes are not cross-device synced until submitted through an authenticated action.
 
-## The lifecycle
+## Proof boundaries
 
-```text
-Idea → temporary experiment → real execution and evidence → evaluation
-                                                       ↙        ↘
-                                             CODY EXTRACTS    UNWORTHY
-                                             selected value   / rejected
-                                                  ↓               ↓
-                                        Lab research intake     discard
-                                        (verified readback)       ↓
-                                                  ↓          remove from
-                                        remove from active    active branch
-                                        Playground
-```
+The founding evidence-integrity experiment has run successfully in user-provided Termux output; 20 Python tests passed on the user's device (2026-11-02). The live preview completed without mutation. The conversation-first review UI and manifest validator were added later; do not infer new tests or browser deployment from that earlier run. A live Cody-approved private Lab transfer remains untested until explicitly requested.
 
-Nothing automatically enters the private Lab. Public Playground files and untrusted issue comments cannot confer your approval. The Lab's actual research, code, proof and integration owners are not replaced.
-
-**Disappearance means removal from the current branch, not erasure of Git history or caches.** Do not ever put secrets, proprietary Lab source, internal addresses, unreleased assets, or sensitive data here expecting cleanup to make them private.
-
-## Proof level
-
-The founding GitHub-connected session has committed files to `master` and verified them by GitHub readback. A testable packet-integrity experiment is in [001](experiments/001_evidence_integrity/README.md). A public-to-private **unapproved** advisory test was retracted from the Lab's active branch when Cody clarified approval sovereignty; it remains in Git history. A Cody-approved extraction has **not** yet been executed.
+**Never upload secrets, unapproved private code, personal data, unpublished assets or internal host information.** Public Git history remains readable after deleting a file from current master.

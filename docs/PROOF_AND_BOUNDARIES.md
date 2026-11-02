@@ -16,3 +16,7 @@ Active experiments are removed after successful approved extraction or evidence-
 - A real **Cody-approved extraction** has not occurred. Any test of the lifecycle code is a test of that code, not an observation of a live Lab extraction.
 
 The current remote branch and live Lab execution may change; re-inspect them before consequential decisions.
+
+## Conversation-first review enhancement (2026-11-02)
+
+The public Desk is a reader and decision-message composer. It cannot write GitHub, authorize a private Lab transfer by itself, or execute a background agent. Review manifests are public summaries with explicit proof ceilings; a manifest record alone does not prove execution. New browser notes are locally stored only until Cody submits them. GitHub-connected ChatGPT can perform real work in the current conversation and publish updated reviews, but absent tools or unobserved execution remain UNKNOWN.

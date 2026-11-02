@@ -1,6 +1,6 @@
 # Active temporary experiments
 
-Each `experiments/<id>/` is disposable. It can hold code, notes, benchmarks, raw evidence, negative results and counterarguments. There is no expectation of permanent retention in the active branch.
+Each `experiments/<id>/` is disposable. New experiments publish a machine-readable `review.json` with their scope, real execution evidence, limitations, next steps and candidate files; the mobile Desk reads this as advisory public data. It can hold code, notes, benchmarks, raw evidence, negative results and counterarguments. There is no expectation of permanent retention in the active branch.
 
 - **Under investigation:** keep only while it has a real unresolved question or live work.
 - **Cody orders extraction:** choose exact files; stage them into the private Lab's existing research intake through GitHub tools; verify readback; remove the whole active experiment directory.

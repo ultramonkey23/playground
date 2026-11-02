@@ -12,6 +12,10 @@ ACTIVE → EXTRACTED_AND_RETIRED  (only Cody explicitly authorizes extraction)
 
 No permanent Playground result archive, no alternative Lab memory. Existing Git history supplies audit/rollback but is not a privacy deletion mechanism.
 
+## Conversation-first decisions
+
+Cody may speak naturally or paste a decision prepared by the mobile Desk. A read-only page click is not an extraction, disposal or approval submission. The assistant must receive the user decision in its authenticated conversation, recover live source scope, and verify owner authority. For Lab transfers the Desk requires explicit per-file selection and pins the observed source SHA, but a changed source requires reconciliation before any mutation. Browser notes stay local until sent. The same existing private intake owner and readback protocol apply.
+
 ## ChatGPT mobile commands
 
 **`playground preview <experiment-id> [selected files]` — read-only review**
