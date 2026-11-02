@@ -11,7 +11,7 @@ This is an **internet-accessible, GitHub-backed workspace** for ChatGPT mobile a
 - **ChatGPT with GitHub tools:** “Inspect `ultramonkey23/Bone-bracket` on `master`, read `AGENTS.md`, create an issue or perform a bounded experiment, run it with available tools, and verify GitHub readback. Report actual proof limits.”
 - **GitHub mobile or web:** [Create an issue](https://github.com/ultramonkey23/Bone-bracket/issues/new/choose) (note, research challenge, experiment). Public contributors can also fork and propose pull requests; they cannot assume direct write permission.
 - **Offline/local terminal:** `python3 experiments/001_evidence_integrity/demo.py`; `python3 -m unittest discover -s tools -p 'test_*.py'`.
-- **Mobile composer:** [site/index.html](site/index.html) contains a standalone, no-server proposal composer; GitHub Pages is not enabled automatically.
+- **Mobile composer:** [index.html](index.html) contains a standalone, no-server proposal composer; GitHub Pages is not enabled automatically.
 
 ## Doors
 

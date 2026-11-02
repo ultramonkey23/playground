@@ -12,7 +12,7 @@ Do not ask a chat to *claim* it wrote to GitHub: request concrete tool-backed re
 
 ### B — GitHub app/web issue submission (no ChatGPT GitHub write permission required)
 
-Open [new issue](https://github.com/ultramonkey23/Bone-bracket/issues/new/choose), choose NOTE / CHALLENGE / EXPERIMENT, paste proposal, then submit. [Mobile proposal composer](../site/index.html) can generate copyable Markdown in any local browser once the HTML is opened/downloaded.
+Open [new issue](https://github.com/ultramonkey23/Bone-bracket/issues/new/choose), choose NOTE / CHALLENGE / EXPERIMENT, paste proposal, then submit. [Mobile proposal composer](../index.html) can generate copyable Markdown in any local browser once the HTML is opened/downloaded.
 
 **Community-observed caveat:** GitHub app deep links sometimes lose prefilled issue title/body parameters on Android or iOS. The clipboard + manual issue route is intentional, not a broken fallback. A GitHub account is still required to submit.
 

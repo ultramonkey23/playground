@@ -14,7 +14,7 @@ This is implementation research from independent builders and public issues, **n
 
 - **Outbound on-device MCP:** DroidBridge explores polling a secure tunnel without inbound ports; not a substitute for an absent Lab connection. https://github.com/zephyr7030/DroidBridge
 - **Agent wake/events:** WorkDone distinguishes Work events from normal chat cards and reports delivery limitations. Any persistent notifications require separate setup, consent, and real event/wakeup proof.
-- **Hosted/static UI:** GitHub Pages could expose `site/index.html` as a mobile portal after enabling Pages in repository settings. Merely committing HTML does not publish a website.
+- **Hosted/static UI:** GitHub Pages could expose `index.html` as a mobile portal after enabling Pages in repository settings. Merely committing HTML does not publish a website.
 - **GitHub mobile cloud coding agent:** a separate optional body if available/account-authorized; never presume that ordinary ChatGPT GitHub tools delegate to it.
 
 ## Engineering consequences
