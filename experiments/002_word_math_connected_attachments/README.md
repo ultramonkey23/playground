@@ -20,9 +20,17 @@ The math socket registry names four consumers of one semantic-vector socket. The
 
 See [fusion_atlas.json](fusion_atlas.json) for source-grounded connection classifications and falsifiable hypotheses. The [probe_fusions.py](probe_fusions.py) harness runs the existing private Lab functions without making Lab source public.
 
+## First authenticated-run results — 2026-11-02
+
+Cody ran the seven original probes on actual Lab `master` commit `c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65` and supplied the console JSON. See [FINDINGS.md](FINDINGS.md) and [observations_2026-11-02.json](observations_2026-11-02.json).
+
+Major observations: Word Math semantic affinity changed without altering Neurodaemon placement. The temporary bioelectric→bridge-resistance adapter changed one assignment, but **reduced unique bridge coverage from five to four**. The original hazard input contained no registered risk/destructive phrase, producing the same +0.04 bioelectric signal as the neutral Word Math baseline. Four Mind's initial `distinct_winners` count included a `null` winner. These are discoveries about existing circuits **and the experiment fixtures**, not a warrant to rewrite Lab organs.
+
+**Current runner has been revised** to report true recognized hazard vs neutral/unmatched controls, record bridge diversity and active semantic dimensions, and count only non-null matches. The corrected runner has not been executed on a private Lab checkout yet.
+
 ## Real runtime experiment
 
-Because the connected GitHub plugin can read private Lab source but this conversation cannot execute that private checkout, actual downstream effects remain unmeasured at this point. In Termux, from a current Playground clone with gh authenticated:
+Because the connected GitHub plugin can read private Lab source but this conversation cannot execute that private checkout, the corrected follow-up effects remain unmeasured as of this update. In Termux, from a current Playground clone with gh authenticated:
 
     cd ~/playground
     git pull --ff-only origin master

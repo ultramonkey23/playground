@@ -89,26 +89,37 @@ def probe_mind_profiles(mods: dict) -> dict:
         "proof_specialist": semantic(mods, "verify test proof evidence"),
         "repair_specialist": semantic(mods, "repair fix recover broken systems"),
         "fusion_specialist": semantic(mods, "fuse merge architecture systems"),
+        # Experimental positive control using ALREADY registered Word Math terms.
+        # This is NOT a new vocabulary definition or a proposed production mapping.
+        "assimilation_control": semantic(mods, "assimilate mycelium parallel will"),
     }
     tasks = {
         "verify": "verify evidence and test safety",
         "repair": "repair broken systems",
         "fuse": "fuse architecture and connected systems",
+        "recognized_proof_control": "verified proof receipt passed",
+        "recognized_assimilation_control": "assimilate mycelium parallel will",
     }
     result = {}
+    wm = mods["word_math"]
     for label, text in tasks.items():
-        ranked = mind._rank_tool_semantic_profiles(semantic(mods, text), profiles)
+        mission_vector = semantic(mods, text)
+        ranked = mind._rank_tool_semantic_profiles(mission_vector, profiles)
         result[label] = {
             "top_match": (ranked.get("top_match") or {}).get("tool"),
+            "active_dimensions": sorted(wm.semantic_activation_vector(mission_vector)),
             "ranked": [
                 {"profile": v["tool"], "resonance": v["resonance_score"],
                  "coverage": v["mission_coverage"]}
                 for v in ranked.get("ranked_profiles", [])
             ],
         }
+    positive_winners = {r["top_match"] for r in result.values() if r["top_match"] is not None}
     return {"existing_link": "Word Math -> Four Mind tool-profile capability fit",
             "tasks": result,
-            "distinct_winners": len({r["top_match"] for r in result.values()}),
+            "distinct_positive_winners": len(positive_winners),
+            "unmatched_tasks": [name for name, r in result.items() if r["top_match"] is None],
+            "fixture_note": "The 2026-11-02 original count incorrectly included None as a distinct winner.",
             "proof_ceiling": "advisory ranking, not executor selection or outcome"}
 
 def probe_scribe_scope(mods: dict) -> dict:
@@ -230,6 +241,13 @@ def probe_structural_connected_policy(mods: dict) -> dict:
             "validation_connected_required": (plan.get("system_strategy") or {}).get("required"),
             "structural_radius": (plan.get("structural_blast_radius") or {}).get("level"),
             "structural_escalated": (plan.get("structural_blast_radius") or {}).get("escalated"),
+            "required_check_count": len(plan.get("required_checks") or []),
+            "cross_module_regression_required": (
+                "cross-module dependent regression verification" in (plan.get("required_checks") or [])
+            ),
+            "state_integrity_check_required": (
+                "state integrity check" in (plan.get("required_checks") or [])
+            ),
             "routing_integration_policy": route.get("system_integration_policy"),
             "word_math_activation": wm.semantic_activation_vector(semantic(mods, text)),
         }
@@ -250,15 +268,22 @@ def probe_bioelectric_daemon_candidate(mods: dict) -> dict:
     morph = mods["morphogenesis_grid"]
     target = "four_mind_to_pattern_fusion"
     outcomes = {}
+    wm = mods["word_math"]
     phrases = {
+        "neutral": "",
+        # Retain the earlier mistaken fixture as a documented unmatched control.
+        "unrecognized_hazard_control": "delete everything danger damage destructive",
+        # This text is inert data and contains real Word Math risk/destructive terms.
+        "recognized_hazard": "rm -rf all files with force",
         "proof": "verified tests proof evidence passed",
-        "hazard": "delete everything danger damage destructive",
     }
     for label, phrase in phrases.items():
+        packet = wm.extract_word_packet(phrase)
+        vector = wm.semantic_vector_from_words(packet)
         grid = morph.MorphogenesisGrid({target: ["neighbor"], "neighbor": [target]})
         grid.cells[target].voltage = 0.7
         grid.cells["neighbor"].voltage = 0.7
-        signal = grid.inject_semantic_stress(target, semantic(mods, phrase))
+        signal = grid.inject_semantic_stress(target, vector)
         grid.step(steps=12)
         after = grid.cells[target].voltage
         rows = {}
@@ -270,12 +295,31 @@ def probe_bioelectric_daemon_candidate(mods: dict) -> dict:
             daemons = myc._calculate_neurodaemon_swarm(
                 [], paths, semantic_environment=myc._mission_semantic_environment(phrase)
             )
+            assignments = [d["target_bridge"] for d in daemons]
             rows[str(gain)] = {
                 "derived_resistance": round(resistance, 6),
-                "assignments": [d["target_bridge"] for d in daemons],
-                "spawn_scores": [d["spawn_score"] for d in daemons],
+                "assignments": assignments,
+                "unique_target_count": len(set(assignments)),
+                "duplicate_target_count": len(assignments) - len(set(assignments)),
+                "spawn_scores_rounded": [d["spawn_score"] for d in daemons],
             }
-        outcomes[label] = {"semantic_signal": signal, "voltage": after, "gain_sweep": rows}
+        base = rows["0.0"]
+        for row in rows.values():
+            row["changed_assignment_count_from_no_adapter"] = sum(
+                a != b for a, b in zip(base["assignments"], row["assignments"])
+            )
+            row["unique_target_delta_from_no_adapter"] = (
+                row["unique_target_count"] - base["unique_target_count"]
+            )
+        outcomes[label] = {
+            "input": phrase,
+            "matched_risk_terms": list(packet.get("risk_terms") or []),
+            "matched_destructive_terms": list(packet.get("destructive_terms") or []),
+            "semantic_pressures": {
+                key: vector[key] for key in ("proof_pressure", "danger_pressure", "destructive_pressure")
+            },
+            "semantic_signal": signal, "voltage": after, "gain_sweep": rows,
+        }
     return {
         "existing_links": ["Word Math -> Morphogenesis semantic stress",
                             "Word Math -> Mycelial advisory semantic affinity"],

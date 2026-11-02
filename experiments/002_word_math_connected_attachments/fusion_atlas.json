@@ -5,7 +5,8 @@
     "lab_head": "e3b08828522ecf6e0ffb547b18dac5c32da42b18",
     "observation_type": "CONNECTED_GITHUB_SOURCE_READ",
     "live_local_worktrees": "UNKNOWN",
-    "user_report": "Some of these are already connected"
+    "user_report": "Some of these are already connected",
+    "latest_user_reported_execution_lab_head": "c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65"
   },
   "existing": [
     {
@@ -153,13 +154,31 @@
       "prediction": "An in-memory voltage-to-resistance adapter MAY alter Neurodaemon placement under parameter sweeps; result must justify any future integration",
       "test": "bioelectric_to_daemon_candidate",
       "novelty": "NEW_CANDIDATE_NOT_EXISTING_WIRING"
+    },
+    {
+      "id": "neutral_floor_bioelectric_polarity",
+      "grounding": "Word Math proof baseline 0.2, danger baseline 0.1; Bioelectric S = 0.5 proof - 0.6 danger - destructive.",
+      "prediction": "Neutral/unrecognized hazard control produce +0.04; recognized risk+destructive phrase should generate negative signal. Exact downstream voltage/placement must be measured.",
+      "test": "bioelectric_to_daemon_candidate",
+      "novelty": "FIXTURE_CORRECTION_AND_CROSS_ORGAN_POLARITY"
+    },
+    {
+      "id": "specialist_nulls_vs_recognized_language",
+      "grounding": "Previous Four Mind distinct_winners counted None as a winner; 'verify' and 'fuse' fixtures had no overlap under current Word Math terms.",
+      "prediction": "Counting non-null winners and adding registered-vocabulary positive controls will distinguish parsing coverage from the downstream ranking algorithm.",
+      "test": "four_mind_semantic_tool_fit",
+      "novelty": "EXPERIMENT_VALIDITY_REPAIR"
     }
   ],
   "proof": {
-    "source_only": true,
-    "runtime_observed": false,
+    "source_inspection": true,
+    "runtime_user_reported": true,
+    "runtime_independently_attested": false,
+    "original_hazard_fixture_invalid": true,
+    "new_runner_followup_executed": false,
+    "proven_production_uplift": false,
     "private_source_published": false,
-    "lab_modified": false,
-    "claims_of_upgrade": false
+    "lab_modified_by_this_experiment": false,
+    "note": "User-reported seven synthetic probe observations are summarized in FINDINGS.md. The current updated runner differs and requires execution; don't treat history as a fresh run."
   }
 }

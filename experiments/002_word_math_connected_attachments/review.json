@@ -1,60 +1,73 @@
 {
   "schema": "umd.playground.review.v1",
   "id": "002_word_math_connected_attachments",
-  "title": "Existing Word Math fusions: hidden downstream behavior",
-  "status": "ACTIVE",
+  "title": "Fusion discoveries: measured organ behavior and unexpected quirks",
+  "status": "REVIEW_READY",
   "question": "How do Word Math and Connected Systems First interact with already-connected Lab organs, and which interactions expose hidden downstream effects rather than duplicate wiring?",
-  "summary": "Current Lab source verifies extensive existing Word Math consumption. Seven controlled fusion-discovery probes now distinguish existing wired effects, socket visibility, and one explicitly experimental in-memory bioelectric→Neurodaemon edge. Runtime effects of the new probe are NOT YET MEASURED.",
+  "summary": "Cody ran seven real private-Lab module probes from Termux at c8c7634d84a7 (user-provided execution output). Existing Word Math changed Neurodaemon semantic affinity without changing placements; a temporary bioelectric adapter shifted one placement while reducing distinct target coverage 5→4. Structural context escalated Validation independently of text-only Routing. The original negative-stress fixture and Four Mind winner count were flawed; corrected follow-up controls are prepared but NOT RUN.",
   "evidence": [
     {
-      "kind": "LIVE_PRIVATE_SOURCE_INSPECTION",
-      "environment": "Connected GitHub read of private Lab master e3b08828522ecf6e0ffb547b18dac5c32da42b18",
-      "observation": "Verified direct Word Math consumers beyond the four consumers declared by the semantic-vector socket. The registry is not a complete call graph.",
-      "source": "fusion_atlas.json"
+      "kind": "USER_REPORTED_REAL_LAB_EXECUTION",
+      "environment": "Authenticated Termux private Lab master c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65, synthetic probes (user-provided output)",
+      "observation": "Seven individual probes reported OBSERVED. This is genuine user-reported module execution, not an independent device attestation or a production mission.",
+      "source": "observations_2026-11-02.json"
     },
     {
-      "kind": "SOURCE_LEVEL_CAUSAL_OBSERVATION",
-      "environment": "Private Lab source: mycelial_pattern_fusion.py, exact master version",
-      "observation": "Neurodaemon spawn_score uses bridge_need, proof safety, mind fit, creativity and density; Word Math semantic_affinity is recorded separately. Actual runtime effects remain to be tested.",
-      "source": "fusion_atlas.json"
+      "kind": "OBSERVED_QUIRK_NO_UPLIFT",
+      "environment": "Neurodaemon and temporary bioelectric fusion comparisons",
+      "observation": "Word Math affinity changed with fixed placements. Candidate adapter changed one of five placements but reduced distinct bridge targets from five to four; no higher rounded spawn scores were observed.",
+      "source": "FINDINGS.md"
     },
     {
-      "kind": "UNEXECUTED_RUNTIME_HARNESS",
-      "environment": "New public Python harness invokes private Lab modules only on an authenticated host",
-      "observation": "Seven comparative cases authored; no private Lab runtime observations or uplift claims yet.",
-      "source": "probe_fusions.py"
+      "kind": "OBSERVED_STRUCTURAL_AND_AUTHORITY_EFFECTS",
+      "environment": "Validation, Routing, Scribe, Zero Point, Socket Registry/Fabric in real isolated synthetic execution",
+      "observation": "Validation tier became DEEP for a high-radius simple task while Routing policy stayed text-stable. Scribe preserved 4/4 semantic handoffs; an attempt to escalate Word Math socket authority/proof was rejected.",
+      "source": "observations_2026-11-02.json"
+    },
+    {
+      "kind": "FIXTURE_DEFECT_SOURCE_DIAGNOSIS",
+      "environment": "Read of exact Lab Word Math + bioelectric source and user-reported numbers",
+      "observation": "Original hazard text did not match registered risk/destructive phrases; its +0.04 signal equals the neutral semantic pressure calculation. Corrected negative-stress input and transparent signal fields have NOT been executed.",
+      "source": "FINDINGS.md"
     }
   ],
   "limitations": [
-    "Private Lab host/runtime and local uncommitted work remain inaccessible from this GitHub-connected conversation.",
-    "No authenticated private Lab runtime probe has executed in this turn.",
-    "Direct imports and function calls do not prove a signal influences later project behavior or learning.",
-    "Bioelectric-to-Neurodaemon resistance mapping exists ONLY in the experimental probe and uses swept, uncalibrated gains.",
-    "The source inventory is targeted rather than a complete 5,000+ path organism census."
+    "User-provided Termux output was truncated at the last record; all seven individual states were OBSERVED, but the top-level runner status and exact public runner revision were not visible.",
+    "Candidate fusion affected synthetic placement but reduced target diversity; no measured production improvement or later project consumer outcome.",
+    "Original 'hazard' input was not recognized as destructive/risk and cannot support a negative-stress comparison; updated harness requires a new run.",
+    "Four Mind distinct_winners=2 counted null; only one positive actual specialist winner occurred in the original three tasks.",
+    "Direct call/import observations do not prove the later Lab used the results, changed behavior in a real mission, or learned from them.",
+    "Private Lab working tree, active agents, and non-GitHub runtime state remain UNKNOWN; no direct Lab writes were made by the Playground update."
   ],
   "next_actions": [
-    "Compare Connected Systems First structural-radius validation against Routing posture and Word Math testimony, without pretending they already share one decision path.",
-    "Run the five comparative probes against a clean private Lab master checkout and inspect observed vs unchanged consumer outputs.",
-    "Investigate whether semantic affinity is intentionally descriptive or under-consumed before proposing any Neurodaemon change.",
-    "Compare typed socket declarations against actual signal consumers, without inventing missing integrations.",
-    "Exercise the actual socket compatibility and obligation compiler, preserving authority/proof ceilings when testing candidate joins.",
-    "Where an experimental adapter changes real results, test on a controlled Lab workload and isolate whether the effect survives a later consumer.",
-    "Keep all improvements in Playground until Cody selects specific research for staging."
+    "Run the updated seven-probe harness with recognized destructive/risk phrasing and neutral/unmatched controls; inspect semantic pressures, voltage sign, bridge coverage and target switches.",
+    "Compare Four Mind recognized and unrecognized proof/fusion terms; count only non-null positive specialist winners before inferring a gap.",
+    "Trace downstream consumption of validation's structural radius and required flags versus Routing's text-only policy.",
+    "Check raw unrounded bridge candidate scores and diversity under varied synthetic topologies before advocating any production voltage-to-resistance fusion.",
+    "Only consider real Lab staging after Cody reviews the measured gains and explicitly selects scope."
   ],
   "recommended_action": "IMPROVE",
-  "recommendation_reason": "A source-grounded corrected experiment exists; the next evidence is real downstream execution, not redundant connection work.",
+  "recommendation_reason": "True organ interactions were observed, but the novel adapter currently reduced diversity and an input-fixture flaw invalidated the intended hazard comparison. A corrected controlled rerun is needed before promotion.",
   "files": [
     {
-      "path": "README.md",
-      "label": "Corrected experimental objective and protocol"
+      "path": "FINDINGS.md",
+      "label": "Detailed observed results, caveats, and promising quirks"
+    },
+    {
+      "path": "observations_2026-11-02.json",
+      "label": "Source-attributed structured metrics from Termux"
     },
     {
       "path": "fusion_atlas.json",
-      "label": "Verified existing connections and falsifiable fusion hypotheses"
+      "label": "Existing connections and testable capabilities"
     },
     {
       "path": "probe_fusions.py",
-      "label": "Five existing-organ comparative probes"
+      "label": "Corrected real-organ follow-up harness"
+    },
+    {
+      "path": "README.md",
+      "label": "Experiment instructions and authority boundaries"
     }
   ],
   "issue_number": null
