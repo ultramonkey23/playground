@@ -4,8 +4,14 @@
   "title": "Fusion discoveries: measured organ behavior and unexpected quirks",
   "status": "REVIEW_READY",
   "question": "How do Word Math and Connected Systems First interact with already-connected Lab organs, and which interactions expose hidden downstream effects rather than duplicate wiring?",
-  "summary": "Published corrected real-module run on private Lab master a08c9619ba60: 7/7 synthetic probes OBSERVED. Recognized destructive input now yields −1.0 bioelectric signal, dropping voltage below native grid's 0.25 critical threshold. An experimental voltage→bridge-resistance adapter raises the fifth daemon spawn score under damage but reduces distinct target coverage 5→4 under neutral/proof. Four Mind reports three real positive matches with recognized terms. These are measured synthetic effects, not proven production improvements.",
+  "summary": "Source-corrected review: 7/7 synthetic probes OBSERVED on Lab master a08c9619ba60. The proposed health-aware repair fusion was NOT a discovered gap: existing Morphogenesis→Physarum edge modulation, Mycelial evidence routing, watchdog→metabolic reflex→immune repair, and outcome feedback were already implemented. Novel voltage→bridge-resistance adapter remains a synthetic alternative, not proven improvement. Native runtime activation and downstream results are UNKNOWN.",
   "evidence": [
+    {
+      "kind": "CORRECTED_EXISTING_ORGAN_OWNERS",
+      "environment": "Targeted live GitHub read of private Lab master a08c9619ba606e972dbcfb99f898cc3a5c69bfed",
+      "observation": "Found an existing optional Morphogenesis Grid input to Physarum edge flow, restorative/quarantine Grid behavior, and watchdog→metabolic_reflex→immune_repair plus outcome-feedback consumers. The inspected main Physarum convergence call omits that optional grid and watchdog auto_reflex defaults false; actual active runtime configuration remains UNKNOWN. Neurodaemon self-check intentionally keeps semantic affinity advisory.",
+      "source": "FINDINGS_LATEST.md"
+    },
     {
       "kind": "ANALYZED_PUBLISHED_RUNTIME_RESULT",
       "environment": "Public Playground latest_results.json, Lab master a08c9619ba606e972dbcfb99f898cc3a5c69bfed, confirmed GitHub source files",
@@ -44,22 +50,21 @@
     }
   ],
   "limitations": [
-    "All seven probes returned OBSERVED in the authenticated published result, which means Python observations were generated, not that a real project or later Lab consumer improved.",
-    "Publication was authenticated through the user's public GitHub workflow but private runtime execution was not independently attested. The Lab's non-GitHub local and active-agent state remain UNKNOWN.",
-    "The temporary voltage-to-bridge-resistance mapping is not Lab production wiring and is not calibrated to real repair outcomes.",
-    "Raw competing Neurodaemon scores, actual traffic isolation, real repair dispatch and adaptation/learning remain unmeasured.",
-    "Typed socket registry membership and direct source imports describe different graphs; neither is automatically a full live execution trace.",
-    "Recognized hazard voltage falls below the existing native critical threshold, but the native quarantine method was not executed as part of this fusion probe."
+    "The earlier 'health-aware repair prioritization' upgrade recommendation was not based on adequate whole-system source recovery and is withdrawn.",
+    "The synthetic voltage→bridge-resistance adapter does NOT provide evidence that a new repair capability is needed; existing native Grid→Physarum and watchdog→immune systems were not used as comparator baselines.",
+    "Current main Physarum convergence source omits the optional bioelectric grid argument, and watchdog's auto_reflex flag defaults false; what live hosts, active agents and other consumers actually enable is UNKNOWN.",
+    "The Neurodaemon semantic-affinity/score separation is an explicit tested intention of the current source, not evidence of an accidental disconnection.",
+    "Seven published synthetic probe functions returned OBSERVED; they do not establish real project repair, routing improvement, or learning.",
+    "The public publication is authenticated; local private Lab execution and non-GitHub active state have not been independently inspected."
   ],
   "next_actions": [
-    "Experimentally compare existing native bioelectric edge modulation and Mycelial repair prioritization, including independent and combined controls on synthetic topology; do not modify Lab organs.",
-    "Instrument raw and runner-up Neurodaemon scores around the assignment switch, plus diversity/congestion and downstream repair outcomes.",
-    "Trace structural-radius validation escalation into actual execution/validation consumers before adding another policy connection.",
-    "Compare recognized and unmatched Four Mind semantics on real bounded selection outcomes; expand only proven missing coverage.",
-    "Review the measured findings and decide whether any bounded research should be staged to Lab. No automatic extraction."
+    "Preserve the corrected measurements and review only; do not change Lab organs or contracts based on this experiment.",
+    "Any future inference about fusion novelty must first examine existing Grid→Physarum, Mycelial routing, watchdog→metabolic reflex→immune repair, and outcome-feedback owners plus actual consumers.",
+    "Before interpreting runtime underactivation, inspect real process configurations, local worktrees and active agent work; GitHub source alone cannot establish those facts.",
+    "Only stage specific Playground research if Cody explicitly authorizes extraction after review."
   ],
-  "recommended_action": "IMPROVE",
-  "recommendation_reason": "The corrected run establishes real synthetic polarity and cross-organ leverage, but beneficial downstream outcomes and safe coordination remain unproven.",
+  "recommended_action": "REVIEW",
+  "recommendation_reason": "Prior upgrade proposal was made without inspecting existing native repair/health-routing machinery. Current evidence supports review of synthetic behavior only, not a new integration recommendation.",
   "files": [
     {
       "path": "FINDINGS_LATEST.md",

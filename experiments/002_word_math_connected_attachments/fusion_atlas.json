@@ -94,6 +94,27 @@
       "code_evidence": "Validation can escalate proof checks using structural_context; Routing sets integration policy from task posture.",
       "classification": "IMPLEMENTED_POLICY_NOT_PROVEN_WORD_MATH_COUPLING",
       "next": "Compare same task with leaf vs cross-organ structure; compare with Word Math signals without assuming feed-forward consumption."
+    },
+    {
+      "pathway": "Morphogenesis Grid → Physarum edge-flow modulation",
+      "owner": "labcore/physarum_router.py and labcore/morphogenesis_grid.py",
+      "code_evidence": "physarum_step accepts bioelectric_grid and multiplies edge flow by grid.bioelectric_edge_modulation. run_physarum_convergence currently calls physarum_step without passing the optional grid.",
+      "classification": "SOURCE_VERIFIED_OPTIONAL_EXISTING_FUSION_RUNTIME_ACTIVATION_UNKNOWN",
+      "next": "Inspect real callers/active agent workloads before treating as underactivated or missing"
+    },
+    {
+      "pathway": "Watchdog → Metabolic Reflex → Immune Repair",
+      "owner": "labcore/runtime_watchdog.py, labcore/metabolic_reflex.py, labcore/immune_repair.py",
+      "code_evidence": "watchdog conditional auto_reflex dispatches metabolic_reflex which calls immune_repair_loop; auto_reflex default false.",
+      "classification": "SOURCE_VERIFIED_EXISTING_EXECUTION_CHAIN_OPT_IN",
+      "next": "Do not duplicate; local enablement and real repair outcomes UNKNOWN"
+    },
+    {
+      "pathway": "Path Feedback → evidence-weighted Mycelial route selection",
+      "owner": "labcore/path_feedback_loop.py, labcore/mycelial_routing.py",
+      "code_evidence": "deposit_outcome_feedback records outcome signals; read_route_health influences Mycelial route fitness and safety penalties.",
+      "classification": "SOURCE_VERIFIED_EXISTING_FEEDBACK_CONSUMPTION",
+      "next": "Actual per-project runtime feedback and outcomes UNKNOWN"
     }
   ],
   "socket_context": {
@@ -153,9 +174,9 @@
     {
       "id": "bioelectric_routing_candidate",
       "grounding": "Morphogenesis has semantic-stress injection; Mycelial has independently scored bridge resistance",
-      "prediction": "An in-memory voltage-to-resistance adapter MAY alter Neurodaemon placement under parameter sweeps; result must justify any future integration",
+      "prediction": "The synthetic adapter changed one advisory target under certain gains; it was NOT compared against existing Grid→Physarum modulation, Mycelial routing or watchdog→immune consumers.",
       "test": "bioelectric_to_daemon_candidate",
-      "novelty": "NEW_CANDIDATE_NOT_EXISTING_WIRING"
+      "novelty": "TEMPORARY_ALTERNATIVE_ADAPTER_NOT_AN_ABSENT_REPAIR_CAPABILITY"
     },
     {
       "id": "neutral_floor_bioelectric_polarity",
@@ -181,6 +202,6 @@
     "proven_production_uplift": false,
     "private_source_published": false,
     "lab_modified_by_this_experiment": false,
-    "note": "Latest 7/7 corrected synthetic probes published on Playground master; distinct-target decline for proof and potential native critical-voltage/repair-need complement are observed/inferred respectively. Runtime outcome and real downstream consumers remain UNKNOWN."
+    "note": "Source correction: prior health-aware repair prioritization recommendation withdrawn. Existing native Morphogenesis→Physarum, Mycelial evidence routing, immune reflex and outcome feedback were not inspected before recommending it. The synthetic adapter does not demonstrate an absent capability. Runtime activation remains unknown."
   }
 }

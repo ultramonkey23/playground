@@ -7,6 +7,25 @@
 - **Execution:** seven of seven probe records have `state=OBSERVED`; overall `status=OBSERVED`. That means seven Python probe functions returned observations from an authenticated user-hosted run. These are *not* seven independent end-to-end integration successes. The public GitHub commit authenticates publication, not the private Termux process or unseen local runtime.
 - **Mutations:** the run reported `explicit_lab_write_operations=0` and `private_source_in_output=false`. No private Lab modification or live consumer adoption was demonstrated. Lab local state beyond the reported clean temporary checkout remains UNKNOWN.
 
+## Corrective source audit — important, supersedes the upgrade recommendation
+
+**This report originally proposed “health-aware repair prioritization” and a quarantine/repair dual-channel integration as though the Lab did not already own comparable capabilities. That conclusion was not grounded in the relevant whole Lab. Withdraw the recommendation.** The source-level recovery below identifies existing owners and actual consumer seams; it is a **targeted** audit, not full live runtime attestation.
+
+Source read on private Lab `master` at `a08c9619ba606e972dbcfb99f898cc3a5c69bfed`:
+
+| Existing owner | Verified behavior and source location | Execution ceiling |
+| --- | --- | --- |
+| `labcore/morphogenesis_grid.py` | `bioelectric_edge_modulation` quarantines critically low-voltage edges at multiplier 0.05, boosts flux through moderately damaged tissue, and leaves healthy edges at baseline. `step` also maintains local repair alarms and restorative dynamics. | Implemented function and existing unit tests; actual use requires a caller. |
+| `labcore/physarum_router.py` | `physarum_step(..., bioelectric_grid=None)` **already multiplies edge flow by the Grid's bioelectric modulation** when a grid is supplied. This is the existing Grid→Physarum fusion hook I missed. | The inspected default `run_physarum_convergence` loop calls `physarum_step` **without** the optional grid, and code search found no other passing callsite. This establishes the *inspected call path's* behavior, not what inaccessible active agents execute. |
+| `labcore/mycelial_routing.py` | Existing selection path consumes Physarum convergence and combines mastery, outcome reliability, route-health memory and failure/integrity penalties. | Source-consumer evidence; no independent currently-running executor trace. |
+| `labcore/runtime_watchdog.py` → `labcore/metabolic_reflex.py` → `labcore/immune_repair.py` | Existing nervous→immune chain triages watchdog abnormalities, gates repairability and authority, dispatches bounded repair, validates outcomes, and records repair evidence. The watchdog loop has an explicit `auto_reflex` flag. | Actual function-call path exists, but `auto_reflex=False` is its declared default; which running processes enable it remains UNKNOWN. |
+| `labcore/path_feedback_loop.py` | Existing `deposit_outcome_feedback` and `read_route_health` preserve proof-backed success, danger and congestion evidence for route-family and route-specific adaptation. | A real evidence-consumer and persistence path exists; no claim of specific local runtime activity. |
+| `labcore/mycelial_pattern_fusion.py` | The Neurodaemon self-check explicitly asserts `neurodaemon_semantics_do_not_change_spawn_equation_yet` and says semantic testimony remains **observational until runtime calibration earns control influence**. Spawn scoring already uses measured bridge need and inverse daemon density. | Intentional contract, not an accidentally unwired semantic signal. |
+
+**Reinterpretation of the published seven-probe run:** The `voltage → invented bridge resistance → Neurodaemon score` adapter is an isolated **alternative experimental mapping**, not discovery of an absent repair-prioritization capability. The recorded voltage, assignment and target-diversity effects remain valid within that synthetic setup. They do **not** prove production advancement, absence of comparable Lab machinery, or a missing bridge that should be added. Prior comparison of this adapter to an empty baseline omitted the Lab's existing Grid→Physarum and watchdog→immune owners; therefore it is **not** an upgrade comparison against the real architecture.
+
+Do not replace, connect around, or tune these owners based on this Playground exercise. Before drawing any new integration conclusions, independently inspect the current live callsites, runtime inputs and downstream consumers (including active agent work inaccessible over GitHub), and compare against the **existing** integrated pathways. No change to Lab contracts is warranted from this result.
+
 ## Measured outcomes
 
 | Experiment | Measured fact | Meaning and proof ceiling |
@@ -35,16 +54,11 @@ No tuning coefficients have been outcome-calibrated. The run tested gain 0, 0.5,
 
 For recognized hazard, the fifth daemon's rounded spawn score increases with gain: **1.35 at 0; 1.66 at 0.5; 1.98 at 1; 2.61 at 2**, without moving its target. At gains above zero, recognized proof and neutral move the fifth daemon to an already occupied bridge, leaving only four unique targets (the target-count metric decreases). Those target moves are observations; no objective utility improvement is proven. The 1.35→1.35 constancy for proof with a changed target also makes raw candidate score margins and deterministic tie-break order worth instrumenting before drawing a stronger conclusion.
 
-## Unexpected native physiology junction (inferred, not executed together)
+## Existing native physiology junction — source verified (earlier inference withdrawn)
 
 The actual `MorphogenesisParameters.v_critical` is **0.25**. The corrected hazard's simulated node voltage is **0.233981**, below that critical threshold. The existing `bioelectric_edge_modulation` code returns **0.05** for an edge whose minimum endpoint voltage is at or below 0.25. That quarantine function **was not called by this fusion experiment**; 0.05 is a source-derived *predicted output*, not another observed case.
 
-At the same time, the temporary adapter increased the targeted bridge's perceived *repair need*, and Mycelial's existing `_calculate_neurodaemon_swarm` formula multiplies bridge need into spawn score. This suggests a possible **damage-response duality**:
-
-1. Quarantine or suppress *ordinary traffic* over a critically unhealthy edge.
-2. Increase *advisory repair attention* to that region, on a separate safe repair path.
-
-Whether these can be coordinated, avoid feedback oscillations and actually repair the edge rather than overload it remains UNKNOWN. Do not combine or change their authority and proof contracts based solely on this observation.
+The earlier analysis **incorrectly presented this as a new dual-channel fusion opportunity without recovering existing consumers**. The native Grid→Physarum edge-modulation hook and watchdog→immune repair chain already exist (see corrective audit above). The artificial adapter changed a Neurodaemon *advisory* score, not native repair assignment, and it has not been compared to those actual mechanisms. Whether the optional Physarum grid hook is activated in specific current runtimes, and how repair execution responds to it, remain UNKNOWN.
 
 ## Additional quirks
 
@@ -52,12 +66,12 @@ Whether these can be coordinated, avoid feedback oscillations and actually repai
 - **Semantic coverage versus ranking power.** `verify` and `fuse` had zero above-neutral dimensions in the specific tested phrases, while recognized proof, repair and assimilation terms matched profiles. That supports a lexical/corpus coverage question, *not* a conclusion that Four Mind's matching engine is broken or needs a replacement.
 - **Two planning views, one task.** Validation's structural context was sufficient to raise the tier and add checks; Routing's integration policy remained based on the task text. This may be intentional separation of roles. The decisive next question is whether the downstream executor reads and obeys the validation plan, not whether two fields carry identical strings.
 
-## What to investigate before recommending an upgrade
+## Revised evidence ceiling
 
-1. On a **temporary synthetic in-memory graph**, call the existing bioelectric edge-modulation function at each measured voltage. Compare pure quarantine, pure repair priority, and combined routing **without replacing existing production laws**. Trace authority and actual consumer behavior.
-2. Instrument **raw scores and second-best candidates** for the Mycelial fifth-daemon decision. Compare task completion, safe repair allocation, diversity and congestion under several topologies—not just score magnitude.
-3. Trace a real bounded Validation/Connected Systems First plan to the next consumer: is the `DEEP` escalation used for execution checks? Observe consumption before proposing additional integration.
-4. Test recognized and natural-language paraphrases in Four Mind to separate token coverage, semantic event scope, and downstream ranking.
-5. No private Lab adoption or extraction without Cody's explicit direct decision after reviewing causal evidence.
+- The published seven-probe measurements demonstrate synthetic differences in existing semantic and scoring functions. They do not establish an absent repair capability or a beneficial new fusion.
+- Native Grid→Physarum coupling, adaptive Mycelial routing, watchdog/metabolic-reflex/immune-repair and outcome feedback **already exist** in current source. Do not treat them as new implementation requirements.
+- Specific activation of the optional bioelectric Grid argument in real Physarum convergence, watchdog auto-reflex configuration, agent activity and downstream repair outcomes remain **UNKNOWN** without live execution evidence.
+- The Neurodaemon semantic-affinity/score separation is intentional in its own current self-check. Do not presume it should drive placement.
+- No Lab mutations, new adapters or new agent contracts are justified by the measured experiment.
 
-**Overall assessment:** The public publication workflow is functioning. Existing Lab circuits show genuine differentiated behavior under synthetic tests. The new adapter has demonstrated leverage but has **not** demonstrated beneficial integration. Keep it experimental.
+**Corrected assessment:** The public publish/review workflow works. The experiment is valid as a bounded synthetic study but did **not** discover a need for “health-aware repair prioritization.” The earlier upgrade suggestion is withdrawn.

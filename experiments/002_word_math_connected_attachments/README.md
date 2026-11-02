@@ -1,5 +1,8 @@
 # Word Math × Lab connected-organ fusion discovery
 
+> **Correction following live Lab-source inspection:** The prior suggestion to add health-aware repair prioritization was redundant. The Lab already owns native Morphogenesis→Physarum bioelectric flow modulation, Mycelial evidence-weighted routing, watchdog→metabolic reflex→immune repair, and outcome-feedback loops. See [FINDINGS_LATEST.md](FINDINGS_LATEST.md). The new adapter in this folder is a *synthetic alternative probe*, not a new necessary organ. Its effect is not proof of improvement. Actual runtime activation of optional callpaths remains UNKNOWN.
+
+
 **Corrected objective:** Discover what the Lab's existing Word Math connections *actually do* to other organs, where multiple connections interact, what behavior they leave unchanged, and whether a genuinely new connection could unlock a useful effect. **Do not propose wiring that already exists.**
 
 ## Existing connections first
