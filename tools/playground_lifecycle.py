@@ -14,7 +14,6 @@ import hashlib
 import json
 import re
 import subprocess
-from datetime import datetime, timezone
 from pathlib import PurePosixPath
 
 PLAYGROUND = "ultramonkey23/Bone-bracket"
@@ -66,7 +65,7 @@ def validate_selection(items: list[str]) -> list[str]:
     result = []
     for item in items:
         path = PurePosixPath(item)
-        if path.is_absolute() or len(path.parts) < 1 or any(p in (".", "..", "") for p in path.parts) or "\\" in item:
+        if path.is_absolute() or len(path.parts) < 1 or any(p in (".", "..", "") for p in path.parts) or "\\" in item or path.as_posix() != item:
             raise LifecycleError(f"unsafe selected path: {item!r}")
         if item not in result:
             result.append(item)
@@ -96,11 +95,14 @@ def read_bytes(repo: str, path: str, sha: str, *, max_bytes: int = MAX_FILE) -> 
     if int(file.get("size", 0)) > max_bytes:
         raise LifecycleError(f"{path}: exceeds {max_bytes} byte limit")
     try:
-        result = base64.b64decode(file["content"], validate=False)
+        result = base64.b64decode("".join(file["content"].split()), validate=True)
     except (ValueError, KeyError) as exc:
         raise LifecycleError(f"{path}: malformed base64") from exc
-    if len(result) > max_bytes:
-        raise LifecycleError(f"{path}: decoded content too large")
+    if len(result) > max_bytes or len(result) != file.get("size"):
+        raise LifecycleError(f"{path}: decoded bytes differ from GitHub file size")
+    git_blob_sha = hashlib.sha1(b"blob " + str(len(result)).encode("ascii") + b"\\0" + result).hexdigest()
+    if file.get("sha") != git_blob_sha:
+        raise LifecycleError(f"{path}: content does not match Git blob SHA")
     return result
 
 
@@ -112,11 +114,10 @@ def build_packet(exp_id: str, head: str, files: list[tuple[str, bytes]], *,
     fields = (question, author, consumer, findings, limitations, next_action, proof)
     if any(not value.strip() for value in fields):
         raise LifecycleError("research question, author, consumer, findings, limitations, next action and proof are required")
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     chunks = [f"# Playground extraction — {exp_id}", "",
               f"- **Topic / local question:** {question}",
               f"- **Author/model/provider as claimed:** {author}",
-              f"- **Extracted at UTC:** {now}",
+              "- **Packet identity:** deterministic by source SHA, selected bytes and operator fields; GitHub commit records staging time",
               f"- **Source:** https://github.com/{PLAYGROUND}/tree/{head}/experiments/{exp_id}",
               f"- **Exact source revision:** `{head}`",
               f"- **Intended Lab owner / consumer:** {consumer}",
@@ -144,6 +145,7 @@ def build_packet(exp_id: str, head: str, files: list[tuple[str, bytes]], *,
 
 
 def load_selection(exp_id: str, head: str, selected: list[str]) -> list[tuple[str, bytes]]:
+    validate_id(exp_id)
     _, tree = get_tree(PLAYGROUND, head)
     all_files = {t["path"] for t in tree if t.get("type") == "blob"}
     result = []
@@ -157,6 +159,9 @@ def load_selection(exp_id: str, head: str, selected: list[str]) -> list[tuple[st
 
 def remove_experiment(exp_id: str, expected_head: str, reason: str) -> str:
     """Delete files from current master without rewriting history or touching siblings."""
+    validate_id(exp_id)
+    if not reason.strip():
+        raise LifecycleError("retirement requires a reason")
     if get_head(PLAYGROUND) != expected_head:
         raise LifecycleError("Playground master moved; do not delete under a stale snapshot")
     tree_sha, entries = get_tree(PLAYGROUND, expected_head)
@@ -178,6 +183,46 @@ def remove_experiment(exp_id: str, expected_head: str, reason: str) -> str:
     return commit
 
 
+
+def status() -> dict:
+    """Live, read-only branch status suitable for mobile handoff."""
+    head = get_head(PLAYGROUND)
+    _, tree = get_tree(PLAYGROUND, head)
+    experiments: dict[str, dict] = {}
+    for item in tree:
+        path = str(item.get("path", ""))
+        bits = path.split("/")
+        if len(bits) < 3 or bits[0] != "experiments" or item.get("type") != "blob":
+            continue
+        if not ID_RE.fullmatch(bits[1]):
+            continue
+        entry = experiments.setdefault(bits[1], {"id": bits[1], "files": 0, "bytes": 0})
+        entry["files"] += 1
+        entry["bytes"] += int(item.get("size") or 0)
+    return {"result": "READ_ONLY", "repo": PLAYGROUND, "branch": BRANCH,
+            "head": head, "active_experiments": sorted(experiments.values(), key=lambda e: e["id"]),
+            "note": "GitHub reports current branch bytes, not execution or owner approval"}
+
+
+def preview(args: argparse.Namespace) -> dict:
+    """Owner-reviewable exact source selection; no Lab write or Playground deletion."""
+    head = get_head(PLAYGROUND)
+    if head != args.expected_head:
+        raise LifecycleError("Playground master differs from supplied expected HEAD")
+    selected = load_selection(args.id, head, validate_selection(args.select))
+    packet = build_packet(args.id, head, selected, question=args.question, author=args.author,
+                          consumer=args.consumer, findings=args.findings, limitations=args.limitations,
+                          next_action=args.next_action, proof=args.proof)
+    return {"result": "PREVIEW_ONLY_NO_MUTATION", "source_head": head,
+            "selected": [{"path": p, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+                         for p, data in selected],
+            "packet_sha256": hashlib.sha256(packet.encode("utf-8")).hexdigest(),
+            "packet_bytes": len(packet.encode("utf-8")),
+            "lab_destination": f"{INGEST}/playground_{args.id}_{head[:12]}.md",
+            "approval": "REQUIRES_DIRECT_CODY_EXTRACTION_COMMAND",
+            "no_write_performed": True}
+
+
 def extract(args: argparse.Namespace) -> dict:
     if not args.owner_approved:
         raise LifecycleError("explicit Cody authorization required; --owner-approved acknowledges external approval, not proof of identity")
@@ -189,26 +234,36 @@ def extract(args: argparse.Namespace) -> dict:
                           consumer=args.consumer, findings=args.findings, limitations=args.limitations,
                           next_action=args.next_action, proof=args.proof)
     dest = f"{INGEST}/playground_{args.id}_{head[:12]}.md"
+    # Confirm the current Lab research intake owner exists. This is a staging-only write.
+    read_bytes(LAB, f"{INGEST}/README.md", BRANCH)
+    packet_bytes = packet.encode("utf-8")
+    lab_commit = None
+    resumed = False
     try:
-        api("GET", f"repos/{LAB}/contents/{dest}?ref={BRANCH}")
+        existing = read_bytes(LAB, dest, BRANCH, max_bytes=MAX_PACKET)
     except GitHubNotFound:
-        pass
+        existing = None
+    if existing is None:
+        encoded = base64.b64encode(packet_bytes).decode("ascii")
+        lab_commit = api("PUT", f"repos/{LAB}/contents/{dest}",
+                         {"message": f"Stage Cody-selected Playground experiment {args.id}",
+                          "content": encoded, "branch": BRANCH})["commit"]["sha"]
+    elif existing == packet_bytes:
+        # Recovery after an earlier successful write but failed network/cleanup.
+        # An existing identical packet is safe to verify and finish retiring.
+        resumed = True
     else:
-        raise LifecycleError("Lab destination already exists; stop for independent reconciliation")
-    encoded = base64.b64encode(packet.encode("utf-8")).decode("ascii")
-    lab_commit = api("PUT", f"repos/{LAB}/contents/{dest}",
-                     {"message": f"Stage Cody-selected Playground experiment {args.id}",
-                      "content": encoded, "branch": BRANCH})["commit"]["sha"]
+        raise LifecycleError("Lab destination already exists with DIFFERENT bytes; refuse overwrite")
     readback = read_bytes(LAB, dest, BRANCH, max_bytes=MAX_PACKET)
-    if readback != packet.encode("utf-8"):
+    if readback != packet_bytes:
         raise LifecycleError("Lab readback does not match; Playground remains active")
     try:
         retired = remove_experiment(args.id, head, "verified Cody-selected extraction")
     except LifecycleError as exc:
         return {"result": "PARTIAL_LAB_WRITTEN_PLAYGROUND_STILL_ACTIVE", "lab_commit": lab_commit,
-                "lab_path": dest, "error": str(exc)}
+                "lab_path": dest, "resumed": resumed, "error": str(exc)}
     return {"result": "EXTRACTED_AND_RETIRED", "lab_commit": lab_commit,
-            "lab_path": dest, "playground_commit": retired}
+            "lab_path": dest, "resumed": resumed, "playground_commit": retired}
 
 
 def discard(args: argparse.Namespace) -> dict:
@@ -224,23 +279,31 @@ def discard(args: argparse.Namespace) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Disposable GitHub Playground: one-way Cody-approved Lab extraction")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("extract", "discard"):
+    sub.add_parser("status", help="read-only list of current master experiments")
+    for name in ("extract", "preview", "discard"):
         p = sub.add_parser(name)
         p.add_argument("id", type=validate_id)
         p.add_argument("--expected-head", required=True, help="exact 40-character current Playground master SHA")
-    e = sub.choices["extract"]
-    e.add_argument("--owner-approved", action="store_true", help="acknowledges explicit Cody authorization in the initiating interaction")
-    e.add_argument("--select", action="append", required=True, help="experiment-relative file; repeat for each approved source")
-    for option in ("question", "author", "consumer", "findings", "limitations", "next-action", "proof"):
-        e.add_argument("--" + option, required=True)
+    sub.choices["extract"].add_argument("--owner-approved", action="store_true",
+        help="acknowledges explicit Cody authorization in the initiating interaction")
+    for name in ("preview", "extract"):
+        e = sub.choices[name]
+        e.add_argument("--select", action="append", required=True,
+                       help="experiment-relative file; repeat for each approved source")
+        for option in ("question", "author", "consumer", "findings", "limitations", "next-action", "proof"):
+            e.add_argument("--" + option, required=True)
     sub.choices["discard"].add_argument("--reason", required=True)
     args = parser.parse_args()
     try:
-        if not SHA_RE.fullmatch(args.expected_head):
-            raise LifecycleError("invalid --expected-head")
-        result = extract(args) if args.command == "extract" else discard(args)
+        if args.command == "status":
+            result = status()
+        else:
+            if not SHA_RE.fullmatch(args.expected_head):
+                raise LifecycleError("invalid --expected-head")
+            result = (preview(args) if args.command == "preview" else
+                      extract(args) if args.command == "extract" else discard(args))
         print(json.dumps(result, sort_keys=True, indent=2))
-        return 0 if result["result"] in ("EXTRACTED_AND_RETIRED", "DISCARDED_FROM_ACTIVE_BRANCH") else 2
+        return 0 if result["result"] in ("EXTRACTED_AND_RETIRED", "DISCARDED_FROM_ACTIVE_BRANCH", "READ_ONLY", "PREVIEW_ONLY_NO_MUTATION") else 2
     except (LifecycleError, KeyError, TypeError, ValueError) as exc:
         print(json.dumps({"result": "BLOCKED", "error": str(exc)}, sort_keys=True))
         return 1
