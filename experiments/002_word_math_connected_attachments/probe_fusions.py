@@ -155,7 +155,8 @@ def probe_socket_visibility(mods: dict, root: Path) -> dict:
         found = any(
             isinstance(n, ast.ImportFrom)
             and ((n.module == "labcore.word_math")
-                 or (n.module == "labcore" and any(x.name == "word_math" for x in n.names)))
+                 or (n.module == "word_math" and n.level > 0)
+                 or (n.module in ("labcore", None) and any(x.name == "word_math" for x in n.names)))
             or isinstance(n, ast.Import)
             and any(x.name == "labcore.word_math" for x in n.names)
             for n in ast.walk(tree)
@@ -171,6 +172,35 @@ def probe_socket_visibility(mods: dict, root: Path) -> dict:
         "meaning": "Different inventories: a source import is not a typed socket subscription nor runtime use",
         "proof_ceiling": "live source AST and registered static declarations, not runtime wiring proof",
     }
+
+def probe_socket_fabric_authority(mods: dict) -> dict:
+    reg, fabric_module = mods["math_socket_registry"], mods["socket_fabric"]
+    decl = next(d for d in reg.DOGFOOD_SOCKETS
+                if d.socket_key == "lab.semantic.vector_observation.v1")
+    read_req = reg.ConsumerRequirement(
+        consumer_id="temporary_observer", consumer_owner_path="playground",
+        required_socket_key=decl.socket_key,
+        required_authority="READ_ONLY", required_proof_ceiling="UNPROVEN")
+    promoted_req = reg.ConsumerRequirement(
+        consumer_id="temporary_writer", consumer_owner_path="playground",
+        required_socket_key=decl.socket_key,
+        required_authority="ACTIVE_WRITE", required_proof_ceiling="PROVEN")
+    good, good_blockers = reg.check_socket_compatibility(decl, read_req)
+    bad, bad_blockers = reg.check_socket_compatibility(decl, promoted_req)
+    fabric = fabric_module.DynamicSocketRegistry()
+    packet = fabric_module.compile_socket_obligations(
+        fabric_module.parse_handoff_tokens("@NEEDS " + decl.socket_key), fabric)
+    return {
+        "tested_existing_socket": decl.socket_key,
+        "observer_compatible": good,
+        "observer_blockers": good_blockers,
+        "writer_proven_compatible": bad,
+        "writer_proven_blockers": bad_blockers,
+        "existing_handoff_compilable": packet.get("compilable"),
+        "in_memory_only": True,
+        "proof_ceiling": "source real socket compatibility and obligation compilation; never granted new authority",
+    }
+
 
 def probe_bioelectric_daemon_candidate(mods: dict) -> dict:
     myc = mods["mycelial_pattern_fusion"]
@@ -217,6 +247,7 @@ PROBES = (
     ("four_mind_semantic_tool_fit", ("word_math", "four_mind"), probe_mind_profiles),
     ("scribe_spine_scope_integrity", ("word_math", "scribe_translation", "zero_point_spine"), probe_scribe_scope),
     ("socket_graph_visibility", ("math_socket_registry",), probe_socket_visibility),
+    ("socket_fabric_authority_boundary", ("math_socket_registry", "socket_fabric"), probe_socket_fabric_authority),
     ("bioelectric_to_daemon_candidate", ("word_math", "morphogenesis_grid", "mycelial_pattern_fusion"), probe_bioelectric_daemon_candidate),
 )
 

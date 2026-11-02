@@ -127,6 +127,13 @@
       "novelty": "HIDDEN_TOPOLOGY_INSPECTION"
     },
     {
+      "id": "socket_authority_ceiling",
+      "grounding": "Math Socket Registry checks declaration/consumer authority and proof compatibility; Socket Fabric compiles typed handoff obligations.",
+      "prediction": "A read-only observer is compatible with Word Math's semantic socket, while a proven active-writer consumer is rejected without legitimate authority/proof elevation.",
+      "test": "socket_fabric_authority_boundary",
+      "novelty": "MEASURE_EXISTING_SOCKET_GUARDRAILS"
+    },
+    {
       "id": "bioelectric_routing_candidate",
       "grounding": "Morphogenesis has semantic-stress injection; Mycelial has independently scored bridge resistance",
       "prediction": "An in-memory voltage-to-resistance adapter MAY alter Neurodaemon placement under parameter sweeps; result must justify any future integration",
