@@ -3,99 +3,292 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark">
-<title>Ultramonkeydog Playground — Pocket Desk</title>
+<meta name="theme-color" content="#0a1514">
+<meta name="description" content="Conversation-first temporary research workbench. Review GitHub experiments and send owner decisions back to ChatGPT.">
+<title>Ultramonkeydog · Playground Desk</title>
 <style>
-:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#e9f5ef;background:#081310;line-height:1.5}*{box-sizing:border-box}body{margin:0}main{max-width:780px;margin:auto;padding:22px 16px 76px}h1{font-size:clamp(26px,7vw,44px);line-height:1.1;margin:8px 0 12px}h2{font-size:21px}p{color:#acc5b8}.eyebrow{color:#76e6a8;font-size:12px;text-transform:uppercase;letter-spacing:.17em;font-weight:700}.panel{border:1px solid #2d5343;border-radius:16px;padding:18px;margin:20px 0;background:#10221b}label{font-weight:650;font-size:13px;display:block;margin:14px 0 6px}input,textarea,select{width:100%;border:1px solid #416450;border-radius:9px;padding:12px;font:inherit;background:#091611;color:#eafff0;min-height:44px}textarea{resize:vertical;min-height:84px}input:focus,textarea:focus,select:focus{outline:2px solid #6bdfa0;outline-offset:1px}button,a.action{cursor:pointer;display:inline-block;border:1px solid #79daa3;border-radius:10px;padding:11px 13px;background:#20744e;color:white;font:600 14px system-ui;text-decoration:none;min-height:44px}button.secondary,a.secondary{background:#162f23;border-color:#477358}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.hint{font-size:12px;color:#a4bbaf}.alert{border-left:3px solid #83dfaa;padding:6px 12px;background:#173326;border-radius:0 8px 8px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:13px;border:1px solid #325c45;border-radius:9px;background:#07120e;max-height:320px;overflow:auto;font-size:12px}a{color:#8deec1}footer{margin-top:34px;color:#9fb4a9;font-size:12px}.status{min-height:26px;font-weight:700;color:#9ff4c3}
+:root{color-scheme:dark;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#e8f5f0;background:#081210;font-size:15px;line-height:1.48}
+*{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:20px 16px 75px}
+a{color:#9af2c3}button,input,textarea{font:inherit}button,.button{min-height:44px;cursor:pointer;border:1px solid #36805d;color:#edfdf4;background:#1b6749;border-radius:11px;padding:10px 14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+button:hover,.button:hover{filter:brightness(1.12)}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #b7f8ca;outline-offset:3px}
+button.secondary,.button.secondary{background:#132c25;border-color:#45695c;color:#d0eadb}button.critical{background:#53292b;border-color:#9e565c}
+button:disabled{opacity:.45;cursor:not-allowed}h1{font-size:clamp(31px,5vw,53px);letter-spacing:-.035em;line-height:1.05;margin:10px 0}h2{font-size:19px;margin:0 0 10px}h3{font-size:16px;margin:14px 0 7px}p{margin:7px 0 12px}.muted{color:#aac0b6}.small{font-size:12px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.19em;font-weight:850;color:#74e8ad}
+.hero{padding:22px 2px 24px}.hero p{max-width:720px;color:#bdd2c8}.actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:14px}
+.panel{border:1px solid #2c4e43;background:#10211b;border-radius:17px;padding:18px}.panel+.panel{margin-top:14px}.dashboard{display:grid;grid-template-columns:minmax(270px,340px) minmax(0,1fr);gap:14px;align-items:start;margin-top:20px}
+.section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pill{display:inline-block;background:#254a38;border:1px solid #376a4d;border-radius:100px;padding:3px 9px;font-size:11px;font-weight:800;letter-spacing:.02em}
+.pill.unknown{background:#36312b;border-color:#735e42}.pill.blocked{background:#4b2a2a;border-color:#815050}
+.notice{background:#172e23;border-left:3px solid #85deb0;padding:10px 13px;border-radius:0 10px 10px 0;color:#dbf1e6}
+.notice.warn{border-left-color:#e7bf7a;background:#322a1d}.notice strong{color:white}
+.statline{display:flex;flex-wrap:wrap;gap:10px;color:#a8c6b7;font-size:12px;margin-top:10px}
+#experiments{display:flex;flex-direction:column;gap:8px;margin-top:14px}.experiment{width:100%;display:block;text-align:left;padding:13px 14px;background:#0a1a15;border:1px solid #345346;border-radius:12px}.experiment.selected{border-color:#79e5ae;background:#183a2a}
+.experiment strong{display:block;font-size:14px;margin:5px 0}.experiment small{color:#a4bfb1}.experiment .miniline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#detail-empty{color:#b9ccbf}#detail{min-height:280px}#detail-content[hidden],#detail-empty[hidden]{display:none}
+.copyrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.list{margin:7px 0 14px;padding-left:19px}.list li{margin:6px 0}.evidence{border-left:2px solid #3f7758;padding:3px 0 3px 12px;margin:10px 0}.evidence b{display:block;font-size:13px}.evidence .small{color:#acc4b8}
+.divider{border:none;border-top:1px solid #304c40;margin:19px 0}
+.file{display:flex;align-items:flex-start;gap:10px;padding:8px 0}.file input{width:19px;height:19px;margin:3px 0 0;accent-color:#76e8a6}.file label{flex:1;cursor:pointer}.file label span{display:block;color:#a5c1b1;font-size:12px;overflow-wrap:anywhere}
+textarea,input[type=text]{width:100%;min-height:42px;background:#081a13;color:white;border:1px solid #456c57;border-radius:10px;padding:11px}
+textarea{resize:vertical;min-height:90px}label.block{display:block;font-weight:700;margin:11px 0 5px}
+.review-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+#handoff{white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto;background:#081a15;padding:12px;border:1px solid #42664f;border-radius:10px;font-size:12px}
+#handoff:empty{display:none}#toast{min-height:24px;color:#ace4c4;font-weight:700;margin-top:9px}
+details{margin-top:16px}details summary{cursor:pointer;font-weight:800}footer{margin-top:28px;color:#96b4a6;font-size:12px}
+@media(max-width:760px){.dashboard{grid-template-columns:1fr}.hero{padding:14px 0}.panel{padding:15px}.review-actions{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:no-preference){.experiment,button{transition:background .15s,border-color .15s}}
 </style>
 </head>
 <body><main>
-<div class="eyebrow">Ultramonkeydog · Mobile R&D workbench</div>
-<h1>🧪 Playground Pocket Desk</h1>
-<p>Turn a phone idea into a temporary, tool-accessible GitHub research experiment. Public for access, not public-first. Everything below runs locally in this page: <strong>no login, API key, analytics, network submission, or private Lab connection.</strong></p>
-<p class="alert"><strong>Repository working branch: master.</strong> The repository is still named <code>Bone-bracket</code>. This page is source code, not automatically a deployed GitHub Pages site.</p>
-<div class="panel">
-<h2>Compose an experiment or handoff</h2>
-<label for="kind">Packet type</label>
-<select id="kind"><option value="EXPERIMENT">Experiment</option><option value="CHALLENGE">Research challenge</option><option value="NOTE">Research note</option><option value="RESULT">Evidence/result</option><option value="FAILURE">Reproducible failure</option></select>
-<label for="title">Objective / title</label><input id="title" autocomplete="off" placeholder="e.g. Compare two model routing hypotheses">
-<label for="actor">Contributor name or agent (self-reported)</label><input id="actor" placeholder="e.g. mobile ChatGPT session">
-<label for="source">Public source / exact revision</label><input id="source" placeholder="GitHub URL, commit, paper, observed build">
-<label for="claim">Claim / hypothesis / full requested scope</label><textarea id="claim" placeholder="What matters? What would disprove it?"></textarea>
-<label for="method">Reproduction method or proposed procedure</label><textarea id="method" placeholder="Commands, inputs, environment, fair resources..."></textarea>
-<label for="observed">Observed evidence (leave blank if not executed)</label><textarea id="observed" placeholder="Actual stdout, tool evidence, counterexample, or NOT RUN"></textarea>
-<label for="unknown">Unknowns, conflicts, security boundaries</label><textarea id="unknown" placeholder="What could change the conclusion? Any protected data omitted?"></textarea>
-<div class="actions"><button id="copy-issue">Copy issue body</button><button id="copy-agent" class="secondary">Copy ChatGPT mission</button><a class="action secondary" href="https://github.com/ultramonkey23/playground/issues/new/choose" target="_blank" rel="noopener noreferrer">Open GitHub issue</a></div>
-<div class="status" id="status" role="status" aria-live="polite"></div>
-<p class="hint">Copy the issue body before opening GitHub. The GitHub app has sometimes lost URL-prefilled fields on mobile; paste the body manually. GitHub sign-in and permissions still apply.</p>
+<header class="hero">
+<div class="eyebrow">Ultramonkeydog · temporary research workbench</div>
+<h1>🧪 Playground Desk</h1>
+<p><strong>Talk to ChatGPT. Review the work here.</strong> Describe an idea naturally in your connected conversation; your assistant can research, build, run tests, and publish temporary results. This page shows the evidence and lets you decide whether to keep going, add notes, discard, or request a selected Lab transfer.</p>
+<div class="actions">
+<button id="refresh">↻ Refresh results</button>
+<a class="button secondary" href="https://github.com/ultramonkey23/playground/tree/master" target="_blank" rel="noopener noreferrer">Source repository</a>
+<a class="button secondary" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT</a>
 </div>
-<section class="panel" aria-labelledby="live-title">
-<h2 id="live-title">Live active experiments</h2>
-<p>Read the public <code>master</code> tree directly from GitHub when you choose. No authentication or private Lab connection. This is an active-file snapshot, not proof an agent executed.</p>
-<div class="actions"><button id="refresh-remote" class="secondary">Refresh from GitHub</button><button id="copy-status" class="secondary">Copy status mission</button></div>
-<p id="remote-status" class="hint" role="status" aria-live="polite">Not checked yet — tap Refresh.</p>
-<ul id="remote-list"></ul>
+<p class="small muted" id="sync" role="status" aria-live="polite">Results not loaded. Public GitHub data is read on refresh; no sign-in needed.</p>
+</header>
+
+<div class="notice"><strong>Your decisions remain yours.</strong> Buttons below prepare a message to send in ChatGPT. They do not execute an extraction, discard files, post notes, or contact the private Lab. This public site never asks for GitHub tokens.</div>
+
+<section class="dashboard" aria-label="Experiment review">
+<aside class="panel">
+<div class="section-heading"><h2>Active experiments</h2><span class="pill" id="count">0 active</span></div>
+<p class="small muted">Current files on GitHub master, not an archive. Select an experiment to inspect its latest published review.</p>
+<div id="experiments" aria-live="polite"></div>
+</aside>
+
+<section class="panel" id="detail">
+<div id="detail-empty"><h2>Select an experiment</h2><p>Experiment results, evidence, files and your decisions appear here.</p></div>
+<div id="detail-content" hidden>
+<div class="section-heading"><h2 id="experiment-title"></h2><span id="experiment-status" class="pill unknown">Unknown</span></div>
+<p class="muted" id="experiment-question"></p>
+<p id="experiment-summary"></p>
+<div class="statline"><span id="experiment-id"></span><span id="experiment-revision"></span></div>
+<h3>What actually happened</h3><div id="evidence-list"></div>
+<h3>Limits and unknowns</h3><ul id="limitations" class="list"></ul>
+<h3>Possible next steps</h3><ul id="next-actions" class="list"></ul>
+<p class="small muted" id="recommendation"></p>
+<hr class="divider">
+<h3>Files you could send</h3>
+<p class="small muted">Select only the exact files you want considered for Lab research intake. Nothing is selected automatically. Source files remain public GitHub files.</p>
+<div id="files"></div>
+<div class="actions"><a id="browse-experiment" class="button secondary" href="#" target="_blank" rel="noopener noreferrer">Browse all files</a></div>
+<hr class="divider">
+<h3>Your review note</h3>
+<label class="block" for="note">Add a correction, idea, next test, or decision context</label>
+<textarea id="note" placeholder="e.g. The benchmark should use the same model budgets. Re-run the adversarial test."></textarea>
+<p class="small muted" id="note-state">Notes on this page are saved only on this browser until you send them to ChatGPT or GitHub. Do not type secrets or private Lab material here.</p>
+<div class="actions">
+<button id="note-to-chat" class="secondary">Copy note for ChatGPT</button>
+<button id="clear-note" class="secondary">Clear local note</button>
+<a id="github-note" class="button secondary" href="#" target="_blank" rel="noopener noreferrer">Discuss on GitHub</a>
+</div>
+<hr class="divider">
+<h3>Choose what happens next</h3>
+<p class="small muted">Your choice is prepared for this conversation. Paste and send it in ChatGPT to authorize work; the page itself has no write access.</p>
+<div class="review-actions">
+<button id="action-improve" class="secondary">🔧 Improve / investigate</button>
+<button id="action-keep" class="secondary">📌 Keep active</button>
+<button id="action-extract">📤 Request Lab transfer</button>
+<button id="action-discard" class="critical">🗑️ Discard experiment</button>
+</div>
+<p id="toast" role="status" aria-live="polite"></p>
+<div id="handoff" aria-label="Decision message to send to ChatGPT"></div>
+<div class="actions">
+<button id="copy-handoff" class="secondary" hidden>Copy message again</button>
+<button id="share-handoff" class="secondary" hidden>Share message</button>
+<a class="button secondary" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Return to ChatGPT</a>
+</div>
+</div>
 </section>
-<h2>Generated issue preview</h2><pre id="preview" aria-label="Generated issue Markdown"></pre>
-<p class="hint">Only user actions copy or open anything. The content is not submitted until you post it on GitHub. Never paste private source, secrets, tokens, internal addresses or unreleased assets into a public issue.</p>
-<div class="actions"><a class="action secondary" href="https://github.com/ultramonkey23/playground/tree/master">Browse master</a><a class="action secondary" href="https://github.com/ultramonkey23/playground/issues">Read challenges</a><a class="action secondary" href="https://github.com/ultramonkey23/playground/blob/master/docs/MOBILE_OPERATIONS.md">Mobile guide</a></div>
-<footer>No backend. No background worker. Only Cody-approved extraction can move selected research into private Lab intake. This page does not perform it. Integrity of future evidence packets is handled separately by the repository's Python tool.</footer>
+</section>
+
+<details class="panel">
+<summary>Advanced: compose a detailed experiment request</summary>
+<p class="small muted">Optional. You can just talk naturally in ChatGPT instead. This creates a research request, not a repository write.</p>
+<label class="block" for="new-objective">Objective</label>
+<textarea id="new-objective" placeholder="Full goal and what a successful result would look like"></textarea>
+<label class="block" for="new-method">Conditions / constraints</label>
+<textarea id="new-method" placeholder="Tools, fairness, limits, important architecture or test conditions"></textarea>
+<button id="copy-mission">Copy detailed request</button>
+</details>
+<footer>Public GitHub Pages · no server, auth token, background agent or automatic Lab connection. Draft notes are local to this browser. Completed experiments are removed from active master, not from Git history. All actions require a real connected ChatGPT conversation or an authenticated GitHub submission. <a href="https://github.com/ultramonkey23/playground/blob/master/docs/REVIEW_WORKFLOW.md">Review protocol</a>.</footer>
 </main>
 <script>
 'use strict';
-const ids=['kind','title','actor','source','claim','method','observed','unknown'];
+const REPO='ultramonkey23/playground';
+const API='https://api.github.com/repos/'+REPO;
+const WEB='https://github.com/'+REPO;
 const el=id=>document.getElementById(id);
-const val=id=>el(id).value.trim();
-function markdown(){
- const title=val('title')||'(title needed)';
- const obs=val('observed')||'NOT RUN / NOT OBSERVED';
- return `# [${val('kind')}] ${title}\n\n**Contributor claim:** ${val('actor')||'Unspecified'}\n**Working branch:** master\n**Source and revision:** ${val('source')||'NOT PROVIDED'}\n**Authority:** PUBLIC_ADVISORY_NOT_LAB_CANON\n\n## Objective / claim / hypothesis\n${val('claim')||'NOT PROVIDED'}\n\n## Method and fair resources\n${val('method')||'NOT PROVIDED'}\n\n## Observations (actual execution only)\n${obs}\n\n## Unknowns / counterevidence / boundaries\n${val('unknown')||'NOT PROVIDED'}\n\n## Next proof\nIndependently reproduce; identify actual tools, environment, command, exit status, and revision. Do not assert private Lab execution or later learning without observing it.\n`;
+const element=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined&&text!==null)n.textContent=String(text);if(cls)n.className=cls;return n;};
+const entries=new Map();
+let current=null,revision=null,handoffText='';
+function toast(text){el('toast').textContent=text;}
+function safeId(id){return /^[a-z0-9][a-z0-9_-]{2,79}$/.test(id);}
+function urlForFile(id,path){return WEB+'/blob/'+revision+'/experiments/'+encodeURIComponent(id)+'/'+path.split('/').map(encodeURIComponent).join('/');}
+function userNoteKey(id){return 'umd.playground.note.v1.'+id;}
+function loadNote(id){try{return localStorage.getItem(userNoteKey(id))||'';}catch(e){return '';}}
+function saveNote(id,text){try{localStorage.setItem(userNoteKey(id),text);return true;}catch(e){return false;}}
+function cleanList(value){return Array.isArray(value)?value.filter(x=>typeof x==='string'&&x.trim()).slice(0,40):[];}
+function appendList(id,items,empty){const host=el(id);host.replaceChildren();if(!items.length){host.appendChild(element('li',empty,'muted'));return;}for(const t of items)host.appendChild(element('li',t));}
+function blobText(base64){const raw=atob(base64.replace(/\s/g,''));const bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);return new TextDecoder('utf-8',{fatal:true}).decode(bytes);}
+async function jsonAPI(path){const response=await fetch(API+path,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});if(!response.ok)throw Error('GitHub HTTP '+response.status);return response.json();}
+async function readReview(blobsha){const raw=await jsonAPI('/git/blobs/'+blobsha);if(raw.encoding!=='base64'||typeof raw.content!=='string'||raw.content.length>150000)throw Error('Unsupported review blob');return JSON.parse(blobText(raw.content));}
+function normalizedReview(data,id,allFiles){
+ if(!data||data.schema!=='umd.playground.review.v1'||data.id!==id)throw Error('Review schema or experiment ID mismatch');
+ if(typeof data.title!=='string'||typeof data.summary!=='string')throw Error('Incomplete review summary');
+ const candidate=Array.isArray(data.files)?data.files.filter(x=>x&&typeof x.path==='string'&&typeof x.label==='string'&&allFiles.some(f=>f.path==='experiments/'+id+'/'+x.path)&&x.path!=='review.json'):[];
+ return {title:data.title.slice(0,220),question:typeof data.question==='string'?data.question:'Question not supplied',summary:data.summary,
+  status:['ACTIVE','REVIEW_READY','BLOCKED'].includes(data.status)?data.status:'UNKNOWN',
+  evidence:Array.isArray(data.evidence)?data.evidence.filter(x=>x&&typeof x==='object').slice(0,40):[],
+  limitations:cleanList(data.limitations),next_actions:cleanList(data.next_actions),
+  recommended_action:String(data.recommended_action||'REVIEW'),
+  recommendation_reason:String(data.recommendation_reason||''),
+  files:candidate,issue_number:Number.isSafeInteger(data.issue_number)&&data.issue_number>0?data.issue_number:null};
 }
-function agentTask(){
- return `Work on the public GitHub repository ultramonkey23/playground branch master. Read current AGENTS.md and related issues/source before changing anything. Discover which execution and GitHub tools are actually available in this session. Respect security and private Lab boundaries. Preserve full scope. Perform real executable R&D where tools allow; produce a testable artifact, observed result, and independent counterexample where relevant. Commit only verified changes to master with concurrent-safe reads, create/comment on the relevant issue, read back committed files and give exact GitHub URLs. Do not claim background work or Lab learning. Keep experiment work temporary; only Cody's direct extract instruction can stage selected artifacts into Lab research intake, with readback before Playground retirement.\n\nUSER PACKET:\n${markdown()}`;
-}
-function preview(){el('preview').textContent=markdown();}
-async function copyText(value){
- try{if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(value);return true;}}catch(e){}
- const area=document.createElement('textarea');area.value=value;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.focus();area.select();let ok=false;try{ok=document.execCommand('copy');}catch(e){}area.remove();return ok;
-}
-async function copy(which){
- const ok=await copyText(which==='agent'?agentTask():markdown());
- el('status').textContent=ok?'Copied. Review before publishing.':'Clipboard unavailable. Select and copy from the preview.';
-}
-
-async function refreshRemote(){
- const status=el('remote-status'), listing=el('remote-list');
- status.textContent='Checking public master (read-only)...';
- listing.replaceChildren();
+async function refresh(){
+ el('sync').textContent='Reading current public master...';
+ el('refresh').disabled=true;
  try{
-  const response=await fetch('https://api.github.com/repos/ultramonkey23/playground/git/trees/master?recursive=1',{headers:{'Accept':'application/vnd.github+json'},cache:'no-store'});
-  if(!response.ok)throw Error('GitHub HTTP '+response.status);
-  const data=await response.json();
-  if(data.truncated || !Array.isArray(data.tree))throw Error('incomplete GitHub tree');
-  const active=new Map();
-  for(const file of data.tree){
-   if(file.type!=='blob'||typeof file.path!=='string')continue;
-   const parts=file.path.split('/');
-   if(parts.length<3||parts[0]!=='experiments'||!/^[a-z0-9][a-z0-9_-]{2,79}$/.test(parts[1]))continue;
-   active.set(parts[1],(active.get(parts[1])||0)+1);
+  const head=await jsonAPI('/commits/master');
+  if(!/^[a-f0-9]{40}$/.test(String(head.sha))||!head.commit||!head.commit.tree)throw Error('Unexpected commit metadata');
+  const tree=await jsonAPI('/git/trees/'+head.commit.tree.sha+'?recursive=1');
+  if(tree.truncated||!Array.isArray(tree.tree))throw Error('GitHub returned an incomplete file tree');
+  const next=new Map();
+  for(const f of tree.tree){
+   if(f.type!=='blob'||typeof f.path!=='string')continue;
+   const parts=f.path.split('/');if(parts.length<3||parts[0]!=='experiments'||!safeId(parts[1]))continue;
+   if(!next.has(parts[1]))next.set(parts[1],{id:parts[1],tree:[],review:null,error:null});
+   next.get(parts[1]).tree.push(f);
   }
-  status.textContent='Public master tree '+String(data.sha||'unknown').slice(0,12)+' · '+active.size+' active experiment(s).';
-  for(const [id,count] of [...active.entries()].sort()){
-   const li=document.createElement('li'),a=document.createElement('a');
-   a.href='https://github.com/ultramonkey23/playground/tree/master/experiments/'+encodeURIComponent(id);
-   a.target='_blank';a.rel='noopener noreferrer';
-   a.textContent=id+' ('+count+' files)';li.appendChild(a);listing.appendChild(li);
-  }
-  if(!active.size){const li=document.createElement('li');li.textContent='No active experiment folders found.';listing.appendChild(li);}
- }catch(error){status.textContent='Unable to refresh public GitHub data: '+String(error.message||error)+'. Open the master link or ask a connected agent for playground status.';}
+  await Promise.all([...next.values()].map(async item=>{
+   const entry=item.tree.find(f=>f.path==='experiments/'+item.id+'/review.json');
+   if(!entry)return;
+   try{item.review=normalizedReview(await readReview(entry.sha),item.id,item.tree);}
+   catch(err){item.error='Review unavailable: '+String(err.message||err);}
+  }));
+  revision=head.sha;entries.clear();for(const [id,item] of next)entries.set(id,item);
+  el('sync').textContent='Current master '+revision.slice(0,12)+' · '+next.size+' active experiment(s). Fetched on this refresh; public data only.';
+  el('count').textContent=next.size+' active';
+  renderCards();
+  const requested=new URLSearchParams(window.location.search).get('experiment');
+  const choose=(current&&entries.has(current)?current:requested&&entries.has(requested)?requested:entries.keys().next().value);
+  if(choose)show(choose);else showEmpty();
+ }catch(err){el('sync').textContent='Unable to load GitHub: '+String(err.message||err)+'. Previously displayed data may be stale. Retry later; no writes occurred.';}
+ finally{el('refresh').disabled=false;}
 }
-
-ids.forEach(id=>el(id).addEventListener('input',preview));
-el('refresh-remote').addEventListener('click',refreshRemote);
-el('copy-status').addEventListener('click',async()=>{const ok=await copyText('playground status: read live ultramonkey23/playground master, inspect AGENTS.md and actual experiments/ tree; report current revision, active experiment IDs, source and execution proof limits; do not mutate the Lab.');el('remote-status').textContent=ok?'Status mission copied.':'Clipboard unavailable.';});
-el('copy-issue').addEventListener('click',()=>copy('issue'));
-el('copy-agent').addEventListener('click',()=>copy('agent'));
-preview();
+function renderCards(){
+ const host=el('experiments');host.replaceChildren();
+ if(!entries.size){host.appendChild(element('p','No active experiment directories found.','muted'));return;}
+ for(const item of [...entries.values()].sort((a,b)=>a.id.localeCompare(b.id))){
+  const button=element('button',null,'experiment'+(current===item.id?' selected':''));
+  button.type='button';button.setAttribute('aria-pressed',current===item.id?'true':'false');
+  const status=item.review?item.review.status:item.error?'UNAVAILABLE':'NO SUMMARY';
+  const top=element('div',null,'miniline');
+  top.appendChild(element('span',status,'pill '+(status==='BLOCKED'?'blocked':item.review?'':'unknown')));
+  top.appendChild(element('small',item.id));button.appendChild(top);
+  button.appendChild(element('strong',item.review?item.review.title:item.id));
+  button.appendChild(element('small',item.review?item.review.summary.slice(0,110):item.error||'Experiment files available; no structured review yet.'));
+  button.addEventListener('click',()=>show(item.id));
+  host.appendChild(button);
+ }
+}
+function showEmpty(){current=null;el('detail-empty').hidden=false;el('detail-content').hidden=true;}
+function show(id){
+ const item=entries.get(id);if(!item)return;
+ current=id;handoffText='';el('handoff').textContent='';el('copy-handoff').hidden=true;el('share-handoff').hidden=true;toast('');
+ el('detail-empty').hidden=true;el('detail-content').hidden=false;
+ const review=item.review;
+ el('experiment-title').textContent=review?review.title:item.id;
+ el('experiment-question').textContent=review?review.question:item.error||'No structured review has been published. This does not imply failure.';
+ el('experiment-summary').textContent=review?review.summary:'Browse the source files. Ask ChatGPT to run the experiment and publish a reviewed result before making a decision.';
+ el('experiment-status').textContent=review?review.status:'NOT REVIEWED';
+ el('experiment-status').className='pill '+(review?review.status==='BLOCKED'?'blocked':'':'unknown');
+ el('experiment-id').textContent='Experiment: '+id;
+ el('experiment-revision').textContent='Revision: '+(revision?revision.slice(0,12):'unknown');
+ const evid=el('evidence-list');evid.replaceChildren();
+ if(review&&review.evidence.length){
+  for(const proof of review.evidence){
+   const div=element('div',null,'evidence');
+   div.appendChild(element('b',String(proof.kind||'Evidence').slice(0,80)));
+   div.appendChild(element('div',String(proof.observation||'No observation recorded')));
+   div.appendChild(element('div',String(proof.environment||'Environment unspecified')+' · Source: '+String(proof.source||'not specified'),'small'));
+   evid.appendChild(div);
+  }
+ }else evid.appendChild(element('p','No structured execution evidence published.','muted'));
+ appendList('limitations',review?review.limitations:[],'Unknown until inspected.');
+ appendList('next-actions',review?review.next_actions:[],'Ask ChatGPT to investigate and publish a review.');
+ el('recommendation').textContent=review?'Assistant suggestion: '+review.recommended_action+' — '+review.recommendation_reason+' (advisory, never approval)':'No recommendation available.';
+ const files=el('files');files.replaceChildren();
+ const candidates=review?review.files:[];
+ if(candidates.length){
+  for(const itemFile of candidates){
+   const row=element('div',null,'file'),box=element('input'),label=element('label');
+   box.type='checkbox';box.value=itemFile.path;box.id='file-'+id+'-'+files.children.length;box.setAttribute('data-candidate','yes');
+   label.setAttribute('for',box.id);label.appendChild(element('strong',itemFile.label));
+   const a=element('a',itemFile.path);a.href=urlForFile(id,itemFile.path);a.target='_blank';a.rel='noopener noreferrer';
+   const small=element('span');small.appendChild(a);label.appendChild(small);row.appendChild(box);row.appendChild(label);files.appendChild(row);
+  }
+ }else files.appendChild(element('p','No reviewed candidate file list. Ask ChatGPT to publish the review before extraction.','muted'));
+ el('browse-experiment').href=WEB+'/tree/'+revision+'/experiments/'+encodeURIComponent(id);
+ el('note').value=loadNote(id);
+ el('note-state').textContent='Local draft on this browser only. Not uploaded or synced. Avoid private information.';
+ const issue=review&&review.issue_number;
+ el('github-note').href=issue?WEB+'/issues/'+issue:WEB+'/issues/new?title='+encodeURIComponent('[PLAYGROUND NOTE] '+id)+'&body='+encodeURIComponent('Experiment: '+id+'\nObserved revision: '+revision+'\n\nNote (paste from Playground Desk):\n');
+ el('github-note').textContent=issue?'Open linked GitHub discussion':'Start GitHub note issue';
+ renderCards();
+}
+function selectedFiles(){return [...el('files').querySelectorAll('input[type=checkbox]:checked')].map(n=>n.value);}
+function message(kind){
+ if(!current||!revision)return '';
+ const item=entries.get(current),note=el('note').value.trim(),paths=selectedFiles();
+ const base='Playground review decision for experiment '+current+' at observed master '+revision+'. Inspect live ultramonkey23/playground master, current AGENTS.md, actual files, and review evidence; do not assume this snapshot is still current. ';
+ let action;
+ if(kind==='EXTRACT'){
+  if(!paths.length){toast('Select the exact files you want considered for Lab transfer first.');return '';}
+  action='I explicitly authorize staging ONLY these selected experiment-relative files into the existing private Lab research intake: '+paths.join(', ')+'. Re-check my selected scope and the current Lab intake owner, verify exact private readback, and retire the experiment only after successful readback. If this snapshot has changed in a way that affects selection, ask me to approve the new content before acting. Lab staging is not adoption.';
+ }else if(kind==='DISCARD'){
+  action='I want this experiment discarded from the active Playground branch without any Lab transfer. Inspect current state and safety first; if the objective or evidence has changed materially, explain before deleting. Keep Git history limitations explicit.';
+ }else if(kind==='IMPROVE'){
+  action='Please continue this experiment, challenge the findings and resolve remaining gaps. Execute and observe the real work available, update the same experiment and publish a new reviewed result. No Lab transfer.';
+ }else if(kind==='KEEP'){
+  action='Keep this experiment active for later work. Do not transfer to the Lab or discard it. Acknowledge this as a review choice, not evidence of runtime completion.';
+ }else if(kind==='NOTE'){
+  action='Please attach my note to the current experiment record and investigate or respond where appropriate. Commit and read back any public note only if it contains no confidential Lab information. Do not extract or discard.';
+ }
+ return base+action+(note?'\n\nMy review note:\n'+note.slice(0,4000):'');
+}
+async function clipboard(text){
+ try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return true;}}catch(e){}
+ try{const field=element('textarea');field.value=text;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.focus();field.select();const ok=document.execCommand('copy');field.remove();return ok;}catch(e){return false;}
+}
+async function makeHandoff(kind){
+ const text=message(kind);if(!text)return;
+ handoffText=text;el('handoff').textContent=text;el('copy-handoff').hidden=false;
+ el('share-handoff').hidden=typeof navigator.share!=='function';
+ const ok=await clipboard(text);
+ toast(ok?'Message copied. Return to this ChatGPT conversation, paste and SEND it to request the action. Nothing has been submitted yet.':'Clipboard blocked. Select the message below and paste it into this conversation. Nothing has been submitted.');
+}
+async function shareHandoff(){if(!handoffText||typeof navigator.share!=='function')return;try{await navigator.share({text:handoffText,title:'Playground review decision'});toast('Shared to your selected destination. You must still submit the message in ChatGPT.');}catch(e){toast('Share cancelled. You can copy the message instead.');}}
+el('refresh').addEventListener('click',refresh);
+el('note').addEventListener('input',()=>{if(current){const ok=saveNote(current,el('note').value);el('note-state').textContent=ok?'Saved locally on this browser. Not uploaded.':'Local storage unavailable; copy the note to avoid losing it.';}});
+el('clear-note').addEventListener('click',()=>{if(current){el('note').value='';saveNote(current,'');el('note-state').textContent='Local draft cleared.';}});
+el('note-to-chat').addEventListener('click',()=>makeHandoff('NOTE'));
+el('action-improve').addEventListener('click',()=>makeHandoff('IMPROVE'));
+el('action-keep').addEventListener('click',()=>makeHandoff('KEEP'));
+el('action-extract').addEventListener('click',()=>makeHandoff('EXTRACT'));
+el('action-discard').addEventListener('click',()=>makeHandoff('DISCARD'));
+el('copy-handoff').addEventListener('click',async()=>{if(handoffText)toast(await clipboard(handoffText)?'Copied. Paste and send in ChatGPT.':'Copy unavailable; select the text below.');});
+el('share-handoff').addEventListener('click',shareHandoff);
+el('copy-mission').addEventListener('click',async()=>{
+ const objective=el('new-objective').value.trim(),constraints=el('new-method').value.trim();
+ if(!objective){el('sync').textContent='Write an objective before copying.';return;}
+ const t='Use my public Playground repository on master. Read current AGENTS.md and docs/REVIEW_WORKFLOW.md, inspect current active work, use all available tools to research/execute my full goal, publish actual artifacts and evidence in an active experiment with review.json, validate and read back, then give me the Pocket Desk review link. Do not send anything to the Lab unless I later explicitly authorize a specific extraction.\n\nMy objective:\n'+objective+'\n\nConditions:\n'+(constraints||'Use the appropriate real-world verification conditions.');
+ el('sync').textContent=await clipboard(t)?'Detailed request copied. Paste it into your ChatGPT conversation.':'Copy failed. Use your regular ChatGPT composer.';
+});
+refresh();
 </script>
-</body></html>
+</body>
+</html>
