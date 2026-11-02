@@ -30,7 +30,7 @@ button:disabled{opacity:.45;cursor:not-allowed}h1{font-size:clamp(31px,5vw,53px)
 textarea,input[type=text]{width:100%;min-height:42px;background:#081a13;color:white;border:1px solid #456c57;border-radius:10px;padding:11px}
 textarea{resize:vertical;min-height:90px}label.block{display:block;font-weight:700;margin:11px 0 5px}
 .review-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
-#handoff{white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto;background:#081a15;padding:12px;border:1px solid #42664f;border-radius:10px;font-size:12px}
+#handoff,#artifact-preview{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto;background:#081a15;padding:12px;border:1px solid #42664f;border-radius:10px;font-size:12px}#artifact-preview{margin-top:9px}.artifact{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #2e4c3d}.artifact div{min-width:0;overflow-wrap:anywhere}.artifact span{display:block;color:#93b6a4;font-size:12px}.artifact button{min-width:82px}
 #handoff:empty{display:none}#toast{min-height:24px;color:#ace4c4;font-weight:700;margin-top:9px}
 details{margin-top:16px}details summary{cursor:pointer;font-weight:800}footer{margin-top:28px;color:#96b4a6;font-size:12px}
 @media(max-width:760px){.dashboard{grid-template-columns:1fr}.hero{padding:14px 0}.panel{padding:15px}.review-actions{grid-template-columns:1fr 1fr}}
@@ -70,6 +70,12 @@ details{margin-top:16px}details summary{cursor:pointer;font-weight:800}footer{ma
 <h3>Limits and unknowns</h3><ul id="limitations" class="list"></ul>
 <h3>Possible next steps</h3><ul id="next-actions" class="list"></ul>
 <p class="small muted" id="recommendation"></p>
+<hr class="divider">
+<h3>Inspect actual files and logs</h3>
+<p class="small muted">Open exact public source and evidence from the snapshot revision. Tap Preview to read text without leaving the Desk; nothing is executed.</p>
+<div id="artifact-list"></div>
+<pre id="artifact-preview" aria-label="Selected file text preview">Choose a file above to inspect its actual contents.</pre>
+<div class="actions"><a id="history-link" class="button secondary" href="#" target="_blank" rel="noopener noreferrer">Experiment commit history</a></div>
 <hr class="divider">
 <h3>Files you could send</h3>
 <p class="small muted">Select only the exact files you want considered for Lab research intake. Nothing is selected automatically. Source files remain public GitHub files.</p>
@@ -221,6 +227,16 @@ function show(id){
  appendList('limitations',review?review.limitations:[],'Unknown until inspected.');
  appendList('next-actions',review?review.next_actions:[],'Ask ChatGPT to investigate and publish a review.');
  el('recommendation').textContent=review?'Assistant suggestion: '+review.recommended_action+' — '+review.recommendation_reason+' (advisory, never approval)':'No recommendation available.';
+ const artifacts=el('artifact-list');artifacts.replaceChildren();
+ el('artifact-preview').textContent='Choose a file above to inspect its exact public contents. No code is executed.';
+ for(const entry of item.tree.slice().sort((a,b)=>a.path.localeCompare(b.path)).slice(0,120)){
+  const name=entry.path.slice(('experiments/'+id+'/').length),line=element('div',null,'artifact'),desc=element('div');
+  desc.appendChild(element('strong',name));desc.appendChild(element('span',(Number(entry.size)||0)+' bytes'));
+  const previewButton=element('button','Preview','secondary');previewButton.type='button';
+  previewButton.addEventListener('click',()=>previewArtifact(id,entry));
+  line.appendChild(desc);line.appendChild(previewButton);artifacts.appendChild(line);
+ }
+ el('history-link').href=WEB+'/commits/master/experiments/'+encodeURIComponent(id);
  const files=el('files');files.replaceChildren();
  const candidates=review?review.files:[];
  if(candidates.length){
@@ -239,6 +255,19 @@ function show(id){
  el('github-note').href=issue?WEB+'/issues/'+issue:WEB+'/issues/new?title='+encodeURIComponent('[PLAYGROUND NOTE] '+id)+'&body='+encodeURIComponent('Experiment: '+id+'\nObserved revision: '+revision+'\n\nNote (paste from Playground Desk):\n');
  el('github-note').textContent=issue?'Open linked GitHub discussion':'Start GitHub note issue';
  renderCards();
+}
+async function previewArtifact(id,entry){
+ const preview=el('artifact-preview');
+ if(!current||current!==id){preview.textContent='Experiment selection changed; select again.';return;}
+ if(typeof entry.size!=='number'||entry.size>100000){preview.textContent='Text preview limited to files of 100 KB. Open the repository for this artifact.';return;}
+ preview.textContent='Reading pinned GitHub artifact (read-only)...';
+ try{
+  const blob=await jsonAPI('/git/blobs/'+entry.sha);
+  if(blob.encoding!=='base64'||typeof blob.content!=='string'||blob.content.length>150000)throw Error('Unsupported or oversized file');
+  const content=blobText(blob.content);
+  if(current!==id)return;
+  preview.textContent=content||'(empty file)';
+ }catch(error){if(current===id)preview.textContent='Unable to preview: '+String(error.message||error);}
 }
 function selectedFiles(){return [...el('files').querySelectorAll('input[type=checkbox]:checked')].map(n=>n.value);}
 function message(kind){
