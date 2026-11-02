@@ -1,0 +1,44 @@
+{
+  "schema": "umd.playground.review.v1",
+  "id": "001_evidence_integrity",
+  "title": "Evidence packet tamper detection",
+  "status": "REVIEW_READY",
+  "question": "Does the public advisory evidence-packet checker detect changed content without claiming author authentication?",
+  "summary": "The demonstration accepts its original packet and detects changed observation text through a content_sha256 mismatch. This result concerns content integrity only, not author identity or private Lab ingestion.",
+  "evidence": [
+    {
+      "kind": "USER_REPORTED_EXECUTION",
+      "environment": "Termux (Android), user-provided console output, 2026-11-02",
+      "observation": "Original packet: no validation errors; tampered packet: content_sha256 mismatch.",
+      "source": "demo.py"
+    },
+    {
+      "kind": "USER_REPORTED_TESTS",
+      "environment": "Termux (Android), user-provided console output, 2026-11-02",
+      "observation": "20 unit tests passed across packet and lifecycle suites.",
+      "source": "../../tools/test_packet.py"
+    }
+  ],
+  "limitations": [
+    "Content hashes do not authenticate the author.",
+    "Lab extraction and downstream consumption have not been tested.",
+    "Termux evidence was supplied by Cody; no independent device attestation."
+  ],
+  "next_actions": [
+    "Review code, evidence and limitations before selecting a disposition.",
+    "Any extraction requires fresh owner approval and explicitly selected files."
+  ],
+  "recommended_action": "REVIEW",
+  "recommendation_reason": "The demonstration worked within scope; usefulness to the Lab remains an owner decision.",
+  "files": [
+    {
+      "path": "README.md",
+      "label": "Experiment explanation"
+    },
+    {
+      "path": "demo.py",
+      "label": "Executable demonstration"
+    }
+  ],
+  "issue_number": null
+}
