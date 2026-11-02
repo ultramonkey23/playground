@@ -100,10 +100,12 @@ class LifecycleTests(unittest.TestCase):
         def api(method, path, data=None):
             if method == "PUT": return {"commit": {"sha": COMMIT}}
             raise AssertionError((method, path))
+        calls = {"dest": 0}
         def read(repo, path, sha, **kwargs):
             if path.endswith("/README.md"): return b"owner present"
-            if path.endswith(".md"): return b"wrong bytes"
-            raise lc.GitHubNotFound("not found")
+            calls["dest"] += 1
+            if calls["dest"] == 1: raise lc.GitHubNotFound("not found")
+            return b"wrong bytes"
         with patch.object(lc, "get_head", return_value=HEAD), patch.object(lc, "load_selection", return_value=[("README.md", b"foo")]), patch.object(lc, "api", side_effect=api), patch.object(lc, "read_bytes", side_effect=read), patch.object(lc, "remove_experiment") as removed:
             with self.assertRaisesRegex(lc.LifecycleError, "readback does not match"):
                 lc.extract(a)
