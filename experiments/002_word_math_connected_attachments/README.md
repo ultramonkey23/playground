@@ -32,11 +32,11 @@ Cody supplied six explicitly OBSERVED probe records and a seventh detailed but t
 
 Major observations: Word Math semantic affinity changed without altering Neurodaemon placement. The temporary bioelectric→bridge-resistance adapter changed one assignment, but **reduced unique bridge coverage from five to four**. The original hazard input contained no registered risk/destructive phrase, producing the same +0.04 bioelectric signal as the neutral Word Math baseline. Four Mind's initial `distinct_winners` count included a `null` winner. These are discoveries about existing circuits **and the experiment fixtures**, not a warrant to rewrite Lab organs.
 
-**Current runner has been revised** to report true recognized hazard vs neutral/unmatched controls, record bridge diversity and active semantic dimensions, and count only non-null matches. The corrected runner has not been executed on a private Lab checkout yet.
+**Historical note:** The original runner was revised after the first execution; the corrected runner has **now executed successfully** on Lab master `a08c9619ba606e972dbcfb99f898cc3a5c69bfed`, and its published observations are analyzed above.
 
 ## Real runtime experiment
 
-Because the connected GitHub plugin can read private Lab source but this conversation cannot execute that private checkout, the corrected follow-up effects remain unmeasured as of this update. In Termux, from a current Playground clone with gh authenticated:
+The connected GitHub plugin can inspect the published observations but cannot execute the private Termux checkout itself. The latest corrected synthetic run has already completed and was published; the following command is for a **new** explicit run from a current authenticated Playground clone:
 
     cd ~/playground
     git pull --ff-only origin master
@@ -44,7 +44,7 @@ Because the connected GitHub plugin can read private Lab source but this convers
 
 The harness clones a clean, temporary private Lab master and calls only read/compute paths on synthetic fixtures. It has no explicit Lab write or dispatch calls. Imports and incidental module behavior have **not** yet been sandbox-attested; do not confuse this with complete isolation.
 
-Paste the JSON results here. I can evaluate the measured differences and publish a bounded review to the Desk. **Never paste private source, tokens or personal data.** No transfer into the Lab is authorized by these tests.
+Publish the bounded JSON directly to the public Playground with `--publish` as described below, or paste the JSON here. I can evaluate the measured differences and publish a bounded review to the Desk. **Never paste private source, tokens or personal data.** No transfer into the Lab is authorized by these tests.
 
 ## Publish results without uploading a phone file
 

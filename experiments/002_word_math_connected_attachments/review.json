@@ -19,15 +19,15 @@
       "source": "latest_results.json"
     },
     {
-      "kind": "USER_REPORTED_REAL_LAB_EXECUTION",
+      "kind": "HISTORICAL_FIRST_RUN_USER_REPORT",
       "environment": "Authenticated Termux private Lab master c8c7634d84a735eebdc8e0fa8a72f9f2f2f7cc65, synthetic probes (user-provided output)",
       "observation": "Six individual probes explicitly reported OBSERVED; a seventh included detailed measurements but its state and overall run status were truncated. These are user-reported actual module calls, not independent attestation or a production mission.",
       "source": "observations_2026-11-02.json"
     },
     {
-      "kind": "OBSERVED_QUIRK_NO_UPLIFT",
+      "kind": "HISTORICAL_FIRST_RUN_QUIRK_NO_UPLIFT",
       "environment": "Neurodaemon and temporary bioelectric fusion comparisons",
-      "observation": "Word Math affinity changed with fixed placements. Candidate adapter changed one of five placements but reduced distinct bridge targets from five to four; no higher rounded spawn scores were observed.",
+      "observation": "Original first run: affinity changed without placement; experimental adapter changed one placement but reduced distinct targets from five to four. The corrected latest run is analyzed in FINDINGS_LATEST.md.",
       "source": "FINDINGS.md"
     },
     {
@@ -37,9 +37,9 @@
       "source": "observations_2026-11-02.json"
     },
     {
-      "kind": "FIXTURE_DEFECT_SOURCE_DIAGNOSIS",
+      "kind": "HISTORICAL_FIRST_RUN_FIXTURE_DEFECT",
       "environment": "Read of exact Lab Word Math + bioelectric source and user-reported numbers",
-      "observation": "Original hazard text did not match registered risk/destructive phrases; its +0.04 signal equals the neutral semantic pressure calculation. Corrected negative-stress input and transparent signal fields have NOT been executed.",
+      "observation": "First run: hazard phrase did not match registered risk/destructive terms and produced neutral +0.04. This defect was subsequently addressed: the corrected published latest_results.json includes recognized hazard with signal −1.0, alongside both neutral and unmatched controls.",
       "source": "FINDINGS.md"
     }
   ],
