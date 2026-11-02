@@ -23,9 +23,9 @@ def validate(data: object, experiment: Path) -> list[str]:
     for key in ("title", "question", "summary", "recommendation_reason"):
         if not isinstance(data.get(key), str) or not data[key].strip():
             errors.append(key + " must be nonempty text")
-    if data.get("status") not in STATES:
+    if not isinstance(data.get("status"), str) or data.get("status") not in STATES:
         errors.append("invalid status")
-    if data.get("recommended_action") not in ACTIONS:
+    if not isinstance(data.get("recommended_action"), str) or data.get("recommended_action") not in ACTIONS:
         errors.append("invalid recommendation")
     for key in ("limitations", "next_actions"):
         values = data.get(key)
@@ -71,7 +71,7 @@ def validate(data: object, experiment: Path) -> list[str]:
 def scan(root: Path) -> list[tuple[str, list[str]]]:
     results = []
     for experiment in sorted(root.iterdir()):
-        if not experiment.is_dir() or not ID.fullmatch(experiment.name):
+        if not experiment.is_dir() or experiment.is_symlink() or not ID.fullmatch(experiment.name):
             continue
         file = experiment / "review.json"
         if not file.is_file():

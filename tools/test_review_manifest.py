@@ -44,6 +44,14 @@ class ReviewManifestTests(unittest.TestCase):
         self.assertEqual([],validate(d,self.experiment))
         self.assertNotIn("owner_approved", d)
 
+    def test_malformed_status_types_are_validation_errors(self):
+        d = sample(self.experiment)
+        d["status"] = []
+        d["recommended_action"] = {"bad": True}
+        errors = validate(d, self.experiment)
+        self.assertIn("invalid status", errors)
+        self.assertIn("invalid recommendation", errors)
+
     def test_bad_evidence_and_status(self):
         d = sample(self.experiment)
         d["evidence"] = [{"kind":"EXECUTION"}]
